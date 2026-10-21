@@ -1,6 +1,10 @@
 /* Estilos del bloque de cuenta de usuario (se carga después de estilos.css) */
 #auth { margin: 16px 0; }
 
+#auth-formulario { max-width: 420px; margin: 0 auto; }
+#auth-formulario .acciones { justify-content: center; }
+#auth-sesion p { text-align: center; }
+
 #auth-formulario label {
   display: block;
   margin-bottom: 10px;
@@ -11,7 +15,7 @@
 #auth-formulario input {
   display: block;
   width: 100%;
-  max-width: 360px;
+  max-width: 100%;
   margin-top: 4px;
   padding: 9px 12px;
   font: inherit;

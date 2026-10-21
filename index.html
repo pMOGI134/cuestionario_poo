@@ -47,12 +47,11 @@
 
     <!-- Selección de asignatura -->
     <section id="pantalla-asignaturas" class="tarjeta" hidden>
-      <div class="barra-superior"><div><h2>Asignaturas</h2><p class="nota-pequena">Elige una asignatura para ver sus cuestionarios.</p></div><button class="btn btn-texto btn-cerrar-sesion" type="button">Salir</button></div>
-      <div class="seleccion-temas">
-        <button id="btn-asignatura-poo" class="tarjeta-seleccion tema-disponible" type="button">
-          <span class="tema-estado">Disponible</span><strong>POO</strong><span>Programación Orientada a Objetos</span>
-        </button>
+      <div class="barra-superior barra-seccion">
+        <div><h2>Asignaturas</h2><p class="nota-pequena">Elige una asignatura para ver sus cuestionarios.</p></div>
+        <div class="acciones-cabecera"><button class="btn btn-secundario btn-cerrar-sesion" type="button">Salir</button></div>
       </div>
+      <div id="lista-asignaturas" class="seleccion-temas"></div>
       <div id="resumen-historial" class="historial" hidden></div>
       <div class="acciones"><button id="btn-borrar-historial" class="btn btn-secundario" type="button" hidden>Borrar historial local</button></div>
       <div id="historial-cuenta" class="nota-pequena" hidden></div>
@@ -60,14 +59,26 @@
 
     <!-- Tests de la asignatura -->
     <section id="pantalla-tests" class="tarjeta" hidden>
-      <div class="barra-superior"><div><p class="nota-pequena">Asignatura</p><h2>POO</h2></div><button id="btn-volver-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button><button class="btn btn-texto btn-cerrar-sesion" type="button">Salir</button></div>
-      <h3>Tests disponibles</h3>
-      <div class="seleccion-temas">
-        <button id="btn-test-temas-1-3" class="tarjeta-seleccion tema-disponible" type="button" disabled>
-          <span class="tema-estado">Cargando preguntas…</span><strong>Test Tema 1-3</strong><span>POO, Java, herencia y polimorfismo · 30 preguntas</span>
-        </button>
+      <div class="barra-superior barra-seccion">
+        <div><p class="nota-pequena">Asignatura</p><h2 id="nombre-asignatura-tests">POO</h2></div>
+        <div class="acciones-cabecera">
+          <button id="btn-volver-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button>
+          <button class="btn btn-secundario btn-cerrar-sesion" type="button">Salir</button>
+        </div>
       </div>
-      <p id="error-carga" class="error" hidden></p>
+      <h3>Tests disponibles</h3>
+      <div id="lista-tests" class="seleccion-temas"></div>
+      <div id="selector-modo" class="selector-modo" hidden>
+        <h3 id="nombre-test-modo"></h3>
+        <p class="nota-pequena">Elige la cantidad de preguntas y la dificultad del test.</p>
+        <div class="seleccion-temas modos-dificultad">
+          <button class="tarjeta-seleccion tema-disponible modo-cantidad" data-total="10" type="button" disabled><strong>10 preguntas · Fácil</strong><span>Práctica corta</span></button>
+          <button class="tarjeta-seleccion tema-disponible modo-cantidad" data-total="20" type="button" disabled><strong>20 preguntas · Medio</strong><span>Práctica intermedia</span></button>
+          <button class="tarjeta-seleccion tema-disponible modo-cantidad" data-total="30" type="button" disabled><strong>30 preguntas · Completo</strong><span>Banco completo</span></button>
+        </div>
+        <p id="estado-banco" class="nota-pequena" role="status">Cargando preguntas…</p>
+        <button id="btn-volver-lista-tests" class="btn btn-secundario" type="button">Volver a tests</button>
+      </div>
       <div id="resumen-historial-tests" class="historial" hidden></div>
     </section>
 
@@ -93,7 +104,8 @@
         <p id="texto-explicacion"></p>
       </div>
 
-      <div class="acciones">
+      <div class="acciones acciones-navegacion">
+        <button id="btn-anterior" class="btn btn-secundario" type="button" disabled>Pregunta anterior</button>
         <button id="btn-siguiente" class="btn btn-principal" type="button" hidden>Siguiente</button>
       </div>
       <p class="atajos">Atajos: A–D (o 1–4) para responder · Intro para continuar</p>

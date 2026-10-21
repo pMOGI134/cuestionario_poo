@@ -4,10 +4,6 @@
 const SUPABASE_URL = "https://lcusxdimfjjdycqvkpeo.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjdXN4ZGltZmpqZHljcXZrcGVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI1NzIxMDIsImV4cCI6MjEwODE0ODEwMn0.mmWwkUGvt_eoEjAzcifLdVLKQ-LfvRV0nq9oJTFK09w";
 
-// Cuando añadas más asignaturas/tests, estas dos constantes serán dinámicas.
-const ASIGNATURA = "poo";
-const TEST_ID = "temas-1-3";
-
 const sb =
   window.supabase && SUPABASE_URL.startsWith("https://")
     ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
@@ -33,14 +29,14 @@ async function usuarioActual() {
 
 /* Guarda un intento. Devuelve {ok, motivo}. Nunca lanza:
    la app sigue funcionando aunque no haya red o Supabase esté pausado. */
-async function guardarIntentoRemoto({ aciertos, total, nota, falladas }) {
+async function guardarIntentoRemoto({ asignatura, testId, aciertos, total, nota, falladas }) {
   try {
     const user = await usuarioActual();
     if (!user) return { ok: false, motivo: "sin-sesion" };
     const { error } = await sb.from("intentos").insert({
       usuario_id: user.id,
-      asignatura: ASIGNATURA,
-      test_id: TEST_ID,
+      asignatura,
+      test_id: testId,
       aciertos,
       total,
       nota: Math.round(nota * 100) / 100,
@@ -67,7 +63,7 @@ async function pintarHistorialCuenta() {
     const { data, error } = await sb
       .from("intentos")
       .select("nota, aciertos, total, creado_en")
-      .eq("asignatura", ASIGNATURA)
+      .eq("asignatura", typeof asignaturaActual !== "undefined" && asignaturaActual ? asignaturaActual.id : "poo")
       .order("creado_en", { ascending: false })
       .limit(200);
     if (error) {

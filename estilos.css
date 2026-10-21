@@ -1,10 +1,10 @@
 :root {
-  --fondo: #f3ede4;
-  --superficie: #fffdf9;
-  --texto: #35291f;
-  --texto-suave: #766759;
-  --borde: #dfd0bf;
-  --acento: #8b5e3c;
+  --fondo: #f4f6f8;
+  --superficie: #ffffff;
+  --texto: #202833;
+  --texto-suave: #5e6a78;
+  --borde: #d7dde5;
+  --acento: #496a8a;
   --acento-texto: #ffffff;
   --acierto: #1f7a45;
   --acierto-fondo: #e3f4ea;
@@ -18,13 +18,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fondo: #211a15;
-    --superficie: #2d241d;
-    --texto: #f1e8dc;
-    --texto-suave: #c0ad99;
-    --borde: #514030;
-    --acento: #c08a5c;
-    --acento-texto: #211a15;
+    --fondo: #111827;
+    --superficie: #1f2937;
+    --texto: #e5e7eb;
+    --texto-suave: #aab4c1;
+    --borde: #374151;
+    --acento: #93c5fd;
+    --acento-texto: #111827;
     --acierto: #5fcf8f;
     --acierto-fondo: #17301f;
     --fallo: #ff8a76;
@@ -56,6 +56,8 @@ body {
 main { max-width: 820px; margin: 0 auto; padding: 12px 16px 24px; }
 
 .tarjeta {
+  width: 100%;
+  margin-inline: auto;
   background: var(--superficie);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
@@ -70,7 +72,8 @@ main { max-width: 820px; margin: 0 auto; padding: 12px 16px 24px; }
 /* Selección de temas */
 .seleccion-temas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+  justify-content: center;
   gap: 12px;
   margin: 18px 0 24px;
 }
@@ -132,8 +135,26 @@ main { max-width: 820px; margin: 0 auto; padding: 12px 16px 24px; }
 
 /* Test */
 .barra-superior { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.barra-superior > div:first-child { margin-right: auto; }
+.barra-seccion { justify-content: space-between; }
+.acciones-cabecera { display: flex; align-items: center; gap: 10px; }
 .contador { font-weight: 700; }
 .marcador { color: var(--texto-suave); margin-right: auto; }
+
+.modos-dificultad {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  overflow-x: auto;
+  padding: 4px;
+}
+.modos-dificultad .modo-cantidad {
+  flex: 1 0 210px;
+  max-width: 240px;
+  align-items: center;
+  text-align: center;
+}
 
 .progreso {
   height: 8px;
@@ -220,11 +241,11 @@ main { max-width: 820px; margin: 0 auto; padding: 12px 16px 24px; }
 .atajos { color: var(--texto-suave); font-size: .8rem; margin: 16px 0 0; }
 
 /* Resultados */
-.nota-grande { display: flex; align-items: baseline; gap: 4px; }
+.nota-grande { display: flex; justify-content: center; align-items: baseline; gap: 4px; }
 .nota-numero { font-size: 3.4rem; font-weight: 800; letter-spacing: -.02em; }
 .nota-sobre { font-size: 1.4rem; color: var(--texto-suave); }
-.nota-detalle { margin: 0; font-weight: 600; }
-.nota-historica { color: var(--texto-suave); margin: 4px 0 0; }
+.nota-detalle { margin: 0; font-weight: 600; text-align: center; }
+.nota-historica { color: var(--texto-suave); margin: 4px 0 0; text-align: center; }
 
 .desglose { display: grid; gap: 8px; }
 .fila-desglose {
@@ -252,6 +273,10 @@ main { max-width: 820px; margin: 0 auto; padding: 12px 16px 24px; }
 
 .error { color: var(--fallo); font-weight: 600; margin-top: 14px; }
 
+.acciones-navegacion { justify-content: space-between; }
+.acciones-navegacion #btn-siguiente { margin-left: auto; }
+.selector-modo h3 { margin-top: 10px; }
+
 .pie { max-width: 820px; margin: 0 auto; padding: 0 16px 28px; color: var(--texto-suave); font-size: .82rem; }
 .pie code { background: var(--superficie); border: 1px solid var(--borde); border-radius: 4px; padding: 0 4px; }
 
@@ -259,6 +284,12 @@ main { max-width: 820px; margin: 0 auto; padding: 12px 16px 24px; }
 
 @media (max-width: 520px) {
   .tarjeta { padding: 16px; }
+  .seleccion-temas { grid-template-columns: minmax(0, 1fr); }
+  .barra-seccion { align-items: flex-start; }
+  .acciones-cabecera { flex-wrap: nowrap; }
+  .modos-dificultad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; }
+  .modos-dificultad .modo-cantidad { min-width: 0; max-width: none; padding: 12px 8px; }
+  .modos-dificultad .modo-cantidad strong { font-size: .9rem; }
   .fila-desglose { grid-template-columns: 1fr 56px; }
   .fila-desglose .barra { grid-column: 1 / -1; order: 3; }
   .nota-numero { font-size: 2.8rem; }

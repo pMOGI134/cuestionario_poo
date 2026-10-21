@@ -13,9 +13,9 @@ Aplicación web para practicar con **tests tipo examen**, organizada por asignat
 
 ### Tests
 - Cada test tiene su propio banco de preguntas en un archivo `.json`.
-- En cada intento la app **selecciona 30 preguntas al azar** del banco, así que cada intento es distinto.
+- En cada intento puedes elegir **10 preguntas (fácil), 20 (medio) o 30 (completo)**; las preguntas se seleccionan al azar del banco.
 - Las **opciones se mezclan** en cada pregunta.
-- Barra de progreso y contador (`Pregunta X de 30`).
+- Barra de progreso y contador ajustados al modo elegido (`Pregunta X de N`).
 - **Corrección inmediata**: la respuesta correcta se marca en verde y la incorrecta en rojo.
 - Preguntas con **fragmentos de código** para analizar, y compatibilidad con imágenes.
 - **Nota final sobre 10** y número de aciertos al terminar.

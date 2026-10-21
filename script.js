@@ -1,8 +1,22 @@
 "use strict";
 
-const TOTAL = 30;
 const LETRAS = ["A", "B", "C", "D", "E", "F"];
 const LS_KEY = "poo_historial_v1";
+const ASIGNATURAS = [
+  {
+    id: "poo",
+    nombre: "POO",
+    descripcion: "Programación Orientada a Objetos",
+    tests: [
+      {
+        id: "temas-1-3",
+        nombre: "Test Tema 1-3",
+        descripcion: "POO, Java, herencia y polimorfismo",
+        archivo: "preguntas.json",
+      },
+    ],
+  },
+];
 const TIPOS = {
   test: "Concepto",
   codigo: "Código",
@@ -14,6 +28,9 @@ const TEMAS = { 1: "Tema 1 · POO", 2: "Tema 2 · Java", 3: "Tema 3 · Herencia 
 
 let banco = [];
 let preguntas = [];
+let asignaturaActual = null;
+let testActual = null;
+let totalPreguntas = 30;
 let indice = 0;
 let respuestas = []; // letra elegida (o null) por pregunta
 let respondida = false;
@@ -54,6 +71,11 @@ function mostrar(id) {
   window.scrollTo({ top: 0 });
 }
 
+function claveHistorial() {
+  if (!asignaturaActual || (asignaturaActual.id === "poo" && (!testActual || testActual.id === "temas-1-3"))) return LS_KEY;
+  return `${LS_KEY}_${asignaturaActual.id}_${testActual ? testActual.id : "general"}`;
+}
+
 function formatoNota(n) {
   return n.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
@@ -62,7 +84,7 @@ function formatoNota(n) {
 
 function leerHistorial() {
   try {
-    const crudo = localStorage.getItem(LS_KEY);
+    const crudo = localStorage.getItem(claveHistorial());
     const h = crudo ? JSON.parse(crudo) : [];
     return Array.isArray(h) ? h.filter((x) => x && typeof x.nota === "number") : [];
   } catch (e) {
@@ -72,7 +94,7 @@ function leerHistorial() {
 
 function guardarHistorial(h) {
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify(h.slice(-200)));
+    localStorage.setItem(claveHistorial(), JSON.stringify(h.slice(-200)));
     return true;
   } catch (e) {
     return false;
@@ -81,7 +103,7 @@ function guardarHistorial(h) {
 
 function borrarHistorial() {
   try {
-    localStorage.removeItem(LS_KEY);
+    localStorage.removeItem(claveHistorial());
   } catch (e) {
     /* sin almacenamiento disponible */
   }
@@ -124,31 +146,94 @@ function pintarHistorial() {
 
 /* ---------- carga ---------- */
 
-async function cargarBanco() {
-  const btn = $("btn-test-temas-1-3");
+async function cargarBanco(test) {
   try {
-    const resp = await fetch("preguntas.json", { cache: "no-cache" });
+    const resp = await fetch(test.archivo, { cache: "no-cache" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const datos = await resp.json();
-    if (!Array.isArray(datos) || datos.length < TOTAL) throw new Error("El banco de preguntas es inválido o demasiado pequeño");
+    if (testActual !== test) return false;
+    if (!Array.isArray(datos) || !datos.length) throw new Error("El banco de preguntas está vacío o no es válido");
     banco = datos;
-    btn.disabled = false;
-    btn.querySelector(".tema-estado").textContent = "Disponible";
+    document.querySelectorAll(".modo-cantidad").forEach((btn) => {
+      const total = Number(btn.dataset.total);
+      btn.disabled = banco.length < total;
+    });
+    $("estado-banco").textContent = banco.length < 30
+      ? `Banco cargado: ${banco.length} preguntas. Los modos superiores a esa cantidad no están disponibles.`
+      : `Banco cargado: ${banco.length} preguntas. Elige un modo.`;
+    return true;
   } catch (e) {
-    const err = $("error-carga");
-    err.hidden = false;
-    err.textContent =
-      "No se pudo cargar preguntas.json (" + e.message + "). Abre la página desde un servidor local, por ejemplo con «python3 -m http.server», y entra en http://localhost:8000.";
-    btn.disabled = true;
-    btn.querySelector(".tema-estado").textContent = "No disponible";
+    if (testActual !== test) return false;
+    $("estado-banco").textContent = `No se pudo cargar ${test.archivo} (${e.message}). Abre la página desde un servidor local.`;
+    document.querySelectorAll(".modo-cantidad").forEach((btn) => { btn.disabled = true; });
+    return false;
   }
+}
+
+function renderizarAsignaturas() {
+  const lista = $("lista-asignaturas");
+  lista.innerHTML = "";
+  ASIGNATURAS.forEach((asignatura) => {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "tarjeta-seleccion tema-disponible";
+    const estado = document.createElement("span");
+    estado.className = "tema-estado";
+    estado.textContent = "Disponible";
+    const nombre = document.createElement("strong");
+    nombre.textContent = asignatura.nombre;
+    const descripcion = document.createElement("span");
+    descripcion.textContent = asignatura.descripcion;
+    boton.append(estado, nombre, descripcion);
+    boton.addEventListener("click", () => {
+      asignaturaActual = asignatura;
+      testActual = null;
+      $("nombre-asignatura-tests").textContent = asignatura.nombre;
+      pintarTests();
+      pintarHistorial();
+      mostrar("pantalla-tests");
+    });
+    lista.append(boton);
+  });
+}
+
+function pintarTests() {
+  const lista = $("lista-tests");
+  lista.innerHTML = "";
+  $("selector-modo").hidden = true;
+  lista.hidden = false;
+  (asignaturaActual ? asignaturaActual.tests : []).forEach((test) => {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "tarjeta-seleccion tema-disponible";
+    const estado = document.createElement("span");
+    estado.className = "tema-estado";
+    estado.textContent = "Elegir test";
+    const nombre = document.createElement("strong");
+    nombre.textContent = test.nombre;
+    const descripcion = document.createElement("span");
+    descripcion.textContent = test.descripcion;
+    boton.append(estado, nombre, descripcion);
+    boton.addEventListener("click", async () => {
+      testActual = test;
+      banco = [];
+      $("nombre-test-modo").textContent = test.nombre;
+      lista.hidden = true;
+      $("selector-modo").hidden = false;
+      document.querySelectorAll(".modo-cantidad").forEach((opcion) => { opcion.disabled = true; });
+      $("estado-banco").textContent = "Cargando preguntas…";
+      await cargarBanco(test);
+      pintarHistorial();
+    });
+    lista.append(boton);
+  });
 }
 
 /* ---------- test ---------- */
 
 function empezar() {
-  preguntas = barajar(banco).slice(0, TOTAL).map(prepararPregunta);
-  respuestas = new Array(TOTAL).fill(null);
+  preguntas = barajar(banco).slice(0, totalPreguntas).map(prepararPregunta);
+  respuestas = new Array(totalPreguntas).fill(null);
   indice = 0;
   mostrar("pantalla-test");
   pintarPregunta();
@@ -160,12 +245,15 @@ function aciertosHastaAhora() {
 
 function pintarPregunta() {
   const q = preguntas[indice];
-  respondida = false;
+  const seleccionGuardada = respuestas[indice];
+  respondida = seleccionGuardada !== null;
 
-  $("contador").textContent = `Pregunta ${indice + 1} de ${TOTAL}`;
+  $("contador").textContent = `Pregunta ${indice + 1} de ${totalPreguntas}`;
   $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
-  $("progreso-barra").style.width = `${(indice / TOTAL) * 100}%`;
+  $("progreso-barra").style.width = `${(indice / totalPreguntas) * 100}%`;
+  $("progreso").setAttribute("aria-valuemax", String(totalPreguntas));
   $("progreso").setAttribute("aria-valuenow", String(indice));
+  $("btn-anterior").disabled = indice === 0;
 
   const et = $("etiquetas");
   et.innerHTML = "";
@@ -201,12 +289,30 @@ function pintarPregunta() {
     t.className = "texto";
     t.textContent = o.texto;
     b.append(l, t);
+    if (respondida) {
+      b.disabled = true;
+      if (q.respuestas_correctas.includes(o.letra)) b.classList.add("correcta");
+      else if (o.letra === seleccionGuardada) b.classList.add("incorrecta");
+      else b.classList.add("apagada");
+    }
     b.addEventListener("click", () => responder(o.letra));
     caja.append(b);
   });
 
-  $("explicacion").hidden = true;
-  $("btn-siguiente").hidden = true;
+  const explicacion = $("explicacion");
+  const siguiente = $("btn-siguiente");
+  if (respondida) {
+    const acierto = q.respuestas_correctas.includes(seleccionGuardada);
+    explicacion.className = "explicacion " + (acierto ? "ok" : "ko");
+    $("veredicto").textContent = acierto ? "✔ Correcto" : `✘ Incorrecto · la respuesta correcta era la ${q.respuestas_correctas.join(", ")}`;
+    $("texto-explicacion").textContent = q.explicacion || "";
+    explicacion.hidden = false;
+    siguiente.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
+    siguiente.hidden = false;
+  } else {
+    explicacion.hidden = true;
+    siguiente.hidden = true;
+  }
 }
 
 function responder(letra) {
@@ -232,14 +338,14 @@ function responder(letra) {
 
   $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
   const sig = $("btn-siguiente");
-  sig.textContent = indice === TOTAL - 1 ? "Ver resultado" : "Siguiente";
+  sig.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
   sig.hidden = false;
   sig.focus({ preventScroll: true });
 }
 
 function siguiente() {
   if (!respondida) return;
-  if (indice < TOTAL - 1) {
+  if (indice < totalPreguntas - 1) {
     indice++;
     pintarPregunta();
   } else {
@@ -250,6 +356,7 @@ function siguiente() {
 function abandonar() {
   if (confirm("¿Abandonar el test? No se guardará ninguna nota.")) {
     pintarHistorial();
+    pintarTests();
     mostrar("pantalla-tests");
   }
 }
@@ -294,17 +401,17 @@ function textoOpcion(q, letra) {
 
 function terminar() {
   const aciertos = aciertosHastaAhora();
-  const nota = (aciertos / TOTAL) * 10;
+  const nota = (aciertos / totalPreguntas) * 10;
 
   const historial = leerHistorial();
   const previa = media(historial);
   const tenia = historial.length;
-  historial.push({ fecha: new Date().toISOString(), nota: Math.round(nota * 100) / 100, aciertos, total: TOTAL });
+  historial.push({ fecha: new Date().toISOString(), nota: Math.round(nota * 100) / 100, aciertos, total: totalPreguntas });
   const guardado = guardarHistorial(historial);
 
   $("progreso-barra").style.width = "100%";
   $("nota-numero").textContent = formatoNota(nota);
-  $("nota-detalle").textContent = `${aciertos} aciertos, ${TOTAL - aciertos} fallos de ${TOTAL} preguntas.`;
+  $("nota-detalle").textContent = `${aciertos} aciertos, ${totalPreguntas - aciertos} fallos de ${totalPreguntas} preguntas.`;
 
   let hist;
   if (!guardado) {
@@ -363,7 +470,7 @@ function terminar() {
   // la app sigue funcionando igual con el historial local.
   if (typeof guardarIntentoRemoto === "function") {
     const idsFalladas = falladas.map(({ q }) => q.id);
-    guardarIntentoRemoto({ aciertos, total: TOTAL, nota, falladas: idsFalladas }).then((r) => {
+    guardarIntentoRemoto({ asignatura: asignaturaActual.id, testId: testActual.id, aciertos, total: totalPreguntas, nota, falladas: idsFalladas }).then((r) => {
       const extra = r.ok
         ? " Guardado en tu cuenta."
         : r.motivo === "sin-sesion"
@@ -394,17 +501,27 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-$("btn-test-temas-1-3").addEventListener("click", empezar);
+document.querySelectorAll(".modo-cantidad").forEach((btn) => btn.addEventListener("click", () => {
+  totalPreguntas = Number(btn.dataset.total);
+  empezar();
+}));
 $("btn-siguiente").addEventListener("click", siguiente);
+$("btn-anterior").addEventListener("click", () => {
+  if (indice > 0) {
+    indice--;
+    pintarPregunta();
+  }
+});
 $("btn-abandonar").addEventListener("click", abandonar);
 $("btn-repetir").addEventListener("click", empezar);
 $("btn-inicio").addEventListener("click", () => {
   pintarHistorial();
+  pintarTests();
   mostrar("pantalla-tests");
 });
 
-$("btn-asignatura-poo").addEventListener("click", () => mostrar("pantalla-tests"));
 $("btn-volver-asignaturas").addEventListener("click", () => mostrar("pantalla-asignaturas"));
+$("btn-volver-lista-tests").addEventListener("click", () => pintarTests());
 document.querySelectorAll(".btn-cerrar-sesion").forEach((btn) => btn.addEventListener("click", () => {
   if (typeof cerrarSesion === "function") cerrarSesion();
 }));
@@ -424,5 +541,5 @@ document.addEventListener("sesion-actualizada", (e) => {
   }
 });
 
+renderizarAsignaturas();
 pintarHistorial();
-cargarBanco();
