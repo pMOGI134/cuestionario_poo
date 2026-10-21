@@ -2,8 +2,6 @@
 
 Aplicación web para practicar con **tests tipo examen**, organizada por asignaturas. Eliges una asignatura, accedes a sus tests y la app genera un cuestionario aleatorio, lo corrige al momento y calcula tu nota.
 
-Es una aplicación 100 % estática (HTML, CSS y JavaScript): no necesita backend ni base de datos.
-
 ---
 
 ##  Funciones
@@ -127,4 +125,4 @@ HTML5 · CSS3 · JavaScript (vanilla) · JSON
 ## Licencia
 Me da igual lo que hagáis con esto la verdad solo es un proyecto personal.
 
-Añade aquí la licencia que prefieras (por ejemplo, MIT) o indica que es de uso personal/educativo.
+
