@@ -1,10 +1,6 @@
 "use strict";
 
-/* ============================================================
-   CONFIGURACIÓN: pega aquí los datos de tu proyecto de Supabase
-   (Settings → API). Usa SIEMPRE la clave "anon public",
-   nunca la "service_role".
-   ============================================================ */
+
 const SUPABASE_URL = "https://lcusxdimfjjdycqvkpeo.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjdXN4ZGltZmpqZHljcXZrcGVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI1NzIxMDIsImV4cCI6MjEwODE0ODEwMn0.mmWwkUGvt_eoEjAzcifLdVLKQ-LfvRV0nq9oJTFK09w";
 
