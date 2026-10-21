@@ -1,0 +1,12 @@
+CUESTIONARIO DE POO (Temas 1-3)
+
+Para usarlo: abre una terminal en esta carpeta y ejecuta
+    python3 -m http.server
+Después entra en http://localhost:8000 en el navegador.
+(Hace falta servidor porque la app carga preguntas.json con fetch.)
+
+Archivos:
+  index.html, estilos.css, script.js  -> la aplicación
+  preguntas.json                      -> banco de 200 preguntas
+  RESUMEN_Y_PENDIENTE.md              -> estado y avisos
+  fuentes/                            -> borrador de preguntas y scripts de apoyo

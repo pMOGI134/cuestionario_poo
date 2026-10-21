@@ -1,0 +1,6202 @@
+[
+  {
+    "id": 1,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S9",
+    "pregunta": "En el diseño de un sistema para un hospital decides no modelar el color de pelo de los pacientes porque no influye en ninguna funcionalidad. ¿Qué herramienta para tratar la complejidad estás aplicando?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Descomponer: dividir el problema completo en problemas más simples que se resuelven por separado"
+      },
+      {
+        "letra": "B",
+        "texto": "Jerarquizar: ordenar los elementos del problema localizando sus semejanzas y diferencias"
+      },
+      {
+        "letra": "C",
+        "texto": "Encapsular: impedir que los clientes de una clase accedan a los detalles de su implementación"
+      },
+      {
+        "letra": "D",
+        "texto": "Abstraer: ignorar los detalles poco significativos y concentrar el esfuerzo en los esenciales"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Abstraer consiste en ignorar los detalles que parecen poco significativos."
+  },
+  {
+    "id": 2,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S10",
+    "pregunta": "Un fabricante reparte el desarrollo de un coche entre un equipo de carrocería, otro de cristales y otro de ruedas, y cada equipo trabaja por separado. ¿Qué herramienta humana frente a la complejidad ilustra esto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Abstraer los detalles del coche para quedarse solo con un modelo simplificado"
+      },
+      {
+        "letra": "B",
+        "texto": "Encapsular cada pieza para que los demás equipos no dependan de su implementación"
+      },
+      {
+        "letra": "C",
+        "texto": "Jerarquizar los componentes según lo que tienen en común y en lo que se diferencian"
+      },
+      {
+        "letra": "D",
+        "texto": "Descomponer el problema en problemas más simples que se resuelven por separado"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Descomponer: el problema completo se divide en problemas más simples."
+  },
+  {
+    "id": 3,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S11",
+    "pregunta": "Clasificar un Renault, un Ferrari y un Megane buscando qué comparten y en qué se diferencian, para agruparlos en un árbol, es un ejemplo de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Descomponer el problema en subproblemas independientes que se resuelven por separado"
+      },
+      {
+        "letra": "B",
+        "texto": "Modularizar, porque se agrupan lógicamente las sentencias en módulos con funcionalidad completa"
+      },
+      {
+        "letra": "C",
+        "texto": "Abstraer, porque se ignoran los detalles de cada coche para considerar solo el modelo"
+      },
+      {
+        "letra": "D",
+        "texto": "Jerarquizar los elementos del problema localizando semejanzas y diferencias"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Jerarquizar ordena los elementos localizando semejanzas y diferencias."
+  },
+  {
+    "id": 4,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S12",
+    "pregunta": "¿Cuál de las siguientes explicaciones corresponde a una descomposición orientada a objetos y no a una algorítmica?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Describir un cálculo como una serie de pasos cada vez más simples hasta llegar a operaciones elementales"
+      },
+      {
+        "letra": "B",
+        "texto": "Describir un partido de fútbol indicando qué objetos intervienen (jugadores, balón, árbitro) y cómo interactúan entre sí"
+      },
+      {
+        "letra": "C",
+        "texto": "Dividir un programa en las funciones que se ejecutan una detrás de otra para obtener el resultado final"
+      },
+      {
+        "letra": "D",
+        "texto": "Describir una receta como una secuencia ordenada de tareas: calentar el aceite, cascar el huevo, freírlo y retirarlo"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "En la orientada a objetos el problema se descompone en objetos de cuya interacción surge la solución."
+  },
+  {
+    "id": 5,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S16",
+    "pregunta": "Dos objetos tienen exactamente el mismo estado interno en un instante dado. ¿Qué se puede afirmar con seguridad?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cualquier mensaje que modifique a uno modificará también al otro, al compartir su estado"
+      },
+      {
+        "letra": "B",
+        "texto": "Son necesariamente el mismo objeto, porque la identidad se deduce del estado interno"
+      },
+      {
+        "letra": "C",
+        "texto": "Deben pertenecer a clases distintas, porque dos objetos de la misma clase no repiten estado"
+      },
+      {
+        "letra": "D",
+        "texto": "Pueden ser objetos distintos, con identidades diferentes, aunque su estado coincida"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Identidad y estado son características independientes de un objeto."
+  },
+  {
+    "id": 6,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S20",
+    "pregunta": "¿Qué conjunto recoge las cuatro capacidades PRIMARIAS en las que se basa la programación orientada a objetos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Encapsular, jerarquizar, tipar y ejecutar concurrentemente"
+      },
+      {
+        "letra": "B",
+        "texto": "Abstraer, modularizar, persistir y ejecutar concurrentemente"
+      },
+      {
+        "letra": "C",
+        "texto": "Abstraer, encapsular, modularizar y jerarquizar"
+      },
+      {
+        "letra": "D",
+        "texto": "Abstraer, encapsular, tipar y persistir"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Tipo, concurrencia y persistencia son las capacidades secundarias."
+  },
+  {
+    "id": 7,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S20",
+    "pregunta": "Según el tema, ¿cuál de las siguientes características se considera una capacidad SECUNDARIA de la POO?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La persistencia de los objetos"
+      },
+      {
+        "letra": "B",
+        "texto": "La jerarquización de las abstracciones"
+      },
+      {
+        "letra": "C",
+        "texto": "La encapsulación de la implementación"
+      },
+      {
+        "letra": "D",
+        "texto": "La modularización del programa"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Las secundarias son tipo, concurrencia y persistencia."
+  },
+  {
+    "id": 8,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S22",
+    "pregunta": "¿Qué caracteriza a una buena abstracción según su definición?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Agrupa en un mismo módulo todas las clases que se utilizan juntas para facilitar la compilación del conjunto"
+      },
+      {
+        "letra": "B",
+        "texto": "Reproduce con total fidelidad todas las características del objeto real para que el modelo sea completo y exacto"
+      },
+      {
+        "letra": "C",
+        "texto": "Distingue las características esenciales de un objeto y fija límites conceptuales relativos a quien lo observa"
+      },
+      {
+        "letra": "D",
+        "texto": "Oculta a los clientes la implementación interna del objeto para que los cambios no les afecten"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Abstraer es ignorar detalles y tratar con un modelo simplificado."
+  },
+  {
+    "id": 9,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S23",
+    "pregunta": "En el contexto de la abstracción, ¿qué es una interfaz?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un molde que permite crear objetos y que incluye siempre la implementación de todos sus métodos"
+      },
+      {
+        "letra": "B",
+        "texto": "Una declaración de los métodos que debe tener una abstracción, sin especificar cómo se implementan"
+      },
+      {
+        "letra": "C",
+        "texto": "Una definición de las propiedades y del código interno de los métodos que tendrán los objetos creados"
+      },
+      {
+        "letra": "D",
+        "texto": "Una descripción del orden en que el cliente puede aplicar las operaciones de un objeto servidor"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La interfaz declara métodos pero no su implementación."
+  },
+  {
+    "id": 10,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S24",
+    "pregunta": "Partiendo de una interfaz, ¿qué aporta de más el concepto de clase en lenguajes como Java o C++?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El contrato: las responsabilidades que asume el servidor frente a sus clientes"
+      },
+      {
+        "letra": "B",
+        "texto": "La jerarquía: la posibilidad de ordenar las abstracciones por semejanzas y diferencias"
+      },
+      {
+        "letra": "C",
+        "texto": "La implementación: la definición de las propiedades y el código interno de los métodos"
+      },
+      {
+        "letra": "D",
+        "texto": "La concurrencia: la posibilidad de que cada objeto se ejecute en un hilo propio"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "La clase añade a la interfaz una implementación."
+  },
+  {
+    "id": 11,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S26",
+    "pregunta": "En la relación cliente/servidor entre objetos, ¿qué es el protocolo?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La lista de métodos públicos que declara la interfaz del servidor"
+      },
+      {
+        "letra": "B",
+        "texto": "El mecanismo con el que el servidor avisa al cliente de que ha fallado una operación"
+      },
+      {
+        "letra": "C",
+        "texto": "El conjunto de responsabilidades que el servidor asume ante el cliente"
+      },
+      {
+        "letra": "D",
+        "texto": "El orden en que el cliente puede aplicar las operaciones del servidor"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El contrato fija responsabilidades; el protocolo fija el orden de las operaciones."
+  },
+  {
+    "id": 12,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S26",
+    "pregunta": "Un cliente envía un mensaje a un objeto servidor y este no puede cumplir las poscondiciones del método. ¿Qué debe ocurrir según el modelo cliente/servidor del tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Se destruye el objeto cliente, por haber incumplido el contrato"
+      },
+      {
+        "letra": "B",
+        "texto": "El servidor devuelve silenciosamente el último valor válido que tuvo"
+      },
+      {
+        "letra": "C",
+        "texto": "El compilador detecta el incumplimiento y rechaza el programa antes de ejecutarlo"
+      },
+      {
+        "letra": "D",
+        "texto": "Se produce una excepción"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Si no se pueden cumplir las poscondiciones, se lanza una excepción."
+  },
+  {
+    "id": 13,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S29",
+    "pregunta": "Una clase Empleado ofrece métodos para calcular la nómina, dibujar gráficos en pantalla y enviar correos electrónicos. ¿Qué criterio de calidad de una abstracción incumple principalmente?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Suficiencia, porque le sobran operaciones que no necesita ningún cliente"
+      },
+      {
+        "letra": "B",
+        "texto": "Primitividad, porque sus operaciones son demasiado básicas para ser útiles"
+      },
+      {
+        "letra": "C",
+        "texto": "Acoplamiento, porque ofrece demasiados métodos públicos a sus clientes"
+      },
+      {
+        "letra": "D",
+        "texto": "Cohesión, porque sus métodos no tienen una temática común"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "La cohesión mide la asociación entre los métodos de una misma abstracción."
+  },
+  {
+    "id": 14,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S29",
+    "pregunta": "Una clase Pila ofrece push, pop e isEmpty y añade un método pushDos(a, b) que simplemente llama dos veces a push. ¿Qué principio de diseño cuestiona más claramente esta decisión?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Acoplamiento, porque pushDos obliga a disponer de otra abstracción para funcionar"
+      },
+      {
+        "letra": "B",
+        "texto": "Completitud, porque a la pila le faltan operaciones para cumplir su objetivo"
+      },
+      {
+        "letra": "C",
+        "texto": "Cohesión, porque pushDos trabaja con tipos distintos a los del resto de métodos"
+      },
+      {
+        "letra": "D",
+        "texto": "Primitividad, porque pushDos se puede construir con operaciones más básicas"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Una operación que ya se construye con otras más básicas va contra la primitividad."
+  },
+  {
+    "id": 15,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S29",
+    "pregunta": "¿Cuándo se dice que dos abstracciones están acopladas?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cuando para tener una de ellas también hay que tener la otra"
+      },
+      {
+        "letra": "B",
+        "texto": "Cuando ambas ofrecen exactamente las mismas operaciones públicas a sus clientes"
+      },
+      {
+        "letra": "C",
+        "texto": "Cuando ambas pertenecen al mismo módulo o paquete del programa"
+      },
+      {
+        "letra": "D",
+        "texto": "Cuando los métodos de ambas tienen una temática común y trabajan con tipos similares"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Es deseable minimizar el acoplamiento entre abstracciones."
+  },
+  {
+    "id": 16,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S34",
+    "pregunta": "¿Cuál es un objetivo de la encapsulación?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Impedir que se pueda crear más de un objeto a partir de la misma abstracción"
+      },
+      {
+        "letra": "B",
+        "texto": "Evitar que un sistema dependa de cómo se ha implementado otro y que el cliente rompa los invariantes"
+      },
+      {
+        "letra": "C",
+        "texto": "Acelerar la ejecución evitando llamadas a métodos entre unos objetos y otros"
+      },
+      {
+        "letra": "D",
+        "texto": "Permitir que el cliente conozca la estructura interna del objeto para optimizar el uso que hace de él"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Encapsular oculta la implementación de una abstracción."
+  },
+  {
+    "id": 17,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S35",
+    "pregunta": "Una lista se implementa con un array y un contador, y su invariante es que el contador coincide con el número de elementos almacenados. ¿Qué evita que ambos sean visibles solo dentro de la lista?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que el array tenga que ser redimensionado cuando se llena"
+      },
+      {
+        "letra": "B",
+        "texto": "Que la lista pueda usarse con más de un cliente simultáneamente"
+      },
+      {
+        "letra": "C",
+        "texto": "Que un cliente modifique por error el contador y rompa el invariante"
+      },
+      {
+        "letra": "D",
+        "texto": "Que el cliente tenga que conocer el tamaño máximo del array"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Ocultar los detalles protege los invariantes."
+  },
+  {
+    "id": 18,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S37",
+    "pregunta": "¿Qué símbolos usa UML para marcar partes públicas, privadas y protegidas, respectivamente?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "+ para público, - para privado y # para protegido"
+      },
+      {
+        "letra": "B",
+        "texto": "+ para público, # para privado y ~ para protegido"
+      },
+      {
+        "letra": "C",
+        "texto": "~ para público, - para privado y # para protegido"
+      },
+      {
+        "letra": "D",
+        "texto": "- para público, + para privado y # para protegido"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "UML: + público, - privado, # protegido."
+  },
+  {
+    "id": 19,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S38",
+    "pregunta": "En un diagrama UML una propiedad aparece sin ningún símbolo de visibilidad. ¿Qué se puede afirmar sobre su implementación?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Podría aparecer como privada o como pública: la ausencia de adorno no implica nada"
+      },
+      {
+        "letra": "B",
+        "texto": "Debe implementarse como privada, porque es la visibilidad por defecto de UML"
+      },
+      {
+        "letra": "C",
+        "texto": "No puede implementarse hasta que se complete el diagrama con su visibilidad"
+      },
+      {
+        "letra": "D",
+        "texto": "Debe implementarse como pública, porque el diagrama no la protege expresamente"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "En UML la ausencia de un adorno no implica que lo representado no esté después."
+  },
+  {
+    "id": 20,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S39",
+    "pregunta": "Una clase Coche tiene velocidad y enMarcha privadas y métodos públicos acelerar(int), parar() y dameVelocidad(). ¿Qué puede hacer un cliente ajeno a la clase?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Leer velocidad directamente, pero no modificarla sin pasar por acelerar() o parar()"
+      },
+      {
+        "letra": "B",
+        "texto": "Acceder directamente a ambas propiedades siempre que pertenezca al mismo paquete"
+      },
+      {
+        "letra": "C",
+        "texto": "Consultar la velocidad solo mediante dameVelocidad() y cambiarla mediante acelerar() o parar()"
+      },
+      {
+        "letra": "D",
+        "texto": "Modificar enMarcha directamente, pero no la velocidad, que está protegida por dameVelocidad()"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Las propiedades privadas solo se tocan mediante los métodos públicos."
+  },
+  {
+    "id": 21,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S41",
+    "pregunta": "¿Qué dos formas básicas de jerarquía se definen en el paradigma orientado a objetos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Jerarquías de herencia simple y jerarquías de herencia múltiple"
+      },
+      {
+        "letra": "B",
+        "texto": "Jerarquías entre objetos y jerarquías entre clases e interfaces"
+      },
+      {
+        "letra": "C",
+        "texto": "Jerarquías de tipos primitivos y jerarquías de tipos por referencia"
+      },
+      {
+        "letra": "D",
+        "texto": "Jerarquías de paquetes y jerarquías de módulos del programa"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Se jerarquizan objetos (asociación, uso) y clases (herencia)."
+  },
+  {
+    "id": 22,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S42",
+    "pregunta": "Un objeto Calculator recibe como parámetro de uno de sus métodos un objeto Stack, pero no lo guarda como propiedad. ¿Qué relación hay entre ambos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Una relación de implementación de interfaz"
+      },
+      {
+        "letra": "B",
+        "texto": "Una relación de asociación del tipo «tiene»"
+      },
+      {
+        "letra": "C",
+        "texto": "Una relación de dependencia o uso"
+      },
+      {
+        "letra": "D",
+        "texto": "Una relación de herencia entre clases"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "A usa a B cuando B no es propiedad de A pero A lo necesita."
+  },
+  {
+    "id": 23,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S43",
+    "pregunta": "En un diagrama UML la clase Archivo está asociada a la clase Curriculum con multiplicidad 0..* en el extremo de Curriculum. ¿Qué indica?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que un Curriculum puede guardar de cero a muchos objetos Archivo"
+      },
+      {
+        "letra": "B",
+        "texto": "Que un Archivo puede guardar de cero a muchos objetos Curriculum"
+      },
+      {
+        "letra": "C",
+        "texto": "Que cada Curriculum debe estar guardado en al menos un Archivo y como mucho en uno"
+      },
+      {
+        "letra": "D",
+        "texto": "Que un Archivo contiene exactamente un Curriculum, que puede estar vacío"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La multiplicidad se lee en el extremo del objeto contenido."
+  },
+  {
+    "id": 24,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S51",
+    "pregunta": "¿Cómo se representa la relación de uso o dependencia entre clases en UML?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con una línea continua terminada en una flecha de punta hueca"
+      },
+      {
+        "letra": "B",
+        "texto": "Con una línea punteada terminada en una flecha"
+      },
+      {
+        "letra": "C",
+        "texto": "Con una línea continua sin flecha, con nombre y multiplicidad"
+      },
+      {
+        "letra": "D",
+        "texto": "Con una línea punteada terminada en una flecha de punta hueca"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La dependencia es línea punteada con flecha."
+  },
+  {
+    "id": 25,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S52",
+    "pregunta": "En una jerarquía de herencia donde B hereda de A, ¿qué afirmación es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los elementos de B son más generales porque agrupan lo que añaden a A"
+      },
+      {
+        "letra": "B",
+        "texto": "Los elementos de A son más generales y los de B están más especializados"
+      },
+      {
+        "letra": "C",
+        "texto": "Los elementos de B usan a los de A sin tenerlos como propiedad"
+      },
+      {
+        "letra": "D",
+        "texto": "Los elementos de B contienen elementos de A como propiedades"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La relación es «B es un A»."
+  },
+  {
+    "id": 26,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S54",
+    "pregunta": "Cuando una interfaz B hereda de otra interfaz A, ¿qué obtiene B?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Únicamente la declaración de los métodos de A"
+      },
+      {
+        "letra": "B",
+        "texto": "La declaración y la implementación por defecto de los métodos de A"
+      },
+      {
+        "letra": "C",
+        "texto": "Nada: una interfaz no puede heredar de otra interfaz"
+      },
+      {
+        "letra": "D",
+        "texto": "Los métodos y las propiedades de A, para poder implementarlos"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Las interfaces solo contienen métodos sin implementación."
+  },
+  {
+    "id": 27,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S55",
+    "pregunta": "Una clase Renault cumple (implementa) la interfaz CocheCombustion. ¿Cómo se representa esta relación en UML?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con una línea punteada y una flecha de punta hueca hacia la interfaz"
+      },
+      {
+        "letra": "B",
+        "texto": "Con una línea continua y un rombo en el extremo de la interfaz"
+      },
+      {
+        "letra": "C",
+        "texto": "Con una línea punteada y una flecha abierta, igual que una dependencia"
+      },
+      {
+        "letra": "D",
+        "texto": "Con una línea continua y una flecha de punta hueca hacia la interfaz"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Si la herencia involucra una interfaz, la línea es punteada."
+  },
+  {
+    "id": 28,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S56",
+    "pregunta": "La clase Megane hereda de la clase Renault (no de una interfaz). ¿Qué afirmación es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Megane solo hereda la declaración de los métodos de Renault y debe implementarlos todos de nuevo"
+      },
+      {
+        "letra": "B",
+        "texto": "Megane tiene todos los métodos y propiedades de Renault y puede modificar el comportamiento de alguno"
+      },
+      {
+        "letra": "C",
+        "texto": "Megane hereda los métodos de Renault pero no sus propiedades, que quedan ocultas al heredar"
+      },
+      {
+        "letra": "D",
+        "texto": "Megane no puede añadir métodos nuevos, porque la herencia fija la interfaz completa de Renault"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La herencia de clases transmite interfaz y comportamiento."
+  },
+  {
+    "id": 29,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S59",
+    "pregunta": "Una clase hereda de una interfaz pero deja sin implementar alguno de los métodos heredados. ¿Cómo se denomina la clase resultante?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Interfaz extendida"
+      },
+      {
+        "letra": "B",
+        "texto": "Clase interna"
+      },
+      {
+        "letra": "C",
+        "texto": "Clase abstracta"
+      },
+      {
+        "letra": "D",
+        "texto": "Clase final"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Si no tiene algún método implementado, es abstracta."
+  },
+  {
+    "id": 30,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S60",
+    "pregunta": "¿En qué caso se habla de polimorfismo dinámico?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cuando ya en compilación se puede determinar la dirección del método que se invocará"
+      },
+      {
+        "letra": "B",
+        "texto": "Cuando una misma clase define varios métodos con el mismo nombre y distintos parámetros"
+      },
+      {
+        "letra": "C",
+        "texto": "Cuando una variable cambia de tipo primitivo durante la ejecución del programa"
+      },
+      {
+        "letra": "D",
+        "texto": "Cuando solo en ejecución se puede determinar a qué método de qué clase se debe llamar"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Estático: se resuelve en compilación; dinámico: solo en ejecución."
+  },
+  {
+    "id": 31,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S63",
+    "pregunta": "En Java, ¿qué concepto permite un número ilimitado de niveles de modularidad aprovechando los directorios?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La clase interna"
+      },
+      {
+        "letra": "B",
+        "texto": "El paquete"
+      },
+      {
+        "letra": "C",
+        "texto": "El componente"
+      },
+      {
+        "letra": "D",
+        "texto": "La biblioteca"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Java creó el concepto de paquete."
+  },
+  {
+    "id": 32,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S64",
+    "pregunta": "Se modifica un único módulo de un programa dividido en muchos módulos. ¿Qué debe recompilarse normalmente?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ese módulo y los que dependan de él, pero no el total de módulos"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo ese módulo, ya que los demás no dependen de su implementación"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo los módulos que no dependen de él, para que se actualicen"
+      },
+      {
+        "letra": "D",
+        "texto": "Todos los módulos del programa, para mantener la coherencia entre ellos"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La modularidad aumenta la velocidad de compilación."
+  },
+  {
+    "id": 33,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S65",
+    "pregunta": "¿Qué problema causan los módulos demasiado pequeños?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Aumentan las dependencias hacia el exterior del módulo"
+      },
+      {
+        "letra": "B",
+        "texto": "Reducen la manejabilidad del módulo"
+      },
+      {
+        "letra": "C",
+        "texto": "Aumentan los tiempos de compilación"
+      },
+      {
+        "letra": "D",
+        "texto": "Aumentan la desorganización del programa"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Pequeños: desorganización. Grandes: compilación lenta y poca manejabilidad."
+  },
+  {
+    "id": 34,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S65",
+    "pregunta": "Al diseñar los módulos de un programa, ¿qué criterios se recomiendan?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Maximizar las dependencias entre módulos para reutilizar más código y minimizar su tamaño"
+      },
+      {
+        "letra": "B",
+        "texto": "Minimizar la coherencia dentro de cada módulo para que sea reutilizable en cualquier contexto"
+      },
+      {
+        "letra": "C",
+        "texto": "Maximizar la coherencia dentro de cada módulo y minimizar las dependencias entre módulos"
+      },
+      {
+        "letra": "D",
+        "texto": "Crear un módulo por clase, evitando que ningún módulo agrupe abstracciones relacionadas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Coherencia alta, dependencias bajas y tamaño controlado."
+  },
+  {
+    "id": 35,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S66",
+    "pregunta": "¿Cómo se representan los paquetes en un diagrama de paquetes de UML?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con rectángulos similares a carpetas etiquetados con el nombre del paquete"
+      },
+      {
+        "letra": "B",
+        "texto": "Con rectángulos con el nombre subrayado en la parte superior"
+      },
+      {
+        "letra": "C",
+        "texto": "Con cajas decoradas con dos cajas pequeñas en su interior"
+      },
+      {
+        "letra": "D",
+        "texto": "Con rectángulos de tres compartimentos: nombre, propiedades y métodos"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los componentes son los que llevan las dos cajas pequeñas."
+  },
+  {
+    "id": 36,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S69",
+    "pregunta": "¿Qué ventaja aporta el tipado a un lenguaje?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Evita tener que definir interfaces, ya que el tipo describe el comportamiento"
+      },
+      {
+        "letra": "B",
+        "texto": "Garantiza que el programa no producirá ningún error durante su ejecución"
+      },
+      {
+        "letra": "C",
+        "texto": "Permite utilizar las abstracciones de maneras no previstas por su diseñador"
+      },
+      {
+        "letra": "D",
+        "texto": "Refuerza las decisiones de diseño impidiendo que se confundan abstracciones diferentes"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El tipado dificulta usar las abstracciones de maneras no previstas."
+  },
+  {
+    "id": 37,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S25",
+    "pregunta": "Lenguajes como Smalltalk o JavaScript no permiten definir clases de objetos. ¿Cómo se crean allí nuevos objetos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Clonando un objeto modelo (prototipo) sobre el que ya se definió el comportamiento"
+      },
+      {
+        "letra": "B",
+        "texto": "Heredando de Object y copiando solo sus propiedades privadas al nuevo objeto"
+      },
+      {
+        "letra": "C",
+        "texto": "Importando una interfaz que declare los métodos del nuevo objeto en un fichero aparte"
+      },
+      {
+        "letra": "D",
+        "texto": "Instanciando una clase abstracta mediante la palabra new y una lista de métodos"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El objeto prototipo se clona para crear más objetos."
+  },
+  {
+    "id": 38,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S25",
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre los objetos es FALSA?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un objeto tiene identidad propia que lo distingue de otros y un estado interno que puede cambiar con el tiempo"
+      },
+      {
+        "letra": "B",
+        "texto": "Un objeto puede recibir mensajes de otros objetos y responder a ellos ejecutando sus métodos"
+      },
+      {
+        "letra": "C",
+        "texto": "Un objeto tiene un comportamiento bien definido, determinado por los métodos de su interfaz"
+      },
+      {
+        "letra": "D",
+        "texto": "Todo objeto se crea necesariamente a partir de una clase en cualquier lenguaje orientado a objetos"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Hay lenguajes sin clases (basados en prototipos)."
+  },
+  {
+    "id": 39,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S18",
+    "pregunta": "En un diagrama de objetos UML, ¿qué aparece subrayado en la parte superior del rectángulo de cada objeto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La multiplicidad con la que se asocia a otros objetos"
+      },
+      {
+        "letra": "B",
+        "texto": "Los valores concretos de las propiedades del objeto"
+      },
+      {
+        "letra": "C",
+        "texto": "La identidad del objeto, con el formato nombre:Tipo"
+      },
+      {
+        "letra": "D",
+        "texto": "El nombre de la clase y la lista de sus métodos"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Superior: identidad (subrayada). Inferior: estado."
+  },
+  {
+    "id": 40,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S31",
+    "pregunta": "¿Qué relación existe entre un diagrama estático de clases y un diagrama de objetos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ambos describen la misma información, pero el de objetos omite las propiedades"
+      },
+      {
+        "letra": "B",
+        "texto": "El diagrama de clases muestra una posible instancia de lo descrito en el diagrama de objetos"
+      },
+      {
+        "letra": "C",
+        "texto": "El diagrama de objetos muestra una posible instancia de lo descrito en el diagrama de clases"
+      },
+      {
+        "letra": "D",
+        "texto": "El diagrama de objetos describe la herencia y el de clases solo las asociaciones"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "El diagrama de objetos es una foto concreta de objetos y valores."
+  },
+  {
+    "id": 41,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S30",
+    "pregunta": "¿Qué diferencia hay entre la sintaxis orientada a objetos s.push(25) y la sintaxis funcional push(s,25) para una pila?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "En la orientada a objetos la pila se pasa por valor y en la funcional siempre por referencia al programa principal"
+      },
+      {
+        "letra": "B",
+        "texto": "En la funcional la pila no puede tener estado interno, mientras que en la orientada a objetos sí puede tenerlo"
+      },
+      {
+        "letra": "C",
+        "texto": "En la orientada a objetos el método forma parte de la interfaz de la abstracción; en la funcional es una función independiente"
+      },
+      {
+        "letra": "D",
+        "texto": "En la orientada a objetos push solo puede definirse una vez en todo el programa, aunque haya varias pilas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Misma operación, distinta forma de organizarla."
+  },
+  {
+    "id": 42,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S73",
+    "pregunta": "En el tema se distingue entre coerción y conversión al hablar de casting. ¿Cuál es la coerción?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ejecutar una función que transforma un dato de un tipo a otro de forma coherente"
+      },
+      {
+        "letra": "B",
+        "texto": "Redondear un número real al entero más cercano al asignarlo a una variable"
+      },
+      {
+        "letra": "C",
+        "texto": "Interpretar los bits de un dato según otro tipo sin realizar ninguna otra operación"
+      },
+      {
+        "letra": "D",
+        "texto": "Declarar una variable de un tipo distinto del tipo del valor que se le asigna"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Coerción: reinterpretar; conversión: transformar."
+  },
+  {
+    "id": 43,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S70",
+    "pregunta": "¿Qué propiedad de la clasificación de tipados indica si hay que declarar el tipo de las variables?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Estático o dinámico"
+      },
+      {
+        "letra": "B",
+        "texto": "Débil o fuerte"
+      },
+      {
+        "letra": "C",
+        "texto": "Explícito o implícito"
+      },
+      {
+        "letra": "D",
+        "texto": "Primitivo o por referencia"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Explícito: hay que declarar el tipo. Implícito: no."
+  },
+  {
+    "id": 44,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S71",
+    "pregunta": "En un programa en C, un float apuntado por a se interpreta desde un puntero a entero y se imprime el valor 1103626240. ¿Qué característica del tipado ilustra?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Tipado dinámico, porque el tipo de c se decide durante la ejecución"
+      },
+      {
+        "letra": "B",
+        "texto": "Tipado débil, porque se puede cambiar el tipo con el que se interpreta un dato"
+      },
+      {
+        "letra": "C",
+        "texto": "Tipado fuerte, porque el compilador ha comprobado que los tipos coinciden"
+      },
+      {
+        "letra": "D",
+        "texto": "Tipado implícito, porque no es necesario declarar el tipo de las variables"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Débil: se puede cambiar el tipo de un dato."
+  },
+  {
+    "id": 45,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S74",
+    "pregunta": "¿Cómo se consigue clásicamente la concurrencia en Unix, según el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con una llamada al sistema operativo llamada fork que divide la línea de ejecución"
+      },
+      {
+        "letra": "B",
+        "texto": "Con la herencia de una clase base llamada Thread que aporta el propio lenguaje"
+      },
+      {
+        "letra": "C",
+        "texto": "Con constructores especiales que crean un hilo de ejecución por cada objeto que se instancia"
+      },
+      {
+        "letra": "D",
+        "texto": "Con la palabra reservada synchronized que el propio lenguaje proporciona desde su primera versión"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Clásicamente los lenguajes no daban soporte: lo daba el SO."
+  },
+  {
+    "id": 46,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S75",
+    "pregunta": "En POO, ¿qué es un objeto activo?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un objeto que mantiene referencias a otros objetos de la aplicación"
+      },
+      {
+        "letra": "B",
+        "texto": "Un objeto que puede almacenarse en ficheros y en bases de datos"
+      },
+      {
+        "letra": "C",
+        "texto": "Un objeto que se puede ejecutar en un thread separado"
+      },
+      {
+        "letra": "D",
+        "texto": "Un objeto que ha recibido algún mensaje desde su creación"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Los pasivos no se ejecutan en threads separados."
+  },
+  {
+    "id": 47,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S76",
+    "pregunta": "¿Qué opción ordena los datos de MENOR a MAYOR persistencia?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Expresión, variable global, variable local, dato guardado entre ejecuciones"
+      },
+      {
+        "letra": "B",
+        "texto": "Variable local, expresión, variable global, dato guardado entre ejecuciones"
+      },
+      {
+        "letra": "C",
+        "texto": "Expresión, variable local, variable global, dato guardado entre ejecuciones"
+      },
+      {
+        "letra": "D",
+        "texto": "Variable global, variable local, expresión, dato guardado entre ejecuciones"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Línea de código < función < ejecución del programa < más allá."
+  },
+  {
+    "id": 48,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S78",
+    "pregunta": "¿Qué debe cumplir una clase de Java para tener cierto nivel de soporte a la persistencia?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Declararse como clase final para que no cambie su definición"
+      },
+      {
+        "letra": "B",
+        "texto": "Heredar de una clase base llamada Persistent"
+      },
+      {
+        "letra": "C",
+        "texto": "Declarar todas sus propiedades como volatile"
+      },
+      {
+        "letra": "D",
+        "texto": "Cumplir la interfaz Serializable"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Serializable da cierto nivel de persistencia en Java."
+  },
+  {
+    "id": 49,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S28",
+    "pregunta": "¿Cuál de estos NO es un consejo recomendado para encontrar las abstracciones de un problema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Fijarse en los nombres que aparecen en la descripción del problema para localizar posibles clases"
+      },
+      {
+        "letra": "B",
+        "texto": "Modelar fielmente la realidad completa, incluidos detalles que el programa no usará"
+      },
+      {
+        "letra": "C",
+        "texto": "Pensar en los elementos que almacenan los datos del problema, ya sean persistentes o transitorios"
+      },
+      {
+        "letra": "D",
+        "texto": "Pensar en las partes en que se divide el programa y en las responsabilidades de cada una"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "No se modela la realidad, sino un software que resuelve un problema."
+  },
+  {
+    "id": 50,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S36",
+    "pregunta": "¿Qué lenguaje de los mencionados en el tema tiene todos sus elementos privados por defecto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Java"
+      },
+      {
+        "letra": "B",
+        "texto": "Rust"
+      },
+      {
+        "letra": "C",
+        "texto": "C++"
+      },
+      {
+        "letra": "D",
+        "texto": "Python"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "En Rust todo es privado por defecto."
+  },
+  {
+    "id": 51,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S50",
+    "pregunta": "Un diseñador no está seguro de si un adorno de UML es correcto. ¿Qué recomienda el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ponerlo siempre como público, porque es el significado que menos errores provoca en la práctica"
+      },
+      {
+        "letra": "B",
+        "texto": "Ponerlo, porque un adorno incorrecto siempre es mejor que un diagrama sin ningún adorno"
+      },
+      {
+        "letra": "C",
+        "texto": "Ponerlo y corregirlo después en la implementación, que prevalece sobre lo indicado en el diagrama"
+      },
+      {
+        "letra": "D",
+        "texto": "No ponerlo, aunque la ausencia de adornos denote un diseño pobre: no da instrucciones equivocadas"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Cada adorno de UML tiene un significado muy concreto."
+  },
+  {
+    "id": 52,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S77",
+    "pregunta": "En el ejemplo de la pila en Pascal (un record Stack con procedimientos Init, Push y Pop independientes), ¿qué problema de encapsulación tiene?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No se puede limitar la capacidad máxima de la pila, que crece de forma indefinida al hacer Push"
+      },
+      {
+        "letra": "B",
+        "texto": "El procedimiento Init impide que se creen varias pilas en el mismo programa principal"
+      },
+      {
+        "letra": "C",
+        "texto": "Las funciones Size y Empty no pueden consultarse sin haber llamado antes a Pop sobre la pila"
+      },
+      {
+        "letra": "D",
+        "texto": "Cualquier cliente puede modificar s.top o s.content y romper el invariante de la pila"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El record deja sus campos accesibles a cualquier cliente."
+  },
+  {
+    "id": 53,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S82",
+    "pregunta": "En el ejercicio de la báscula, ¿qué diseño permite ampliar el listado de productos sin modificar el código?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Declarar los precios como constantes estáticas en la clase SiemensAPI que proporciona el fabricante de la báscula"
+      },
+      {
+        "letra": "B",
+        "texto": "Usar un switch en el programa principal con un caso por cada posición devuelta por getProduct de la báscula"
+      },
+      {
+        "letra": "C",
+        "texto": "Escribir una subclase por cada producto con su precio fijado directamente en el código fuente de cada clase"
+      },
+      {
+        "letra": "D",
+        "texto": "Cargar al arrancar nombres, precios por kilo e imágenes desde ficheros, creando un objeto por producto"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los datos van fuera del código; el diseño solo crea objetos con ellos."
+  },
+  {
+    "id": 54,
+    "tema": 1,
+    "tipo": "test",
+    "diapositiva": "T1-S13",
+    "pregunta": "Entre los paradigmas de programación que muestra el esquema del tema, ¿qué pareja aparece como contrapuesta (<>)?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Concurrente y orientado a objetos"
+      },
+      {
+        "letra": "B",
+        "texto": "Procedimental y secuencial"
+      },
+      {
+        "letra": "C",
+        "texto": "Funcional y lógico"
+      },
+      {
+        "letra": "D",
+        "texto": "Imperativo y declarativo"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Aparecen Imperativo <> Declarativo y Secuencial <> Dirigido por eventos."
+  },
+  {
+    "id": 55,
+    "tema": 1,
+    "tipo": "diseno",
+    "diapositiva": "T1-S67",
+    "pregunta": "En un diagrama de paquetes UML aparece una flecha punteada desde el paquete C hacia el paquete F. ¿Qué significa?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que F usa o depende de C"
+      },
+      {
+        "letra": "B",
+        "texto": "Que C usa o depende de F"
+      },
+      {
+        "letra": "C",
+        "texto": "Que C hereda todo el contenido de F"
+      },
+      {
+        "letra": "D",
+        "texto": "Que F es un subpaquete contenido en C"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La flecha punteada es dependencia, que va del que usa al usado."
+  },
+  {
+    "id": 56,
+    "tema": 1,
+    "tipo": "codigo",
+    "diapositiva": "T1-S73",
+    "pregunta": "¿Qué imprime el siguiente programa Java?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        float a = 25.9f;\n        int b = (int) a;\n        char c = 'A' + 2;\n        byte d = (byte) 130;\n        System.out.println(b);\n        System.out.println(c);\n        System.out.println(d);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "25, C, -126"
+      },
+      {
+        "letra": "B",
+        "texto": "26, C, -126"
+      },
+      {
+        "letra": "C",
+        "texto": "25, C, 130"
+      },
+      {
+        "letra": "D",
+        "texto": "25, 67, -126"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Cast a int trunca; (byte)130 desborda a -126; 'A'+2 es 'C'."
+  },
+  {
+    "id": 57,
+    "tema": 1,
+    "tipo": "codigo",
+    "diapositiva": "T1-S19",
+    "pregunta": "¿Qué imprime el siguiente programa? Fíjate en la diferencia entre identidad y estado.",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        StringBuilder s1 = new StringBuilder(\"Juan\");\n        StringBuilder s2 = new StringBuilder(\"Juan\");\n        StringBuilder s3 = s1;\n        s3.append(\"!\");\n        System.out.println(s1);\n        System.out.println(s2);\n        System.out.println(s1 == s3);\n        System.out.println(s1.equals(s2));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Juan, Juan, false, true"
+      },
+      {
+        "letra": "B",
+        "texto": "Juan!, Juan, true, false"
+      },
+      {
+        "letra": "C",
+        "texto": "Juan!, Juan, true, true"
+      },
+      {
+        "letra": "D",
+        "texto": "Juan!, Juan!, true, true"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "s3 es otra referencia al mismo objeto que s1; equals no está sobrescrito en StringBuilder."
+  },
+  {
+    "id": 58,
+    "tema": 1,
+    "tipo": "codigo",
+    "diapositiva": "T1-S27",
+    "pregunta": "¿Qué imprime este programa, que usa una pila con protocolo (no se puede sacar de una pila vacía)?",
+    "imagen": "",
+    "codigo": "class Pila {\n    private int[] datos = new int[10];\n    private int n = 0;\n    void push(int x) { datos[n++] = x; }\n    int pop() {\n        if (n == 0) throw new IllegalStateException(\"pila vacia\");\n        return datos[--n];\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Pila p = new Pila();\n        p.push(7);\n        System.out.println(p.pop());\n        try {\n            System.out.println(p.pop());\n        } catch (IllegalStateException e) {\n            System.out.println(\"Error: \" + e.getMessage());\n        }\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Error: pila vacia"
+      },
+      {
+        "letra": "B",
+        "texto": "7, Error: pila vacia"
+      },
+      {
+        "letra": "C",
+        "texto": "7, seguido de una excepción sin capturar que termina el programa"
+      },
+      {
+        "letra": "D",
+        "texto": "7, 0"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El segundo pop incumple el protocolo y lanza una excepción que se captura."
+  },
+  {
+    "id": 59,
+    "tema": 1,
+    "tipo": "codigo",
+    "diapositiva": "T1-S36",
+    "pregunta": "¿Qué ocurre al intentar compilar este programa?",
+    "imagen": "",
+    "codigo": "class Lista {\n    private int[] datos = new int[5];\n    private int contador = 0;\n    void add(int x) { datos[contador++] = x; }\n    int size() { return contador; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Lista l = new Lista();\n        l.add(4);\n        l.contador = 10;\n        System.out.println(l.size());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila y size() devuelve 1, porque el contador solo cambia con add"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila y lanza ArrayIndexOutOfBoundsException al ejecutarse"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: contador es privado en Lista y el cliente no puede modificarlo directamente"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila y size() devuelve 10, porque el cliente ha modificado el contador"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Java permite etiquetar como privadas partes del código."
+  },
+  {
+    "id": 60,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S22",
+    "pregunta": "¿Qué imprime este programa que usa operadores de bit?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int a = 0x5E;\n        byte b = -3;\n        short c = 0b111;\n        System.out.println(c << 1);\n        System.out.println(a | (b & c));\n        System.out.println(-8 >> 1);\n        System.out.println(-8 >>> 28);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "7, 95, -4, 15"
+      },
+      {
+        "letra": "B",
+        "texto": "14, 95, -4, 15"
+      },
+      {
+        "letra": "C",
+        "texto": "14, 95, -4, -1"
+      },
+      {
+        "letra": "D",
+        "texto": "14, 95, 4, 15"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "-8 >> 1 conserva el signo (-4); -8 >>> 28 rellena con ceros (15); (b & c) = 5."
+  },
+  {
+    "id": 61,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S26",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int c = 15;\n        {\n            int b = 2;\n            int c = 12;\n            System.out.println(b + c);\n        }\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila e imprime 14, porque la c interior oculta a la c exterior dentro de las llaves"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila e imprime 17, porque suma b con la c exterior al no haberse redefinido"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: c ya está definida en el ámbito exterior y Java no permite redefinirla en un ámbito anidado"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila, pero lanza una excepción al ejecutarse por tener dos variables con el mismo nombre"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "A diferencia de C++, Java no permite ocultar una variable local con otra de un ámbito interior."
+  },
+  {
+    "id": 62,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S26",
+    "pregunta": "¿Qué ocurre al compilar y ejecutar este programa?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int a = 25;\n        {\n            int b = 2;\n            a = a + b;\n        }\n        System.out.println(a + b);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila e imprime 29, porque b conserva su valor al salir del bloque"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila e imprime 27, porque b vale 0 fuera de su bloque"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila e imprime 25, porque la suma dentro del bloque no afecta a a"
+      },
+      {
+        "letra": "D",
+        "texto": "No compila: b solo existe dentro del ámbito en el que se declara"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Las variables son locales al ámbito en que se declaran."
+  },
+  {
+    "id": 63,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S26",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int a;\n        if (args.length > 5) {\n            a = 1;\n        }\n        System.out.println(a);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: a puede no haber sido inicializada cuando se imprime"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila y lanza NullPointerException al imprimir una variable sin valor"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila e imprime 0, porque int tiene 0 como valor por defecto"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila e imprime 1, porque la condición se evalúa siempre como verdadera"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Las variables locales no se inicializan por defecto; solo las propiedades."
+  },
+  {
+    "id": 64,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S30",
+    "pregunta": "¿Qué valor imprime este programa con bucles etiquetados?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int s = 0;\n        externo:\n        for (int i = 0; i < 4; i++) {\n            for (int j = 0; j < 4; j++) {\n                if (j == 2) continue;\n                if (i == 2) break externo;\n                s += i * 10 + j;\n            }\n        }\n        System.out.println(s);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "38"
+      },
+      {
+        "letra": "B",
+        "texto": "34"
+      },
+      {
+        "letra": "C",
+        "texto": "62"
+      },
+      {
+        "letra": "D",
+        "texto": "40"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "continue salta solo el resto de la iteración interna; break externo termina ambos bucles."
+  },
+  {
+    "id": 65,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S31",
+    "pregunta": "¿Qué imprime este switch clásico?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int x = 5;\n        switch (x) {\n            case 5:\n                System.out.println(\"cinco\");\n            case 6:\n                System.out.println(\"seis\");\n                break;\n            case 7:\n                System.out.println(\"siete\");\n            default:\n                System.out.println(\"mas\");\n        }\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "cinco, seis"
+      },
+      {
+        "letra": "B",
+        "texto": "cinco, seis, siete, mas"
+      },
+      {
+        "letra": "C",
+        "texto": "cinco"
+      },
+      {
+        "letra": "D",
+        "texto": "seis"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Sin break, se ejecutan las sentencias siguientes aunque pertenezcan a otros casos."
+  },
+  {
+    "id": 66,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S32",
+    "pregunta": "¿Qué imprime este programa que usa expresiones switch con flecha y yield?",
+    "imagen": "",
+    "codigo": "public class Main {\n    static String clasifica(int n) {\n        return switch (n) {\n            case 1, 2 -> \"bajo\";\n            case 3 -> {\n                String t = \"me\";\n                yield t + \"dio\";\n            }\n            default -> \"alto\";\n        };\n    }\n    public static void main(String[] args) {\n        System.out.println(clasifica(2));\n        System.out.println(clasifica(3));\n        System.out.println(clasifica(9));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "bajo, me, alto"
+      },
+      {
+        "letra": "B",
+        "texto": "bajo, medio, bajo"
+      },
+      {
+        "letra": "C",
+        "texto": "alto, medio, alto"
+      },
+      {
+        "letra": "D",
+        "texto": "bajo, medio, alto"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "yield devuelve el valor del bloque como resultado de la expresión switch."
+  },
+  {
+    "id": 67,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S32",
+    "pregunta": "¿Qué imprime este programa (Java 21) con match de tipos y guardas when?",
+    "imagen": "",
+    "codigo": "public class Main {\n    static String f(Object o) {\n        return switch (o) {\n            case Integer i when i > 10 -> \"grande\";\n            case Integer i -> \"chico\";\n            case String s -> \"texto \" + s.length();\n            default -> \"otro\";\n        };\n    }\n    public static void main(String[] args) {\n        System.out.println(f(15));\n        System.out.println(f(7));\n        System.out.println(f(\"hola\"));\n        System.out.println(f(2.5));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "grande, chico, texto 4, otro"
+      },
+      {
+        "letra": "B",
+        "texto": "grande, chico, texto 4, chico"
+      },
+      {
+        "letra": "C",
+        "texto": "grande, grande, texto 4, otro"
+      },
+      {
+        "letra": "D",
+        "texto": "grande, chico, hola, otro"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Las guardas se evalúan por orden; Double no encaja con Integer ni String y cae en default."
+  },
+  {
+    "id": 68,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S40",
+    "pregunta": "¿Qué valores de velocidad imprime este programa (c1, c2, c3)?",
+    "imagen": "",
+    "codigo": "class Coche {\n    int velocidad;\n    void acelerar(int v) { velocidad += v; }\n    void parar() { velocidad = 0; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Coche c1 = new Coche();\n        Coche c2 = new Coche();\n        Coche c3 = c1;\n        c1.acelerar(10);\n        c2.acelerar(20);\n        c3.parar();\n        System.out.println(c1.velocidad + \",\" + c2.velocidad + \",\" + c3.velocidad);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "10,20,0"
+      },
+      {
+        "letra": "B",
+        "texto": "0,20,20"
+      },
+      {
+        "letra": "C",
+        "texto": "0,20,0"
+      },
+      {
+        "letra": "D",
+        "texto": "10,20,10"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "c3 y c1 son referencias al mismo objeto; c2 es otro objeto."
+  },
+  {
+    "id": 69,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S45",
+    "pregunta": "¿Qué imprime este programa? Piensa en cómo se pasan los parámetros en Java.",
+    "imagen": "",
+    "codigo": "class Coche {\n    int velocidad;\n}\npublic class Main {\n    static void cambia(Coche c, int n) {\n        c.velocidad = 99;\n        n = n + 1;\n        c = new Coche();\n        c.velocidad = 1;\n    }\n    public static void main(String[] args) {\n        Coche x = new Coche();\n        x.velocidad = 5;\n        int n = 7;\n        cambia(x, n);\n        System.out.println(x.velocidad + \" \" + n);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "99 7"
+      },
+      {
+        "letra": "B",
+        "texto": "1 8"
+      },
+      {
+        "letra": "C",
+        "texto": "5 8"
+      },
+      {
+        "letra": "D",
+        "texto": "99 8"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La referencia se copia: se puede cambiar el estado del objeto, pero no reasignar la variable del cliente. n es primitivo."
+  },
+  {
+    "id": 70,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S49",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "class Coche {\n    private class Rueda {\n        int presion = 2000;\n    }\n    private Rueda r = new Rueda();\n    int presion() { return r.presion; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Coche c = new Coche();\n        Coche.Rueda r = null;\n        System.out.println(c.presion());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila e imprime 2000, porque presion es accesible a través del método presion()"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: una clase interna no puede declarar propiedades con valor inicial"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila, pero lanza NullPointerException porque r vale null"
+      },
+      {
+        "letra": "D",
+        "texto": "No compila: la clase interna Rueda es privada y solo es visible dentro de Coche"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Una clase interna private solo es visible dentro de la clase en la que está definida."
+  },
+  {
+    "id": 71,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S54",
+    "pregunta": "¿Qué imprime este programa con una propiedad estática?",
+    "imagen": "",
+    "codigo": "class Coche {\n    static int creados = 0;\n    int id;\n    Coche() {\n        creados++;\n        id = creados;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Coche a = new Coche();\n        Coche b = new Coche();\n        Coche c = new Coche();\n        System.out.println(a.id + \" \" + b.id + \" \" + c.id + \" \" + Coche.creados + \" \" + a.creados);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "1 2 3 3 0"
+      },
+      {
+        "letra": "B",
+        "texto": "1 2 3 1 1"
+      },
+      {
+        "letra": "C",
+        "texto": "1 2 3 3 3"
+      },
+      {
+        "letra": "D",
+        "texto": "3 3 3 3 3"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "creados es compartida por todos los objetos; id es independiente en cada objeto."
+  },
+  {
+    "id": 72,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S54",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "class Coche {\n    public final static double PI = 3.14;\n}\npublic class Main {\n    public static void main(String[] args) {\n        Coche.PI = 3.1416;\n        System.out.println(Coche.PI);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila e imprime 3.1416, porque las propiedades static pueden reasignarse desde otra clase"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: PI es una constante (final) y no puede reasignarse"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila e imprime 3.14, porque la asignación se ignora silenciosamente"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila, pero lanza una excepción en ejecución al intentar modificar PI"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "final impide cambiar el valor tras la inicialización."
+  },
+  {
+    "id": 73,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S59",
+    "pregunta": "¿Qué imprime este programa?",
+    "imagen": "",
+    "codigo": "class Contador {\n    private static int total;\n    private int mio;\n    void inc() { mio++; total++; }\n    int getMio() { return mio; }\n    static int getTotal() { return total; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Contador a = new Contador();\n        Contador b = new Contador();\n        a.inc();\n        a.inc();\n        b.inc();\n        System.out.println(a.getMio() + \" \" + b.getMio() + \" \" + Contador.getTotal());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2 1 1"
+      },
+      {
+        "letra": "B",
+        "texto": "2 1 3"
+      },
+      {
+        "letra": "C",
+        "texto": "3 3 3"
+      },
+      {
+        "letra": "D",
+        "texto": "2 1 2"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "mio es de instancia (independiente por objeto); total es de clase (compartida)."
+  },
+  {
+    "id": 74,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S60",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "class Coche {\n    private int velocidad;\n    private static int creados;\n    public static void sumarCoche() {\n        creados++;\n        velocidad = 0;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Coche.sumarCoche();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: un método estático no puede usar propiedades de instancia, porque no hay objeto"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila y velocidad se pone a 0 en todos los objetos Coche existentes"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: un método estático no puede modificar tampoco propiedades estáticas"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila, pero lanza NullPointerException al llamarse sin ningún objeto Coche creado"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "En un método static solo se pueden usar propiedades estáticas."
+  },
+  {
+    "id": 75,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S63",
+    "pregunta": "¿Qué imprime este programa con sobrecarga de métodos?",
+    "imagen": "",
+    "codigo": "public class Main {\n    static void f(int x)     { System.out.println(\"int\"); }\n    static void f(long x)    { System.out.println(\"long\"); }\n    static void f(double x)  { System.out.println(\"double\"); }\n    static void f(Integer x) { System.out.println(\"Integer\"); }\n    public static void main(String[] args) {\n        f(5);\n        f(5L);\n        f(5f);\n        f('a');\n        f(Integer.valueOf(5));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "int, long, double, int, Integer"
+      },
+      {
+        "letra": "B",
+        "texto": "int, long, double, int, int"
+      },
+      {
+        "letra": "C",
+        "texto": "int, long, float, int, Integer"
+      },
+      {
+        "letra": "D",
+        "texto": "int, long, double, long, Integer"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "float se ensancha a double; char a int; Integer.valueOf devuelve un Integer, que encaja exacto con f(Integer)."
+  },
+  {
+    "id": 76,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S63",
+    "pregunta": "¿Qué ocurre al compilar esta clase?",
+    "imagen": "",
+    "codigo": "class Coche {\n    private int velocidad;\n    public int dameVelocidad() { return velocidad; }\n    public double dameVelocidad() { return velocidad; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(new Coche().dameVelocidad());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: dos métodos con la misma lista de parámetros no son una sobrecarga válida aunque cambie el tipo devuelto"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila: los dos métodos se distinguen por el tipo que devuelven"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: un método no puede devolver double si la propiedad es de tipo int"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila, pero al llamar a dameVelocidad() se produce una ambigüedad en ejecución"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La sobrecarga requiere parámetros distintos."
+  },
+  {
+    "id": 77,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S65",
+    "pregunta": "¿Qué imprime este programa con constructores encadenados?",
+    "imagen": "",
+    "codigo": "class Coche {\n    Coche() {\n        System.out.println(\"A\");\n    }\n    Coche(boolean on) {\n        this();\n        System.out.println(\"B\");\n    }\n    Coche(int v, boolean on) {\n        this(on);\n        System.out.println(\"C\");\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new Coche(5, true);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "A, B, C"
+      },
+      {
+        "letra": "B",
+        "texto": "C"
+      },
+      {
+        "letra": "C",
+        "texto": "C, B, A"
+      },
+      {
+        "letra": "D",
+        "texto": "A, C"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Cada constructor ejecuta primero this(...), así que el más simple termina antes."
+  },
+  {
+    "id": 78,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S71",
+    "pregunta": "¿Qué ocurre al ejecutar este programa?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int[] fib = {1, 1, 2, 3, 5, 8, 13};\n        int suma = 0;\n        for (int i = 0; i <= fib.length; i++) {\n            suma += fib[i];\n        }\n        System.out.println(suma);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Lanza ArrayIndexOutOfBoundsException: i llega a 7 y el último índice válido es 6"
+      },
+      {
+        "letra": "B",
+        "texto": "Imprime 33, que es la suma de los siete elementos de fib"
+      },
+      {
+        "letra": "C",
+        "texto": "Imprime 33 tras ignorar la posición inexistente, que no suma nada"
+      },
+      {
+        "letra": "D",
+        "texto": "No compila: la condición i <= fib.length no es válida al recorrer un array"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los índices van de 0 a length-1; la condición debía ser i < fib.length."
+  },
+  {
+    "id": 79,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S73",
+    "pregunta": "¿Qué ocurre al ejecutar este programa con un array de arrays?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        int[][] m = new int[3][];\n        m[0] = new int[2];\n        m[1] = new int[]{1, 2, 3};\n        System.out.println(m.length + \" \" + m[1].length);\n        System.out.println(m[0][1]);\n        System.out.println(m[2][0]);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Imprime «3 3» y «0», y lanza NullPointerException al acceder a m[2][0]"
+      },
+      {
+        "letra": "B",
+        "texto": "Imprime «3 3» y «0», y lanza ArrayIndexOutOfBoundsException al acceder a m[2][0]"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: new int[3][] es una declaración incompleta de un array bidimensional"
+      },
+      {
+        "letra": "D",
+        "texto": "Imprime «3 3», «0» y «0», porque m[2][0] vale 0 como cualquier int sin inicializar"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La segunda dimensión se puede omitir; la fila m[2] es null."
+  },
+  {
+    "id": 80,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S74",
+    "pregunta": "¿Qué imprime este programa con la clase Arrays?",
+    "imagen": "",
+    "codigo": "import java.util.Arrays;\n\npublic class Main {\n    public static void main(String[] args) {\n        int[] a = {3, 1, 2};\n        int[] b = Arrays.copyOf(a, 5);\n        Arrays.sort(a);\n        System.out.println(Arrays.toString(a));\n        System.out.println(Arrays.toString(b));\n        System.out.println(a == b);\n        System.out.println(Arrays.equals(a, new int[]{1, 2, 3}));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "[1, 2, 3], [3, 1, 2], false, true"
+      },
+      {
+        "letra": "B",
+        "texto": "[1, 2, 3], [1, 2, 3, 0, 0], true, true"
+      },
+      {
+        "letra": "C",
+        "texto": "[1, 2, 3], [3, 1, 2, 0, 0], true, false"
+      },
+      {
+        "letra": "D",
+        "texto": "[1, 2, 3], [3, 1, 2, 0, 0], false, true"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "copyOf crea una copia (nuevo array); a == b compara referencias; Arrays.equals compara contenido."
+  },
+  {
+    "id": 81,
+    "tema": 2,
+    "tipo": "codigo",
+    "diapositiva": "T2-S18",
+    "pregunta": "¿Qué imprime este programa que opera con el tipo char?",
+    "imagen": "",
+    "codigo": "public class Main {\n    public static void main(String[] args) {\n        char c = 'A';\n        c += 2;\n        c++;\n        System.out.println(c);\n        System.out.println(c + 1);\n        System.out.println((char) (c + 1));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "D, 69, E"
+      },
+      {
+        "letra": "B",
+        "texto": "C, 68, D"
+      },
+      {
+        "letra": "C",
+        "texto": "D, 69, 69"
+      },
+      {
+        "letra": "D",
+        "texto": "D, D1, E"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "c + 1 es una expresión de tipo int (69); el casting a char la convierte en 'E'."
+  },
+  {
+    "id": 82,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S5",
+    "pregunta": "Al ejecutar «javac HolaMundo.java» con éxito, ¿qué se obtiene?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un fichero HolaMundo.jar comprimido y listo para distribuir el programa"
+      },
+      {
+        "letra": "B",
+        "texto": "Un fichero HolaMundo.html con la documentación generada de los comentarios"
+      },
+      {
+        "letra": "C",
+        "texto": "Un fichero HolaMundo.class con bytecode que ejecutará la máquina virtual de Java"
+      },
+      {
+        "letra": "D",
+        "texto": "Un ejecutable nativo, específico del sistema operativo en el que se ha compilado"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "javac traduce el código fuente a bytecode (.class)."
+  },
+  {
+    "id": 83,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S6",
+    "pregunta": "En el esquema de compilación y ejecución de Java, ¿quién ejecuta realmente el bytecode?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La máquina virtual de Java (JVM)"
+      },
+      {
+        "letra": "B",
+        "texto": "La herramienta javadoc, al generar la documentación del programa"
+      },
+      {
+        "letra": "C",
+        "texto": "El procesador de la máquina, directamente y sin intermediarios"
+      },
+      {
+        "letra": "D",
+        "texto": "El compilador javac, que lo interpreta línea a línea"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El bytecode es el código de la JVM."
+  },
+  {
+    "id": 84,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S7",
+    "pregunta": "¿Qué ventaja principal aporta compilar a bytecode en lugar de a código máquina nativo?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El programa se ejecuta siempre más rápido que cualquier programa en código nativo"
+      },
+      {
+        "letra": "B",
+        "texto": "El programa no necesita ninguna máquina virtual instalada en el sistema donde se ejecute"
+      },
+      {
+        "letra": "C",
+        "texto": "El código fuente deja de ser necesario, porque el bytecode lo sustituye por completo"
+      },
+      {
+        "letra": "D",
+        "texto": "El mismo fichero .class puede ejecutarse en cualquier sistema que disponga de una JVM"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los .class son portables entre sistemas con JVM."
+  },
+  {
+    "id": 85,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S8",
+    "pregunta": "Tras compilar HolaMundo.java, ¿qué orden ejecuta el programa desde la línea de comandos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "jar HolaMundo.java"
+      },
+      {
+        "letra": "B",
+        "texto": "java HolaMundo"
+      },
+      {
+        "letra": "C",
+        "texto": "javadoc HolaMundo.class"
+      },
+      {
+        "letra": "D",
+        "texto": "javac HolaMundo"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "java recibe el nombre de la clase (sin extensión .class)."
+  },
+  {
+    "id": 86,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S10",
+    "pregunta": "¿Qué firma debe tener el método en el que comienza la ejecución de un programa Java clásico?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "static public int main(String[] args)"
+      },
+      {
+        "letra": "B",
+        "texto": "public void main(String args)"
+      },
+      {
+        "letra": "C",
+        "texto": "public static void Main(String[] args)"
+      },
+      {
+        "letra": "D",
+        "texto": "public static void main(String[] args)"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Debe ser estático, sin valor devuelto, y su nombre es main."
+  },
+  {
+    "id": 87,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S11",
+    "pregunta": "¿Qué tipo de comentario puede procesar la herramienta javadoc para generar documentación automática?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los que comienzan por /* y admiten etiquetas como @param, @return o @throws"
+      },
+      {
+        "letra": "B",
+        "texto": "Cualquier comentario del fichero, pues javadoc ignora el delimitador utilizado"
+      },
+      {
+        "letra": "C",
+        "texto": "Los que comienzan por /** y admiten etiquetas como @param, @return o @throws"
+      },
+      {
+        "letra": "D",
+        "texto": "Los que comienzan por // y se colocan justo encima de cada método"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Javadoc reconoce el delimitador /** ... */."
+  },
+  {
+    "id": 88,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S17",
+    "pregunta": "¿Cuál de los siguientes tipos NO es un tipo primitivo de Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "boolean"
+      },
+      {
+        "letra": "B",
+        "texto": "double"
+      },
+      {
+        "letra": "C",
+        "texto": "char"
+      },
+      {
+        "letra": "D",
+        "texto": "String"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "String es una clase; el resto son tipos primitivos."
+  },
+  {
+    "id": 89,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S19",
+    "pregunta": "¿Cuál de estas asignaciones directas requiere un casting explícito para compilar (siendo n una variable int)?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "byte b = n;"
+      },
+      {
+        "letra": "B",
+        "texto": "double d = n;"
+      },
+      {
+        "letra": "C",
+        "texto": "float f = n;"
+      },
+      {
+        "letra": "D",
+        "texto": "long l = n;"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Solo se asigna sin casting hacia tipos más anchos: byte < short < int < long < float < double."
+  },
+  {
+    "id": 90,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S19",
+    "pregunta": "Al convertir con (byte) el valor 257.0f, el resultado es 1. ¿Por qué?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque un float no puede representar valores superiores a 127"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque el casting redondea siempre al entero más cercano a cero"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque tras pasar a entero se conservan solo 8 bits: 257 mod 256 = 1"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque byte guarda el número de dígitos significativos del valor original"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Un byte ocupa 8 bits y el desbordamiento descarta los bits altos."
+  },
+  {
+    "id": 91,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S20",
+    "pregunta": "¿Qué diferencia hay entre usar a++ y ++a dentro de una expresión?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "a++ solo puede usarse como sentencia independiente y ++a únicamente dentro de expresiones"
+      },
+      {
+        "letra": "B",
+        "texto": "No hay ninguna diferencia: la variable acaba con el mismo valor y la expresión también lo toma"
+      },
+      {
+        "letra": "C",
+        "texto": "a++ aporta el valor anterior y luego incrementa; ++a incrementa y aporta el nuevo valor"
+      },
+      {
+        "letra": "D",
+        "texto": "a++ incrementa antes de evaluar la expresión y ++a la incrementa después de evaluarla"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Post-incremento: valor viejo; pre-incremento: valor nuevo."
+  },
+  {
+    "id": 92,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S23",
+    "pregunta": "¿Qué diferencia existe entre los operadores & y && cuando se aplican a booleanos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "&& devuelve un entero con la conjunción bit a bit y & devuelve un booleano"
+      },
+      {
+        "letra": "B",
+        "texto": "& deja de evaluar el segundo operando si el primero ya es falso; && evalúa siempre ambos"
+      },
+      {
+        "letra": "C",
+        "texto": "&& solo puede aplicarse a variables y & solo a expresiones con llamadas a método"
+      },
+      {
+        "letra": "D",
+        "texto": "&& deja de evaluar el segundo operando si el primero ya es falso; & evalúa siempre ambos"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "&& es la conjunción «impaciente»: cortocircuita."
+  },
+  {
+    "id": 93,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S25",
+    "pregunta": "¿Cuál de estas afirmaciones sobre los ámbitos en Java es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Una variable declarada en un ámbito es visible en todos los ámbitos hermanos del programa"
+      },
+      {
+        "letra": "B",
+        "texto": "Un ámbito interior puede declarar una variable con el nombre de una del ámbito exterior"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo los métodos y las clases definen ámbitos; las llaves de un if no crean ninguno"
+      },
+      {
+        "letra": "D",
+        "texto": "Las variables son locales al ámbito en que se declaran, y los ámbitos pueden anidarse"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los ámbitos delimitan declaraciones, clases y sentencias de control."
+  },
+  {
+    "id": 94,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S27",
+    "pregunta": "En un if con varias ramas else if encadenadas y un else final, ¿cuántas ramas se ejecutan en cada evaluación?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Como máximo una: la primera cuya condición sea cierta, o el else si ninguna lo es"
+      },
+      {
+        "letra": "B",
+        "texto": "Ninguna si la primera condición es falsa, pues else if solo se evalúa si el if es cierto"
+      },
+      {
+        "letra": "C",
+        "texto": "Todas aquellas cuya condición sea cierta, en el orden en que aparecen"
+      },
+      {
+        "letra": "D",
+        "texto": "Exactamente dos: la primera cierta y el else final"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Las ramas son excluyentes."
+  },
+  {
+    "id": 95,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S28",
+    "pregunta": "¿Cuándo se considera buena práctica usar un bucle for en lugar de un while?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cuando el cuerpo del bucle debe ejecutarse al menos una vez aunque la condición sea falsa"
+      },
+      {
+        "letra": "B",
+        "texto": "Cuando se necesita salir del bucle con break, ya que while no admite esa sentencia"
+      },
+      {
+        "letra": "C",
+        "texto": "Cuando el número de iteraciones no está definido a priori o depende de varias condiciones"
+      },
+      {
+        "letra": "D",
+        "texto": "Cuando el número de iteraciones se conoce de antemano y solo depende de una condición sencilla"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El while es para iteraciones indefinidas; for para conocidas."
+  },
+  {
+    "id": 96,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S29",
+    "pregunta": "¿Qué garantiza un bucle do-while que no garantiza un while?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que las variables declaradas en el cuerpo siguen siendo visibles tras el bucle, fuera de su ámbito"
+      },
+      {
+        "letra": "B",
+        "texto": "Que el bucle termina siempre, porque la condición se comprueba al final de cada vuelta"
+      },
+      {
+        "letra": "C",
+        "texto": "Que la condición se evalúa antes de cada iteración, incluida la primera, como en un while"
+      },
+      {
+        "letra": "D",
+        "texto": "Que el cuerpo se ejecuta al menos una vez, aunque la condición sea falsa desde el inicio"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "En do-while la condición se evalúa al final."
+  },
+  {
+    "id": 97,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S34",
+    "pregunta": "¿Qué significa la relación entre una clase y los objetos en Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Primero se define la clase (interfaz e implementación) y luego se crean tantos objetos como se desee"
+      },
+      {
+        "letra": "B",
+        "texto": "Cada clase puede crear como máximo un objeto, que representa a todas las instancias de ella"
+      },
+      {
+        "letra": "C",
+        "texto": "Los objetos se definen primero y de ellos se deduce la clase a la que pertenecen todos"
+      },
+      {
+        "letra": "D",
+        "texto": "Una clase solo existe en memoria mientras existan objetos creados a partir de ella en el programa"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La clase es el molde; los objetos, ilimitados, se crean con new."
+  },
+  {
+    "id": 98,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S35",
+    "pregunta": "Tras ejecutar «Coche a = new Coche(); Coche b = new Coche(); Coche c = a;», ¿cuántos objetos Coche existen y qué se puede afirmar?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Tres objetos; c es una copia independiente del objeto apuntado por a"
+      },
+      {
+        "letra": "B",
+        "texto": "Dos objetos; c y a apuntan al mismo objeto, y b a otro distinto"
+      },
+      {
+        "letra": "C",
+        "texto": "Tres objetos; a, b y c apuntan a objetos distintos aunque tengan el mismo estado"
+      },
+      {
+        "letra": "D",
+        "texto": "Dos objetos; c apunta al objeto de b, porque es la última referencia creada"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "c = a copia la referencia, no el objeto."
+  },
+  {
+    "id": 99,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S36",
+    "pregunta": "¿Qué opción respeta las convenciones de nombres habituales en Java para clase, método y paquete?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Clase CocheDeportivo, método DameVelocidad y paquete Urjc.Util"
+      },
+      {
+        "letra": "B",
+        "texto": "Clase cocheDeportivo, método DameVelocidad y paquete URJC.Util"
+      },
+      {
+        "letra": "C",
+        "texto": "Clase CocheDeportivo, método dameVelocidad y paquete urjc.util"
+      },
+      {
+        "letra": "D",
+        "texto": "Clase Coche_Deportivo, método dame_velocidad y paquete urjc.util"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Clases UpperCamelCase, miembros lowerCamelCase, paquetes en minúsculas."
+  },
+  {
+    "id": 100,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S37",
+    "pregunta": "Una clase declara las propiedades «Rueda r; boolean on; int n; double d;» sin inicializarlas. ¿Qué valores tienen al crear un objeto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un objeto Rueda vacío, false, 0 y NaN"
+      },
+      {
+        "letra": "B",
+        "texto": "null, false, 0 y 0.0"
+      },
+      {
+        "letra": "C",
+        "texto": "null, true, 0 y 0.0"
+      },
+      {
+        "letra": "D",
+        "texto": "Valor indefinido hasta que se asignen, y el compilador exige inicializarlas"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Las propiedades se inicializan a su valor por defecto."
+  },
+  {
+    "id": 101,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S44",
+    "pregunta": "Si un método declara que devuelve un valor (por ejemplo int), ¿qué es imprescindible?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que todos los caminos de ejecución del método terminen en un return"
+      },
+      {
+        "letra": "B",
+        "texto": "Que el método reciba al menos un parámetro con el que calcular el valor"
+      },
+      {
+        "letra": "C",
+        "texto": "Que exista un único return, situado en la última línea del método"
+      },
+      {
+        "letra": "D",
+        "texto": "Que el método sea estático y público"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Si falta un return en algún camino, no compila."
+  },
+  {
+    "id": 102,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S46",
+    "pregunta": "¿Para qué sirve la palabra reservada this dentro de un método de objeto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para referirse a la clase padre y poder invocar sus métodos sobrescritos desde la clase hija"
+      },
+      {
+        "letra": "B",
+        "texto": "Para referirse a la clase en lugar de al objeto y acceder a sus miembros estáticos"
+      },
+      {
+        "letra": "C",
+        "texto": "Para crear una copia del objeto actual y devolverla al cliente que invocó el método"
+      },
+      {
+        "letra": "D",
+        "texto": "Para referirse al propio objeto, por ejemplo para pasárselo a otro como parámetro"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "this es la referencia al objeto sobre el que se ejecuta el método."
+  },
+  {
+    "id": 103,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S47",
+    "pregunta": "Un método declarado sin ningún modificador de acceso (friendly) es visible desde:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Únicamente la propia clase en la que se declara"
+      },
+      {
+        "letra": "B",
+        "texto": "La propia clase y sus subclases, aunque estén en otro paquete"
+      },
+      {
+        "letra": "C",
+        "texto": "Todas las clases del programa, igual que si fuese public"
+      },
+      {
+        "letra": "D",
+        "texto": "Las clases del mismo paquete, pero no desde fuera del paquete"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Se representa con ~ en UML."
+  },
+  {
+    "id": 104,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S47",
+    "pregunta": "En el ejemplo de la clase Coche, el método incrementarExponencial() es privado y lo invoca el método público acelerar(). ¿Qué uso suelen tener los métodos privados?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Son métodos que se heredan en las subclases pero no pueden sobrescribirse"
+      },
+      {
+        "letra": "B",
+        "texto": "Son los métodos que implementan el constructor de la clase"
+      },
+      {
+        "letra": "C",
+        "texto": "Son funciones auxiliares de la propia clase que no forman parte de su interfaz"
+      },
+      {
+        "letra": "D",
+        "texto": "Son métodos que solo pueden ejecutarse una vez durante la vida del objeto"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Las propiedades suelen ser privadas y los métodos privados, auxiliares."
+  },
+  {
+    "id": 105,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S48",
+    "pregunta": "Un fichero Coche.java contiene «public class Coche» y también «public class Rueda». ¿Qué ocurre?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila, pero Rueda solo es visible desde el mismo paquete en el que se encuentra Coche"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila: cada clase pública genera su propio fichero .class con el nombre de la clase correspondiente"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: un fichero no puede contener más de una clase, sea o no pública, ni siquiera internas"
+      },
+      {
+        "letra": "D",
+        "texto": "No compila: solo puede haber una clase pública por fichero, con el nombre del fichero"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Las clases no públicas sí pueden compartir fichero."
+  },
+  {
+    "id": 106,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S52",
+    "pregunta": "¿Qué ventaja tiene un setter como setSpeed(int speed) que limita el valor entre 0 y 120, frente a una propiedad pública?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Permite que la propiedad sea final y siga pudiendo modificarse desde fuera"
+      },
+      {
+        "letra": "B",
+        "texto": "Permite que la propiedad se modifique más rápido, al evitar el acceso directo a memoria"
+      },
+      {
+        "letra": "C",
+        "texto": "Permite que la propiedad pueda tener distintos valores en cada hilo de ejecución"
+      },
+      {
+        "letra": "D",
+        "texto": "Permite modificar la propiedad privada de forma controlada, sin romper el invariante de la clase"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Getters y setters protegen los invariantes."
+  },
+  {
+    "id": 107,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S53",
+    "pregunta": "Una clase tiene «private final Rueda r = new Rueda();». ¿Qué se puede hacer con r?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ni cambiar el estado de la Rueda ni hacer que r apunte a otro objeto"
+      },
+      {
+        "letra": "B",
+        "texto": "Cualquier cosa, porque final solo afecta a las propiedades de tipos primitivos"
+      },
+      {
+        "letra": "C",
+        "texto": "Cambiar el estado del objeto Rueda, pero no hacer que r apunte a otro objeto"
+      },
+      {
+        "letra": "D",
+        "texto": "Hacer que r apunte a otro objeto, pero no cambiar el estado del actual"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "En una referencia final no se puede reasignar la referencia."
+  },
+  {
+    "id": 108,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S58",
+    "pregunta": "En Java, ¿cómo se pasa a un método una referencia a un objeto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Por valor: se copia la referencia, así que el método modifica el objeto pero no a qué objeto apunta la variable del cliente"
+      },
+      {
+        "letra": "B",
+        "texto": "Por referencia: el método puede hacer que la variable del cliente apunte a otro objeto distinto del original"
+      },
+      {
+        "letra": "C",
+        "texto": "Por valor: se copia el objeto entero, y los cambios del método no afectan al objeto original del cliente"
+      },
+      {
+        "letra": "D",
+        "texto": "Depende de si el objeto es mutable: los mutables por referencia y los inmutables por valor, como String"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "En Java el paso de parámetros es siempre por valor."
+  },
+  {
+    "id": 109,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S64",
+    "pregunta": "¿Qué características tiene un constructor en Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Su nombre es siempre init, devuelve el propio objeto y se invoca explícitamente tras new"
+      },
+      {
+        "letra": "B",
+        "texto": "Su nombre coincide con el de la clase, devuelve void y puede invocarse sobre un objeto ya creado"
+      },
+      {
+        "letra": "C",
+        "texto": "Su nombre coincide con el de la clase, no tiene tipo de retorno y se ejecuta al crear el objeto"
+      },
+      {
+        "letra": "D",
+        "texto": "Es un método estático que reserva memoria y devuelve una referencia al nuevo objeto"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Es una función especial que inicia las propiedades del objeto."
+  },
+  {
+    "id": 110,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S64",
+    "pregunta": "Una clase define únicamente el constructor Coche(int velInicial). ¿Qué ocurre al escribir new Coche()?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila, pero lanza una excepción en ejecución por falta de argumentos al crear el objeto"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila y velInicial vale 0, que es el valor por defecto de los enteros en Java"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila: Java siempre añade además el constructor por defecto sin parámetros a la clase"
+      },
+      {
+        "letra": "D",
+        "texto": "No compila: al definir un constructor, Java ya no añade el constructor por defecto"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El constructor por defecto solo se añade si no se define ninguno."
+  },
+  {
+    "id": 111,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S70",
+    "pregunta": "Se ejecuta «Coche[] parking = new Coche[5];». ¿Qué contiene el array?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cinco posiciones con valor 0, que se sustituyen al asignar objetos"
+      },
+      {
+        "letra": "B",
+        "texto": "Cinco posiciones con valor null, sin ningún objeto Coche creado"
+      },
+      {
+        "letra": "C",
+        "texto": "Cinco objetos Coche creados con su constructor por defecto"
+      },
+      {
+        "letra": "D",
+        "texto": "Un array vacío, que crece al asignarle objetos"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Cada posición toma el valor por defecto del tipo; para objetos es null."
+  },
+  {
+    "id": 112,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S70",
+    "pregunta": "Un array de 25 enteros ya creado necesita almacenar 30 elementos. ¿Qué se puede hacer?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Asignar a la propiedad length el valor 30 para ampliar el array a la nueva capacidad"
+      },
+      {
+        "letra": "B",
+        "texto": "Llamar al método resize(30) de la clase array para ampliar su capacidad"
+      },
+      {
+        "letra": "C",
+        "texto": "Escribir en la posición 29 del array, que se amplía automáticamente al superar su tamaño"
+      },
+      {
+        "letra": "D",
+        "texto": "Crear un array nuevo mayor y copiar el contenido; un array no se puede redimensionar"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Una vez dimensionado, un array no puede redimensionarse."
+  },
+  {
+    "id": 113,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S72",
+    "pregunta": "Un array vector se crea con new int[25]. ¿Qué rango de índices es válido para acceder a sus elementos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "De 1 a 25"
+      },
+      {
+        "letra": "B",
+        "texto": "De 1 a 24"
+      },
+      {
+        "letra": "C",
+        "texto": "De 0 a 25"
+      },
+      {
+        "letra": "D",
+        "texto": "De 0 a 24"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los índices comienzan en cero y llegan a dimensión menos uno."
+  },
+  {
+    "id": 114,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S76",
+    "pregunta": "¿Qué correspondencia define Java entre paquetes y directorios?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los paquetes contienen lógicamente a los ficheros y se corresponden con los directorios físicos"
+      },
+      {
+        "letra": "B",
+        "texto": "Cada paquete se corresponde con un único fichero que contiene todas las clases del mismo"
+      },
+      {
+        "letra": "C",
+        "texto": "Los paquetes son independientes de los directorios y se definen en un fichero de configuración aparte"
+      },
+      {
+        "letra": "D",
+        "texto": "Cada directorio es un paquete, pero un paquete no puede contener a otros paquetes dentro"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La estructura de directorios permite organizar los paquetes como un árbol."
+  },
+  {
+    "id": 115,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S77",
+    "pregunta": "¿Dónde se declara a qué paquete pertenece una clase en un fichero Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Justo antes de cada método, con la palabra reservada package"
+      },
+      {
+        "letra": "B",
+        "texto": "En la primera línea de código del fichero, con la palabra reservada package"
+      },
+      {
+        "letra": "C",
+        "texto": "En el nombre del fichero, que debe incluir los puntos del nombre del paquete"
+      },
+      {
+        "letra": "D",
+        "texto": "En la cabecera del método main de la clase pública del fichero"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "package va antes que los import y que la clase."
+  },
+  {
+    "id": 116,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S79",
+    "pregunta": "¿Qué efecto tiene «import vehiculos.camiones.*;»?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Permite usar sin nombre completo todos los tipos del paquete vehiculos, incluidos los de camiones"
+      },
+      {
+        "letra": "B",
+        "texto": "Permite usar sin nombre completo los tipos de vehiculos.camiones, pero no los de sus subpaquetes"
+      },
+      {
+        "letra": "C",
+        "texto": "Permite usar solo la clase Camion, que es la que da nombre al paquete importado"
+      },
+      {
+        "letra": "D",
+        "texto": "Permite usar sin nombre completo los tipos de vehiculos.camiones y de todos sus subpaquetes"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El asterisco no es recursivo."
+  },
+  {
+    "id": 117,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S71",
+    "pregunta": "¿Cuál de estas es una forma válida de declarar e inicializar de forma implícita un array de enteros?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "int[] fib = {1, 1, 2, 3};"
+      },
+      {
+        "letra": "B",
+        "texto": "int fib[4] = {1, 1, 2, 3};"
+      },
+      {
+        "letra": "C",
+        "texto": "int[] fib = new int[4]{1, 1, 2, 3};"
+      },
+      {
+        "letra": "D",
+        "texto": "int[] fib = (1, 1, 2, 3);"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "En Java no se indica la dimensión al inicializar con llaves."
+  },
+  {
+    "id": 118,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S73",
+    "pregunta": "Al crear con new un array de arrays de enteros, ¿qué dimensión puede omitirse?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ninguna: todos los arrays deben dimensionarse por completo en el momento de crearse con new"
+      },
+      {
+        "letra": "B",
+        "texto": "Ambas: new int[][] es válido y se dimensiona después al asignar los valores a las filas"
+      },
+      {
+        "letra": "C",
+        "texto": "La segunda: new int[2][] es válido, y cada fila se crea después con su propio tamaño"
+      },
+      {
+        "letra": "D",
+        "texto": "La primera: new int[][3] es válido, y el número de filas se deduce después al rellenarlo"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Los arrays de arrays pueden tener filas de tamaños variables."
+  },
+  {
+    "id": 119,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S12",
+    "pregunta": "¿Cuál de las siguientes palabras NO es una palabra reservada de Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "native"
+      },
+      {
+        "letra": "B",
+        "texto": "volatile"
+      },
+      {
+        "letra": "C",
+        "texto": "atomic"
+      },
+      {
+        "letra": "D",
+        "texto": "transient"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "transient, volatile y native sí son modificadores de Java."
+  },
+  {
+    "id": 120,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S4",
+    "pregunta": "¿Con qué nombre se denominó inicialmente el lenguaje que acabó siendo Java, creado por James Gosling?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Xelfi"
+      },
+      {
+        "letra": "B",
+        "texto": "Hotspot"
+      },
+      {
+        "letra": "C",
+        "texto": "Oak"
+      },
+      {
+        "letra": "D",
+        "texto": "Eclipse"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Oak (1994) precedió a Java; JDK 1.0 es de 1995."
+  },
+  {
+    "id": 121,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S9",
+    "pregunta": "¿Qué herramienta del JDK genera documentación automática a partir de los comentarios del código?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "jar, que empaqueta las clases compiladas en un único fichero comprimido"
+      },
+      {
+        "letra": "B",
+        "texto": "javac, que compila el código fuente a bytecode"
+      },
+      {
+        "letra": "C",
+        "texto": "javadoc, que lee los comentarios /** ... */"
+      },
+      {
+        "letra": "D",
+        "texto": "javap, que desensambla ficheros .class para mostrar su contenido"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "javap desensambla, jar empaqueta y javac compila."
+  },
+  {
+    "id": 122,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S49",
+    "pregunta": "Una clase interna se declara con el modificador private dentro de otra clase. ¿Desde dónde es visible?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Desde cualquier clase, pues private solo restringe las propiedades"
+      },
+      {
+        "letra": "B",
+        "texto": "Desde la clase que la contiene y desde sus subclases en otros paquetes"
+      },
+      {
+        "letra": "C",
+        "texto": "Desde cualquier clase del mismo paquete"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo desde dentro de la clase en la que está definida"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Una clase interna private solo es visible dentro de su clase contenedora."
+  },
+  {
+    "id": 123,
+    "tema": 2,
+    "tipo": "diseno",
+    "diapositiva": "T2-S54",
+    "pregunta": "En un diagrama UML de clases, ¿cómo se distingue una propiedad o un método estático?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque aparece en cursiva"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque aparece entre corchetes con la etiqueta {static}"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque aparece subrayado"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque va precedido del símbolo #"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "En cursiva se marca lo abstracto; en UML lo estático va subrayado."
+  },
+  {
+    "id": 124,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S55",
+    "pregunta": "Una clase Coche declara «public final static double pi = 3.14;». ¿Cómo puede un cliente acceder a ella?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con Coche.pi, y también con una referencia a un objeto (aunque no sea recomendable)"
+      },
+      {
+        "letra": "B",
+        "texto": "Únicamente creando antes al menos un objeto Coche y usando su referencia"
+      },
+      {
+        "letra": "C",
+        "texto": "No puede accederse desde fuera de la clase, porque las propiedades estáticas son privadas"
+      },
+      {
+        "letra": "D",
+        "texto": "Únicamente con una referencia a un objeto Coche, como c.pi"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Las propiedades de clase se consultan sobre la propia clase."
+  },
+  {
+    "id": 125,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S66",
+    "pregunta": "Desde Java 9 se desaconseja el uso de finalize(). ¿Cuál es el motivo que da el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo funciona con clases que implementan la interfaz Serializable y que están en un paquete"
+      },
+      {
+        "letra": "B",
+        "texto": "No se sabe cuándo se ejecutará, porque depende del recolector de basura"
+      },
+      {
+        "letra": "C",
+        "texto": "Impide que el recolector de basura libere nunca la memoria del objeto que lo declara"
+      },
+      {
+        "letra": "D",
+        "texto": "Se ejecuta siempre tras cada llamada a método, ralentizando de forma notable el programa"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El recolector se ejecuta en segundo plano en momentos no predecibles."
+  },
+  {
+    "id": 126,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S56",
+    "pregunta": "Una propiedad se declara transient. ¿Qué implica?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que no se copia a la caché del procesador y vive en memoria principal"
+      },
+      {
+        "letra": "B",
+        "texto": "Que no persiste, aunque el objeto tenga capacidad de persistencia"
+      },
+      {
+        "letra": "C",
+        "texto": "Que solo puede ser modificada por un hilo cada vez"
+      },
+      {
+        "letra": "D",
+        "texto": "Que su valor es constante y no puede cambiar durante la vida del objeto"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "volatile es el que se mantiene en memoria principal; final el constante."
+  },
+  {
+    "id": 127,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S56",
+    "pregunta": "¿Qué efecto tiene declarar una propiedad como volatile?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Se vuelve inmutable una vez inicializada en el constructor, igual que si se declarase final"
+      },
+      {
+        "letra": "B",
+        "texto": "Se excluye de la serialización cuando el objeto se guarda en un fichero o base de datos"
+      },
+      {
+        "letra": "C",
+        "texto": "Se mantiene en memoria principal y no en la caché del procesador, evitando problemas con hilos"
+      },
+      {
+        "letra": "D",
+        "texto": "Se comparte entre todos los objetos de la clase, igual que ocurre con una propiedad estática"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Es útil si la propiedad es utilizada desde varios threads de forma simultánea."
+  },
+  {
+    "id": 128,
+    "tema": 2,
+    "tipo": "test",
+    "diapositiva": "T2-S67",
+    "pregunta": "¿Qué indica el modificador synchronized en un método?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que solo puede ser ejecutado por un hilo en cada momento para cada objeto"
+      },
+      {
+        "letra": "B",
+        "texto": "Que está implementado en un lenguaje nativo y se enlaza mediante JNI"
+      },
+      {
+        "letra": "C",
+        "texto": "Que su ejecución se retrasa hasta que termina el recolector de basura"
+      },
+      {
+        "letra": "D",
+        "texto": "Que fuerza una aritmética de coma flotante independiente del procesador"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "native: lenguaje nativo; strictfp: aritmética portable."
+  },
+  {
+    "id": 129,
+    "tema": 2,
+    "tipo": "estructura",
+    "diapositiva": "T2-S78",
+    "pregunta": "¿Para qué sirve la variable de entorno CLASSPATH?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para indicar los directorios desde los que la JVM localiza los paquetes de clases"
+      },
+      {
+        "letra": "B",
+        "texto": "Para indicar en qué paquete se encuentra la clase que contiene el método main del programa"
+      },
+      {
+        "letra": "C",
+        "texto": "Para indicar el directorio donde se guarda el compilador javac y el resto de herramientas"
+      },
+      {
+        "letra": "D",
+        "texto": "Para indicar la versión del JDK con la que se compiló cada uno de los paquetes"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Un paquete debe residir en un directorio localizable desde el CLASSPATH."
+  },
+  {
+    "id": 130,
+    "tema": 2,
+    "tipo": "sintaxis",
+    "diapositiva": "T2-S32",
+    "pregunta": "En una expresión switch de Java moderno, ¿para qué sirve yield?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para interrumpir el switch y continuar con la sentencia que haya justo después de él, igual que break"
+      },
+      {
+        "letra": "B",
+        "texto": "Para devolver un valor desde un bloque de un caso como resultado del switch"
+      },
+      {
+        "letra": "C",
+        "texto": "Para saltar al siguiente caso sin comprobar su condición, como hace un caso sin break"
+      },
+      {
+        "letra": "D",
+        "texto": "Para ceder la ejecución a otro hilo mientras se evalúa el caso, devolviendo luego el control"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "yield devuelve el valor de la expresión switch desde un ámbito."
+  },
+  {
+    "id": 131,
+    "tema": 2,
+    "tipo": "diseno",
+    "diapositiva": "T2-S80",
+    "pregunta": "Las clases Coche y Rueda están en el mismo paquete y Taller en otro, aunque está anidado dentro del primero. Rueda tiene una propiedad radio sin modificador de acceso. ¿Quién la ve?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ninguna de las dos, porque las propiedades sin modificador solo las ve la propia clase"
+      },
+      {
+        "letra": "B",
+        "texto": "Taller la ve, pero Coche no, porque los paquetes interiores heredan la visibilidad"
+      },
+      {
+        "letra": "C",
+        "texto": "Coche la ve, pero Taller no, porque el anidamiento de paquetes no afecta a la visibilidad"
+      },
+      {
+        "letra": "D",
+        "texto": "Coche y Taller la ven, porque el paquete de Taller está anidado en el de Coche"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Los elementos friendly solo se comparten dentro de un mismo paquete."
+  },
+  {
+    "id": 132,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S7",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "class Car {\n    private int speed;\n    public void acelerate() { speed++; }\n}\nclass SportsCar extends Car {\n    public void turbo() {\n        for (int c = 0; c < 10; c++) {\n            acelerate();\n        }\n        speed = speed * 2;\n        System.out.println(speed);\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new SportsCar().turbo();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: speed es privada en Car y SportsCar no puede acceder a ella directamente"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila y imprime 20, porque SportsCar hereda la propiedad speed de Car"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila, pero lanza NullPointerException porque speed no está inicializada"
+      },
+      {
+        "letra": "D",
+        "texto": "No compila: SportsCar no puede invocar el método acelerate heredado de Car"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los miembros privados de la clase base no son visibles en las derivadas."
+  },
+  {
+    "id": 133,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S15",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "class Car {\n    private int speed;\n    public final void acelerate() { speed++; }\n    public int getSpeed() { return speed; }\n}\nclass SportsCar extends Car {\n    @Override\n    public void acelerate() {\n        super.acelerate();\n        super.acelerate();\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        SportsCar s = new SportsCar();\n        s.acelerate();\n        System.out.println(s.getSpeed());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila e imprime 2, porque SportsCar llama dos veces a super.acelerate()"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: SportsCar intenta sobrescribir un método declarado final en Car"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: un método final no puede invocarse desde una clase derivada"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila e imprime 1, porque el método final de Car prevalece sobre el de SportsCar"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Los métodos final no pueden cambiar su implementación en clases derivadas."
+  },
+  {
+    "id": 134,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S16",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "final class Punto {\n    private final int x = 5;\n    public int getX() { return x; }\n}\nclass MutablePunto extends Punto {\n    public void setX(int nuevo) { }\n}\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(new MutablePunto().getX());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: una clase final no puede tener métodos públicos"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: de una clase final no se puede heredar"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila e imprime 5, porque MutablePunto puede añadir su propio estado"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila, pero lanza una excepción al crear el objeto MutablePunto"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Una clase final se usa para impedir, por ejemplo, que se derive de una clase inmutable."
+  },
+  {
+    "id": 135,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S27",
+    "pregunta": "¿Qué imprime este programa?",
+    "imagen": "",
+    "codigo": "class A {\n    public void printName() { System.out.println(\"A\"); }\n}\nclass B extends A {\n    public void printName() { System.out.println(\"B\"); }\n}\nclass C extends A {\n}\npublic class Main {\n    public static void main(String[] args) {\n        A[] lista = { new A(), new B(), new C() };\n        for (A a : lista) {\n            a.printName();\n        }\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "B, B, B"
+      },
+      {
+        "letra": "B",
+        "texto": "A, B, C"
+      },
+      {
+        "letra": "C",
+        "texto": "A, B, A"
+      },
+      {
+        "letra": "D",
+        "texto": "A, A, A"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "C no sobrescribe printName, por lo que hereda la versión de A."
+  },
+  {
+    "id": 136,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S27",
+    "pregunta": "¿Qué imprime este programa? Presta atención a la diferencia entre propiedades y métodos.",
+    "imagen": "",
+    "codigo": "class A {\n    String name = \"A\";\n    String who() { return \"A\"; }\n}\nclass B extends A {\n    String name = \"B\";\n    String who() { return \"B\"; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        A x = new B();\n        System.out.println(x.name + x.who());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "AB"
+      },
+      {
+        "letra": "B",
+        "texto": "BA"
+      },
+      {
+        "letra": "C",
+        "texto": "AA"
+      },
+      {
+        "letra": "D",
+        "texto": "BB"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los métodos se resuelven dinámicamente por el tipo del objeto; las propiedades, estáticamente por el tipo de la referencia."
+  },
+  {
+    "id": 137,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S27",
+    "pregunta": "¿Qué imprime este programa? Piensa qué firmas ve el compilador y qué versión ejecuta la JVM.",
+    "imagen": "",
+    "codigo": "class A {\n    void f(A a) { System.out.println(\"A.f(A)\"); }\n}\nclass B extends A {\n    void f(B b) { System.out.println(\"B.f(B)\"); }\n    @Override\n    void f(A a) { System.out.println(\"B.f(A)\"); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        A x = new B();\n        B y = new B();\n        x.f(y);\n        y.f(y);\n        x.f(x);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "B.f(A), B.f(A), B.f(A)"
+      },
+      {
+        "letra": "B",
+        "texto": "A.f(A), B.f(B), A.f(A)"
+      },
+      {
+        "letra": "C",
+        "texto": "B.f(B), B.f(B), B.f(A)"
+      },
+      {
+        "letra": "D",
+        "texto": "B.f(A), B.f(B), B.f(A)"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Con tipo estático A solo se ve f(A) (se ejecuta la sobrescritura de B); con tipo B y argumento B gana f(B), más específica."
+  },
+  {
+    "id": 138,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S28",
+    "pregunta": "¿Qué imprime este programa? Observa cuándo se inicializan las propiedades de B.",
+    "imagen": "",
+    "codigo": "class A {\n    A() {\n        System.out.println(\"A ctor\");\n        init();\n    }\n    void init() { System.out.println(\"A.init\"); }\n}\nclass B extends A {\n    int v = 5;\n    B() {\n        System.out.println(\"B ctor \" + v);\n    }\n    @Override\n    void init() { System.out.println(\"B.init \" + v); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new B();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "A ctor, A.init, B ctor 5"
+      },
+      {
+        "letra": "B",
+        "texto": "A ctor, B.init 5, B ctor 5"
+      },
+      {
+        "letra": "C",
+        "texto": "A ctor, B.init 0, B ctor 5"
+      },
+      {
+        "letra": "D",
+        "texto": "B.init 0, A ctor, B ctor 5"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "El constructor de A se ejecuta antes de inicializar las propiedades de B, pero init() ya es el de B."
+  },
+  {
+    "id": 139,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S28",
+    "pregunta": "¿Qué valor imprime este programa?",
+    "imagen": "",
+    "codigo": "class Car {\n    protected int speed;\n    public void acelerate() { speed += 1; }\n}\nclass Ambulance extends Car {\n    @Override\n    public void acelerate() { speed += 10; }\n}\nclass SportsCar extends Car {\n    @Override\n    public void acelerate() {\n        super.acelerate();\n        speed += 20;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car[] cs = { new Car(), new Ambulance(), new SportsCar() };\n        int total = 0;\n        for (Car c : cs) {\n            c.acelerate();\n            total += c.speed;\n        }\n        System.out.println(total);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "33"
+      },
+      {
+        "letra": "B",
+        "texto": "32"
+      },
+      {
+        "letra": "C",
+        "texto": "12"
+      },
+      {
+        "letra": "D",
+        "texto": "31"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Car suma 1; Ambulance suma 10; SportsCar suma 1 (super) y luego 20."
+  },
+  {
+    "id": 140,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S29",
+    "pregunta": "¿Qué imprime este programa que usa un método que acepta cualquier Car?",
+    "imagen": "",
+    "codigo": "class Car {\n    protected int speed;\n    void acelerate() { speed++; }\n    void brake() { speed--; }\n    int getSpeed() { return speed; }\n}\nclass SportsCar extends Car {\n    @Override\n    void acelerate() {\n        for (int i = 0; i < 5; i++) super.acelerate();\n    }\n    @Override\n    void brake() { speed -= 2; }\n}\nclass ZonaDeFrenado {\n    static int stop(Car c) {\n        int pasos = 0;\n        while (c.getSpeed() > 0) {\n            c.brake();\n            pasos++;\n        }\n        return pasos;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        SportsCar s = new SportsCar();\n        s.acelerate();\n        Car k = new Car();\n        for (int i = 0; i < 5; i++) k.acelerate();\n        System.out.println(ZonaDeFrenado.stop(s) + \" \" + ZonaDeFrenado.stop(k) + \" \"\n                           + s.getSpeed() + \" \" + k.getSpeed());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2 5 -1 0"
+      },
+      {
+        "letra": "B",
+        "texto": "3 5 0 0"
+      },
+      {
+        "letra": "C",
+        "texto": "3 5 -1 0"
+      },
+      {
+        "letra": "D",
+        "texto": "3 5 -1 -1"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "SportsCar frena de 2 en 2: 5, 3, 1, -1. El bucle se detiene cuando la velocidad deja de ser positiva."
+  },
+  {
+    "id": 141,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S27",
+    "pregunta": "¿Qué imprime este programa con métodos estáticos y herencia?",
+    "imagen": "",
+    "codigo": "class A {\n    static String id() { return \"A\"; }\n    String me() { return id(); }\n}\nclass B extends A {\n    static String id() { return \"B\"; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(new B().me());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "B"
+      },
+      {
+        "letra": "B",
+        "texto": "AB"
+      },
+      {
+        "letra": "C",
+        "texto": "A"
+      },
+      {
+        "letra": "D",
+        "texto": "BA"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Los métodos static no se sobrescriben: me() está en A y llama a A.id()."
+  },
+  {
+    "id": 142,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S34",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "class Car {\n    public void acelerate() { System.out.println(\"Run\"); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n        Object o = c;\n        o.acelerate();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: el tipo Object no tiene el método acelerate"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila e imprime «Run», porque el objeto real es un Car"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila e imprime «Run», porque Object es el tipo padre de todas las clases"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila, pero lanza ClassCastException al invocar acelerate sobre o"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Sobre una referencia solo se pueden invocar los métodos de su tipo; hace falta un casting."
+  },
+  {
+    "id": 143,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S35",
+    "pregunta": "¿Qué ocurre al ejecutar este programa?",
+    "imagen": "",
+    "codigo": "class Car { }\nclass SportsCar extends Car {\n    void turbo() { }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n        System.out.println(\"antes\");\n        SportsCar d = (SportsCar) c;\n        System.out.println(\"despues\");\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Imprime «antes» y lanza ClassCastException en el casting"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: no se puede hacer casting de una clase base a una derivada"
+      },
+      {
+        "letra": "C",
+        "texto": "Imprime «antes» y «despues»: el casting es válido porque SportsCar hereda de Car"
+      },
+      {
+        "letra": "D",
+        "texto": "Imprime «antes» y lanza NullPointerException al hacer el casting"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El casting falla en ejecución porque el objeto no es del tipo derivado."
+  },
+  {
+    "id": 144,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S35",
+    "pregunta": "¿Qué valor imprime este programa?",
+    "imagen": "",
+    "codigo": "class Car { }\nclass SportsCar extends Car { }\nclass Van extends Car { }\npublic class Main {\n    public static void main(String[] args) {\n        Car[] cs = { new Car(), new SportsCar(), new Van() };\n        int n = 0;\n        for (Car c : cs) {\n            if (c instanceof Car) n += 1;\n            if (c instanceof SportsCar) n += 10;\n        }\n        System.out.println(n);\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "21"
+      },
+      {
+        "letra": "B",
+        "texto": "13"
+      },
+      {
+        "letra": "C",
+        "texto": "12"
+      },
+      {
+        "letra": "D",
+        "texto": "3"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Todo SportsCar y Van también son Car (+1); solo el SportsCar suma además 10."
+  },
+  {
+    "id": 145,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S39",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "abstract class Car {\n    public abstract void acelerate();\n    public void brake() { System.out.println(\"Run\"); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n        c.brake();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: no pueden crearse objetos de una clase abstracta"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: una clase abstracta no puede declarar métodos con implementación"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila, pero lanza una excepción al invocar el método abstracto"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila e imprime «Run», porque Car define el método acelerate"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Una clase abstracta tiene métodos sin implementación y no puede instanciarse."
+  },
+  {
+    "id": 146,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S39",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "abstract class Car {\n    public abstract void acelerate();\n    public abstract void brake();\n}\nclass Van extends Car {\n    public void brake() { System.out.println(\"Bruum\"); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new Van().brake();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila, pero lanza una excepción al crear un objeto Van"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: Van no implementa el método abstracto acelerate y no se ha declarado abstracta"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila e imprime «Bruum»: Van hereda la implementación vacía del método abstracto"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila e imprime «Bruum», porque basta con implementar el método brake"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Una clase que deriva de una abstracta debe implementar todos sus métodos o ser abstracta."
+  },
+  {
+    "id": 147,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S40",
+    "pregunta": "¿Qué imprime este programa con una clase abstracta y un método plantilla?",
+    "imagen": "",
+    "codigo": "abstract class Plantilla {\n    final void ejecutar() {\n        paso1();\n        paso2();\n    }\n    abstract void paso1();\n    void paso2() { System.out.println(\"base2\"); }\n}\nclass Concreta extends Plantilla {\n    void paso1() { System.out.println(\"c1\"); }\n    @Override\n    void paso2() {\n        System.out.println(\"c2\");\n        super.paso2();\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new Concreta().ejecutar();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "c1, c2"
+      },
+      {
+        "letra": "B",
+        "texto": "c2, c1, base2"
+      },
+      {
+        "letra": "C",
+        "texto": "c1, base2"
+      },
+      {
+        "letra": "D",
+        "texto": "c1, c2, base2"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "ejecutar() llama a paso1() y paso2() dinámicamente; la versión de paso2 de la derivada invoca después a super.paso2()."
+  },
+  {
+    "id": 148,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S43",
+    "pregunta": "¿Qué ocurre al compilar este programa?",
+    "imagen": "",
+    "codigo": "interface Car {\n    void acelerate();\n}\nclass SportsCar implements Car {\n    void acelerate() { System.out.println(\"Run\"); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new SportsCar();\n        c.acelerate();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila, pero lanza una excepción en ejecución por incumplir la interfaz"
+      },
+      {
+        "letra": "B",
+        "texto": "No compila: el método que implementa la interfaz debe ser público, porque en la interfaz es público"
+      },
+      {
+        "letra": "C",
+        "texto": "No compila: una clase no puede implementar una interfaz sin heredar de otra clase"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila e imprime «Run»: el método sin modificador es visible dentro del paquete"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Todos los métodos de una interfaz son públicos por defecto."
+  },
+  {
+    "id": 149,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S45",
+    "pregunta": "¿Qué imprime este programa, que ordena objetos que implementan Comparable?",
+    "imagen": "",
+    "codigo": "import java.util.Arrays;\n\nclass Car implements Comparable<Car> {\n    int speed;\n    Car(int s) { speed = s; }\n    public int compareTo(Car o) { return o.speed - speed; }\n    public String toString() { return \"\" + speed; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car[] cs = { new Car(30), new Car(10), new Car(20) };\n        Arrays.sort(cs);\n        System.out.println(Arrays.toString(cs));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "[20, 10, 30]"
+      },
+      {
+        "letra": "B",
+        "texto": "[10, 20, 30]"
+      },
+      {
+        "letra": "C",
+        "texto": "[30, 20, 10]"
+      },
+      {
+        "letra": "D",
+        "texto": "[30, 10, 20]"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "compareTo devuelve o.speed - speed, así que el orden resultante es descendente."
+  },
+  {
+    "id": 150,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S46",
+    "pregunta": "¿Qué imprime este programa que usa un método default de una interfaz?",
+    "imagen": "",
+    "codigo": "interface Car {\n    void brake();\n    int getSpeed();\n    default void stopCar() {\n        while (getSpeed() > 0) {\n            brake();\n        }\n    }\n}\nclass Basic implements Car {\n    private int s = 3;\n    public void brake() {\n        s--;\n        System.out.println(\"freno \" + s);\n    }\n    public int getSpeed() { return s; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new Basic().stopCar();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "freno 2, freno 1"
+      },
+      {
+        "letra": "B",
+        "texto": "freno 2"
+      },
+      {
+        "letra": "C",
+        "texto": "freno 3, freno 2, freno 1, freno 0"
+      },
+      {
+        "letra": "D",
+        "texto": "freno 2, freno 1, freno 0"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "stopCar frena mientras getSpeed() sea mayor que cero, partiendo de 3."
+  },
+  {
+    "id": 151,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S47",
+    "pregunta": "¿Qué ocurre al compilar este programa con dos interfaces que tienen un método default con el mismo nombre?",
+    "imagen": "",
+    "codigo": "interface Airplane {\n    default void acelerate() { System.out.println(\"Ziuuuu...\"); }\n}\ninterface Car {\n    default void acelerate() { System.out.println(\"Puf, puf...\"); }\n}\nclass FlyingCar implements Car, Airplane {\n}\npublic class Main {\n    public static void main(String[] args) {\n        new FlyingCar().acelerate();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No compila: FlyingCar hereda dos implementaciones por defecto de acelerate y debe resolver el conflicto"
+      },
+      {
+        "letra": "B",
+        "texto": "Compila e imprime «Ziuuuu...», porque la última interfaz sobrescribe a las anteriores"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila, pero lanza una excepción en ejecución por ambigüedad"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila e imprime «Puf, puf...», porque Car aparece primero en implements"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Java detecta el problema del diamante y obliga a resolverlo en la clase derivada."
+  },
+  {
+    "id": 152,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S47",
+    "pregunta": "¿Qué imprime este programa, que resuelve el conflicto entre dos métodos default?",
+    "imagen": "",
+    "codigo": "interface Airplane {\n    default void acelerate() { System.out.println(\"Ziuuuu...\"); }\n}\ninterface Car {\n    default void acelerate() { System.out.println(\"Puf, puf...\"); }\n}\nclass FlyingCar implements Car, Airplane {\n    @Override\n    public void acelerate() {\n        Car.super.acelerate();\n        Airplane.super.acelerate();\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        new FlyingCar().acelerate();\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ziuuuu..."
+      },
+      {
+        "letra": "B",
+        "texto": "Puf, puf..., Puf, puf..."
+      },
+      {
+        "letra": "C",
+        "texto": "Puf, puf..., Ziuuuu..."
+      },
+      {
+        "letra": "D",
+        "texto": "Ziuuuu..., Puf, puf..."
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Car.super.acelerate() invoca explícitamente la versión de la interfaz Car."
+  },
+  {
+    "id": 153,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S32",
+    "pregunta": "¿Qué imprime este programa, que aplica varias operaciones a un mismo array de caracteres?",
+    "imagen": "",
+    "codigo": "abstract class CharArrayOperation {\n    abstract void doOperation(char[] a);\n}\nclass Upper extends CharArrayOperation {\n    void doOperation(char[] a) {\n        for (int i = 0; i < a.length; i++) a[i] = Character.toUpperCase(a[i]);\n    }\n}\nclass Reverse extends CharArrayOperation {\n    void doOperation(char[] a) {\n        for (int i = 0; i < a.length / 2; i++) {\n            char t = a[i];\n            a[i] = a[a.length - 1 - i];\n            a[a.length - 1 - i] = t;\n        }\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        char[] t = \"hola mundo\".toCharArray();\n        CharArrayOperation[] ops = { new Upper(), new Reverse() };\n        for (CharArrayOperation op : ops) op.doOperation(t);\n        System.out.println(new String(t));\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "HOLA MUNDO"
+      },
+      {
+        "letra": "B",
+        "texto": "ODNUM ALOH"
+      },
+      {
+        "letra": "C",
+        "texto": "odnum aloh"
+      },
+      {
+        "letra": "D",
+        "texto": "OLAH ODNUM"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Cada operación modifica el array in situ; se aplican en el orden del array de operaciones."
+  },
+  {
+    "id": 154,
+    "tema": 3,
+    "tipo": "codigo",
+    "diapositiva": "T3-S30",
+    "pregunta": "¿Qué imprime este programa, donde CorrectText particulariza el comportamiento de Text?",
+    "imagen": "",
+    "codigo": "import java.util.Set;\n\nclass Text {\n    protected StringBuilder sb = new StringBuilder();\n    void insertWord(String w) { sb.append(w).append(' '); }\n    String get() { return sb.toString().trim(); }\n}\nclass CorrectText extends Text {\n    private Set<String> dic = Set.of(\"hola\", \"mundo\");\n    @Override\n    void insertWord(String w) {\n        if (dic.contains(w)) super.insertWord(w);\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Text t = new CorrectText();\n        t.insertWord(\"hola\");\n        t.insertWord(\"mnudo\");\n        t.insertWord(\"mundo\");\n        System.out.println(t.get());\n    }\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "hola mnudo mundo"
+      },
+      {
+        "letra": "B",
+        "texto": "hola"
+      },
+      {
+        "letra": "C",
+        "texto": "hola mundo"
+      },
+      {
+        "letra": "D",
+        "texto": "hola mundo mundo"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "El método sobrescrito solo llama al del padre cuando la palabra está en el diccionario."
+  },
+  {
+    "id": 155,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S4",
+    "pregunta": "En «class SportsCar extends Car», ¿qué afirmación es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Car es una interfaz que SportsCar implementa con la palabra reservada extends"
+      },
+      {
+        "letra": "B",
+        "texto": "SportsCar y Car son clases hermanas que comparten una superclase común"
+      },
+      {
+        "letra": "C",
+        "texto": "SportsCar es la clase derivada (hija o subclase) y Car es la clase base (padre o superclase)"
+      },
+      {
+        "letra": "D",
+        "texto": "SportsCar es la clase base y Car la derivada, porque extends amplía a la clase que lo escribe"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "extends indica de quién deriva la clase."
+  },
+  {
+    "id": 156,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S5",
+    "pregunta": "¿Cuál es la principal limitación de lo que una clase derivada puede utilizar de su clase base?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No puede invocar los métodos públicos de la clase base si están sobrescritos"
+      },
+      {
+        "letra": "B",
+        "texto": "No puede ver los miembros protegidos si está en el mismo paquete que la base"
+      },
+      {
+        "letra": "C",
+        "texto": "No puede definir miembros nuevos con nombres distintos a los de la clase base"
+      },
+      {
+        "letra": "D",
+        "texto": "No puede ver los miembros privados de la clase base"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los miembros privados de la base no son visibles en las derivadas."
+  },
+  {
+    "id": 157,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S6",
+    "pregunta": "Se hereda de una clase Stack para añadir un método toArray. ¿Qué ventajas aporta la herencia frente a copiar y pegar el código de Stack?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Hace que los cambios futuros de Stack no afecten nunca a la clase derivada que se añade"
+      },
+      {
+        "letra": "B",
+        "texto": "Permite acceder a la implementación privada de Stack para optimizar el método toArray"
+      },
+      {
+        "letra": "C",
+        "texto": "Obliga al compilador a verificar que toArray no modifica el estado de la clase Stack"
+      },
+      {
+        "letra": "D",
+        "texto": "Evita duplicar código y evita modificar una clase que funciona y que ya usan otros clientes"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "La herencia reutiliza lo ya probado y no obliga a tocarlo."
+  },
+  {
+    "id": 158,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S10",
+    "pregunta": "Una clase de Java se declara sin ninguna cláusula extends. ¿De qué clase deriva?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "De la clase Object"
+      },
+      {
+        "letra": "B",
+        "texto": "De la clase Class, que describe a todas las clases"
+      },
+      {
+        "letra": "C",
+        "texto": "De ninguna clase: es la raíz de su propia jerarquía"
+      },
+      {
+        "letra": "D",
+        "texto": "De la primera clase declarada en su mismo paquete"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Object está en la raíz del árbol de herencia de Java."
+  },
+  {
+    "id": 159,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S10",
+    "pregunta": "¿Cuántos árboles de herencia de clases hay en Java y cuántos padres directos puede tener una clase?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un árbol por paquete, y como máximo un padre directo"
+      },
+      {
+        "letra": "B",
+        "texto": "Un único árbol, con Object en la raíz, y como máximo un padre directo"
+      },
+      {
+        "letra": "C",
+        "texto": "Un árbol por cada clase abstracta, y como máximo dos padres directos"
+      },
+      {
+        "letra": "D",
+        "texto": "Un único árbol, con Object en la raíz, y tantos padres directos como se desee"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "En Java una clase no puede derivar de dos o más clases."
+  },
+  {
+    "id": 160,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S11",
+    "pregunta": "¿Por qué Java no permite la herencia múltiple de clases?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque una subclase no podría sobrescribir métodos que heredase de dos padres a la vez sin conflicto"
+      },
+      {
+        "letra": "B",
+        "texto": "Para evitar el problema del diamante: la ambigüedad al invocar un método definido en dos puntos"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque la clase Object ya es padre de todas y no puede haber dos raíces en un mismo árbol de herencia"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque obligaría a que todas las clases con varios padres fueran abstractas para poder compilar"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Otros lenguajes (C++, Python) la permiten y definen políticas complejas para resolver la ambigüedad."
+  },
+  {
+    "id": 161,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S12",
+    "pregunta": "¿Desde dónde es accesible un miembro protected?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo desde las clases del mismo paquete, aunque no hereden de la clase que lo declara"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo desde la propia clase y las que heredan de ella, sin importar el paquete en que estén"
+      },
+      {
+        "letra": "C",
+        "texto": "Desde la propia clase, sus clases derivadas y las clases del mismo paquete"
+      },
+      {
+        "letra": "D",
+        "texto": "Desde cualquier clase del programa, igual que un miembro public, sin ninguna restricción"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "En UML se representa con #."
+  },
+  {
+    "id": 162,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S13",
+    "pregunta": "Una clase sin ninguna relación de herencia con Car, situada en otro paquete, intenta acceder a un miembro de Car. ¿Qué modificadores lo permiten?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "public y protected"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo public"
+      },
+      {
+        "letra": "C",
+        "texto": "Todos, menos private"
+      },
+      {
+        "letra": "D",
+        "texto": "public, protected y el acceso sin modificador"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Fuera del paquete y sin herencia, solo lo público es visible."
+  },
+  {
+    "id": 163,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S13",
+    "pregunta": "Una subclase de Car situada en otro paquete accede a miembros de Car. ¿Cuáles puede usar?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo los declarados public"
+      },
+      {
+        "letra": "B",
+        "texto": "Los declarados public, protected y sin modificador"
+      },
+      {
+        "letra": "C",
+        "texto": "Los declarados public y protected"
+      },
+      {
+        "letra": "D",
+        "texto": "Los declarados protected y sin modificador, pero no los public"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Sin modificador solo se ve dentro del mismo paquete."
+  },
+  {
+    "id": 164,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S14",
+    "pregunta": "Dentro del método acelerate sobrescrito en SportsCar aparece la llamada super.acelerate(). ¿Qué hace?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Crea un objeto nuevo de la clase base y le envía el mensaje acelerate"
+      },
+      {
+        "letra": "B",
+        "texto": "Invoca el constructor de la clase base para reiniciar el objeto"
+      },
+      {
+        "letra": "C",
+        "texto": "Ejecuta la versión de acelerate definida en la clase base"
+      },
+      {
+        "letra": "D",
+        "texto": "Vuelve a ejecutar la versión de SportsCar, de forma recursiva"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "super permite invocar miembros de la clase base."
+  },
+  {
+    "id": 165,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S14",
+    "pregunta": "¿Para qué sirve la anotación @Override sobre un método?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para que el método se pueda invocar sin crear ningún objeto de la clase que lo contiene"
+      },
+      {
+        "letra": "B",
+        "texto": "Para permitir que el método tenga distinto nombre del método que sobrescribe en la clase base"
+      },
+      {
+        "letra": "C",
+        "texto": "Para eliminar el método de la clase base, de modo que deje de existir en toda la jerarquía"
+      },
+      {
+        "letra": "D",
+        "texto": "Para indicar que sobrescribe un método de la clase base: el compilador comprueba que exista"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Si la firma no coincide con ningún método heredado, es un error de compilación."
+  },
+  {
+    "id": 166,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S14",
+    "pregunta": "SportsCar sobrescribe acelerate de Car. ¿Puede un cliente externo ejecutar la versión de Car sobre un objeto SportsCar?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Sí, usando una referencia de tipo Car, que ejecuta la versión definida en la clase base"
+      },
+      {
+        "letra": "B",
+        "texto": "No, salvo que el método acelerate de Car se declare private, en cuyo caso SportsCar tampoco podría sobrescribirlo"
+      },
+      {
+        "letra": "C",
+        "texto": "Sí, escribiendo super.acelerate() directamente desde el código del cliente que usa el objeto SportsCar"
+      },
+      {
+        "letra": "D",
+        "texto": "No: ni con una referencia de tipo Car, porque se ejecuta la versión del objeto real; solo SportsCar puede invocarla con super"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los clientes de la derivada no ven los miembros sobrescritos de la base."
+  },
+  {
+    "id": 167,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S17",
+    "pregunta": "Una clase derivada define un constructor sin llamar explícitamente a super(...). ¿Qué hace Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Llama al constructor de la superclase que tenga menos parámetros, rellenándolos con valores por defecto"
+      },
+      {
+        "letra": "B",
+        "texto": "No llama a ningún constructor de la superclase y deja sin inicializar sus propiedades"
+      },
+      {
+        "letra": "C",
+        "texto": "Llama al último constructor definido en la superclase"
+      },
+      {
+        "letra": "D",
+        "texto": "Llama al constructor sin parámetros de la superclase; si no existe, el código no compila"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Si la superclase no tiene constructor sin parámetros, no compilaría."
+  },
+  {
+    "id": 168,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S17",
+    "pregunta": "Car define el constructor Car(int speed). ¿Qué ocurre con los constructores de Car respecto a un cliente de SportsCar?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No son visibles al cliente: SportsCar declara los suyos y puede llamar a Car(int) con super"
+      },
+      {
+        "letra": "B",
+        "texto": "Se heredan únicamente cuando Car y SportsCar están en el mismo paquete de la aplicación"
+      },
+      {
+        "letra": "C",
+        "texto": "Se heredan, pero solo si SportsCar los redeclara usando la palabra reservada extends"
+      },
+      {
+        "letra": "D",
+        "texto": "Se heredan, y el cliente puede escribir new SportsCar(120) directamente sin definir ningún constructor"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los constructores de una clase padre no son visibles para los clientes de la hija."
+  },
+  {
+    "id": 169,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S21",
+    "pregunta": "Si T deriva de P, ¿qué referencias pueden apuntar a un objeto creado con new T()?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Referencias de tipo T o de cualquier tipo padre de T"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo referencias de tipo T"
+      },
+      {
+        "letra": "C",
+        "texto": "Cualquier referencia cuyo tipo tenga los mismos métodos que T"
+      },
+      {
+        "letra": "D",
+        "texto": "Referencias de tipo T o de cualquier tipo derivado de T"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Una referencia de un tipo base puede apuntar a objetos derivados."
+  },
+  {
+    "id": 170,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S22",
+    "pregunta": "Con «Car c = new SportsCar();», ¿qué determina qué versión de acelerate se ejecuta al llamar a c.acelerate()?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El tipo con el que se declaró la referencia c, que se conoce en compilación"
+      },
+      {
+        "letra": "B",
+        "texto": "El tipo de los parámetros con los que se invoca el método"
+      },
+      {
+        "letra": "C",
+        "texto": "El orden en que aparecen las clases Car y SportsCar en el fichero"
+      },
+      {
+        "letra": "D",
+        "texto": "El tipo del objeto creado con new, que se conoce en ejecución"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Se ejecuta el método del objeto creado."
+  },
+  {
+    "id": 171,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S24",
+    "pregunta": "Con «Car c = new SportsCar();» y un método turbo() definido solo en SportsCar, ¿por qué falla c.turbo()?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque en ejecución el objeto apuntado por c no es de tipo SportsCar sino de otro tipo derivado"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque solo se pueden invocar los métodos del tipo de la referencia, y Car no tiene turbo"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque c no se ha inicializado con un objeto creado con new y vale null"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque turbo() es un método sobrescrito y no puede invocarse desde una referencia de la clase base"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El tipo de la referencia restringe lo que se puede invocar."
+  },
+  {
+    "id": 172,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S37",
+    "pregunta": "¿Cuándo tiene sentido declarar un método como abstracto en una clase base?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cuando la base solo fija la operación y cada clase derivada debe aportar su comportamiento"
+      },
+      {
+        "letra": "B",
+        "texto": "Cuando se quiere que el método pueda invocarse sin crear ningún objeto de la clase que lo declara"
+      },
+      {
+        "letra": "C",
+        "texto": "Cuando el método debe ejecutarse en un hilo independiente del resto de métodos de la clase"
+      },
+      {
+        "letra": "D",
+        "texto": "Cuando se quiere impedir que las clases derivadas sobrescriban la operación de la clase base"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Se usa cuando el método de la base no debe definir ningún comportamiento."
+  },
+  {
+    "id": 173,
+    "tema": 3,
+    "tipo": "diseno",
+    "diapositiva": "T3-S38",
+    "pregunta": "¿Cómo se representa en UML una clase o un método abstracto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con el nombre entre comillas angulares, como un estereotipo"
+      },
+      {
+        "letra": "B",
+        "texto": "Con el nombre en cursiva"
+      },
+      {
+        "letra": "C",
+        "texto": "Con el nombre subrayado"
+      },
+      {
+        "letra": "D",
+        "texto": "Con el nombre precedido del símbolo #"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Lo subrayado es lo estático."
+  },
+  {
+    "id": 174,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S38",
+    "pregunta": "La clase abstracta Car declara «public final void brake()» con implementación. ¿Qué pueden hacer con brake las clases Van y SportsCar?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Heredarlo y sobrescribirlo, porque Car es abstracta"
+      },
+      {
+        "letra": "B",
+        "texto": "Heredarlo y usarlo, pero no sobrescribirlo"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo usarlo si están en el mismo paquete que Car"
+      },
+      {
+        "letra": "D",
+        "texto": "Nada: una clase abstracta no puede tener métodos con implementación"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "final impide cambiar la implementación en clases derivadas."
+  },
+  {
+    "id": 175,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S41",
+    "pregunta": "¿Qué afirmación sobre las interfaces de Java es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Es una clase abstracta pura sin propiedades de instancia; sus métodos son públicos por defecto"
+      },
+      {
+        "letra": "B",
+        "texto": "Puede declarar propiedades de instancia con valor inicial, y sus métodos son protegidos por defecto"
+      },
+      {
+        "letra": "C",
+        "texto": "Debe implementar al menos un método con cuerpo para poder ser implementada por una clase"
+      },
+      {
+        "letra": "D",
+        "texto": "Puede heredar de varias clases abstractas con la palabra reservada extends a la vez"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Se define con interface."
+  },
+  {
+    "id": 176,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S41",
+    "pregunta": "Una interfaz Coche deportivo quiere heredar de otra interfaz Coche. ¿Qué palabra reservada se usa?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "implements"
+      },
+      {
+        "letra": "B",
+        "texto": "extends"
+      },
+      {
+        "letra": "C",
+        "texto": "inherits"
+      },
+      {
+        "letra": "D",
+        "texto": "super"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Una interfaz hereda de otra con extends; una clase cumple una interfaz con implements."
+  },
+  {
+    "id": 177,
+    "tema": 3,
+    "tipo": "diseno",
+    "diapositiva": "T3-S42",
+    "pregunta": "Una clase SportsCar cumple una interfaz Car. ¿Qué palabra reservada y qué notación UML se usan?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "implements; línea continua con flecha abierta hacia la interfaz"
+      },
+      {
+        "letra": "B",
+        "texto": "implements; línea punteada con flecha de punta hueca hacia la interfaz"
+      },
+      {
+        "letra": "C",
+        "texto": "extends; línea punteada con flecha abierta hacia la interfaz"
+      },
+      {
+        "letra": "D",
+        "texto": "extends; línea continua con flecha de punta hueca hacia la interfaz"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "En UML la herencia de interfaz es punteada."
+  },
+  {
+    "id": 178,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S44",
+    "pregunta": "Una clase implementa dos interfaces sin métodos default. ¿Por qué no aparece el problema del diamante?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque el compilador copia los métodos de ambas interfaces con nombres distintos"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque Java elige automáticamente la interfaz que aparece primero"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque las interfaces no pueden compartir nombres de métodos"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque solo hay una implementación de cada método: la que escribe la clase"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "La clase implementa los métodos; las interfaces solo los declaran."
+  },
+  {
+    "id": 179,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S7",
+    "pregunta": "En el ejemplo donde SportsCar hereda de Car, ¿qué NO puede invocar SportsCar de Car, si speed es privada?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El método acelerate, porque modifica la propiedad privada speed que no es visible desde SportsCar"
+      },
+      {
+        "letra": "B",
+        "texto": "Ningún miembro de Car, porque todo lo heredado debe redeclararse en la clase derivada antes de usarse"
+      },
+      {
+        "letra": "C",
+        "texto": "La propiedad speed directamente, aunque sí puede usar los métodos públicos que la modifican"
+      },
+      {
+        "letra": "D",
+        "texto": "El método getSpeed, porque devuelve el valor de una propiedad privada de la clase base"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Un miembro privado de la base no es visible en la clase derivada."
+  },
+  {
+    "id": 180,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S9",
+    "pregunta": "Se crean un SportsCar d y una Van f, y se ejecuta d.acelerate() dos veces y f.acelerate() una vez. ¿Qué valor de speed tiene cada objeto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ambos tienen 1, porque cada acelerate se aplica al último objeto creado"
+      },
+      {
+        "letra": "B",
+        "texto": "Ambos tienen 3, porque speed es una propiedad compartida por la clase Car"
+      },
+      {
+        "letra": "C",
+        "texto": "d tiene 2 y f tiene 0, porque Van no hereda el método acelerate"
+      },
+      {
+        "letra": "D",
+        "texto": "d tiene 2 y f tiene 1: cada objeto tiene su propia propiedad speed"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Las propiedades heredadas son de cada objeto, no de la clase."
+  },
+  {
+    "id": 181,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S18",
+    "pregunta": "Una clase Car declara «public int speed;» y un cliente escribe d.speed = 5. ¿Cuál es el problema de diseño?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Provoca un error de compilación, porque en Java las propiedades de una clase no pueden ser públicas"
+      },
+      {
+        "letra": "B",
+        "texto": "Rompe la encapsulación: cualquier cliente puede modificarla sin respetar los invariantes"
+      },
+      {
+        "letra": "C",
+        "texto": "Provoca que speed se comparta entre todos los objetos de la clase, como si fuera estática"
+      },
+      {
+        "letra": "D",
+        "texto": "Impide que las subclases de Car puedan acceder a speed aunque estén en el mismo paquete"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Mal estilo: lo habitual es que las propiedades sean privadas."
+  },
+  {
+    "id": 182,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S16",
+    "pregunta": "¿Por qué se declara final la clase String?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para que sus métodos se ejecuten en un hilo independiente del resto del programa"
+      },
+      {
+        "letra": "B",
+        "texto": "Para que nadie derive de una clase inmutable y la haga mutable, reforzando una decisión de diseño"
+      },
+      {
+        "letra": "C",
+        "texto": "Para que sus objetos se almacenen en la pila en lugar de en el montón de memoria"
+      },
+      {
+        "letra": "D",
+        "texto": "Para que los objetos String no puedan ser asignados a variables de tipo Object"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "De una clase final no se puede heredar."
+  },
+  {
+    "id": 183,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S15",
+    "pregunta": "¿Qué objetivo, además de fijar el diseño, tiene declarar un método final?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Aumentar la eficiencia, porque permite la ligadura estática del método"
+      },
+      {
+        "letra": "B",
+        "texto": "Que el método devuelva siempre el mismo valor, sea cual sea el estado del objeto"
+      },
+      {
+        "letra": "C",
+        "texto": "Permitir que el método se invoque sin tener ningún objeto creado"
+      },
+      {
+        "letra": "D",
+        "texto": "Permitir que el método se ejecute en varios hilos a la vez"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Con final el compilador sabe qué método se ejecutará."
+  },
+  {
+    "id": 184,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S26",
+    "pregunta": "En el ejemplo de getCar(), la referencia «Car c = getCar();» es polimorfa. ¿Por qué?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque en ejecución puede tomar distintas formas: un Van, una Ambulance o un SportsCar"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque Car puede cambiar de tipo primitivo durante la ejecución del programa"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque el método getCar está sobrecargado con distintos tipos de retorno"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque la clase Car tiene varios constructores con distintos parámetros"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Polimorfo significa «con múltiples formas»."
+  },
+  {
+    "id": 185,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S28",
+    "pregunta": "Con «Car c = getCar(); c.acelerate();», donde getCar devuelve al azar un objeto de alguna subclase de Car, ¿cuándo se puede saber qué versión de acelerate se ejecutará?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "En compilación, porque getCar devuelve siempre un tipo derivado fijo"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo en ejecución, cuando ya se ha creado el objeto concreto"
+      },
+      {
+        "letra": "C",
+        "texto": "Nunca: el resultado puede variar incluso con el mismo objeto"
+      },
+      {
+        "letra": "D",
+        "texto": "En compilación, porque c está declarada como Car"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Es polimorfismo dinámico."
+  },
+  {
+    "id": 186,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S29",
+    "pregunta": "Un método stopCar(Car c) frena cualquier coche llamando a c.brake() hasta que su velocidad es cero. ¿Qué permite que funcione con SportsCar, Ambulance o Van?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El polimorfismo: la referencia a Car apunta a objetos derivados y cada uno ejecuta su brake"
+      },
+      {
+        "letra": "B",
+        "texto": "La sobrecarga: Java crea automáticamente una versión de stopCar por cada subclase de Car existente"
+      },
+      {
+        "letra": "C",
+        "texto": "La herencia múltiple: todas las subclases comparten el mismo método brake heredado de Object"
+      },
+      {
+        "letra": "D",
+        "texto": "La encapsulación: stopCar accede directamente a la propiedad speed de cada clase derivada"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El cliente no necesita saber qué tipo concreto de Car recibe."
+  },
+  {
+    "id": 187,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S30",
+    "pregunta": "CorrectText hereda de Text y sobrescribe insertWord para rechazar palabras incorrectas. ¿Qué permite el polimorfismo en este caso?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que CorrectText modifique las propiedades privadas de Text para ajustar su comportamiento interno"
+      },
+      {
+        "letra": "B",
+        "texto": "Que un cliente que use objetos Text use objetos CorrectText sin saberlo"
+      },
+      {
+        "letra": "C",
+        "texto": "Que Text deje de poder usarse porque queda sustituida por su clase derivada en el programa"
+      },
+      {
+        "letra": "D",
+        "texto": "Que insertWord se ejecute en un hilo independiente del resto del programa para ir más rápido"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La herencia particulariza; el polimorfismo hace transparente el cambio."
+  },
+  {
+    "id": 188,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S31",
+    "pregunta": "QuickSort, MergeSort y otras clases heredan de SortAlgorithm. ¿Qué ventajas aporta esta jerarquía?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Comparten métodos comunes sin duplicar código y los usuarios aprenden una sola interfaz"
+      },
+      {
+        "letra": "B",
+        "texto": "Obliga a que todos los algoritmos tengan la misma complejidad computacional en el caso medio"
+      },
+      {
+        "letra": "C",
+        "texto": "Impide que un algoritmo concreto pueda modificar el orden de los elementos del array"
+      },
+      {
+        "letra": "D",
+        "texto": "Permite que dos algoritmos se ejecuten a la vez sobre el mismo array sin interferirse"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Familias de clases que ejecutan algoritmos parecidos."
+  },
+  {
+    "id": 189,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S32",
+    "pregunta": "Los filtros Upper, Lower y Capitalize heredan de CharArrayOperation. ¿Qué permite esto a un cliente?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Evitar que los filtros puedan tener propiedades propias"
+      },
+      {
+        "letra": "B",
+        "texto": "Aplicar a la vez tres operaciones distintas con una sola llamada a doOperation"
+      },
+      {
+        "letra": "C",
+        "texto": "Almacenarlos en estructuras de datos y ejecutarlos sin distinguir unos de otros"
+      },
+      {
+        "letra": "D",
+        "texto": "Modificar las operaciones sin necesidad de recompilar la clase cliente"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Todos cumplen la misma interfaz doOperation."
+  },
+  {
+    "id": 190,
+    "tema": 3,
+    "tipo": "diseno",
+    "diapositiva": "T3-S33",
+    "pregunta": "En un procesador de texto, los botones Open, Save, Print y Undo heredan de Button, que declara doOperation(Document). ¿Qué ventaja da el polimorfismo a la aplicación?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Puede ejecutar a la vez la operación de todos los botones con una sola llamada a doOperation"
+      },
+      {
+        "letra": "B",
+        "texto": "No necesita conocer qué hace cada botón: solo invoca doOperation cuando se pulsa"
+      },
+      {
+        "letra": "C",
+        "texto": "Evita tener que crear una subclase de Button por cada operación distinta de la aplicación"
+      },
+      {
+        "letra": "D",
+        "texto": "Impide que dos botones tengan el mismo icono dentro de la barra de herramientas"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El comportamiento concreto lo aporta cada subclase."
+  },
+  {
+    "id": 191,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S34",
+    "pregunta": "Una pila almacena objetos de tipo Object. Tras hacer «Object o = p.pop();» donde se había guardado un Car, ¿qué hace falta para invocar acelerate?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Nada: el objeto real es un Car y Java ejecuta su método acelerate"
+      },
+      {
+        "letra": "B",
+        "texto": "Declarar la pila con el tipo Car en lugar de Object, pero sin casting"
+      },
+      {
+        "letra": "C",
+        "texto": "Usar instanceof, que convierte automáticamente la referencia a Car"
+      },
+      {
+        "letra": "D",
+        "texto": "Un casting a Car, porque Object no tiene el método acelerate"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Cualquier objeto puede apuntarse con Object, pero se pierde su tipo."
+  },
+  {
+    "id": 192,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S35",
+    "pregunta": "¿Qué ocurre si se hace un casting de una referencia a un tipo derivado y el objeto apuntado no es de ese tipo?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Se produce un error durante la ejecución del programa"
+      },
+      {
+        "letra": "B",
+        "texto": "Java convierte el objeto al tipo derivado, añadiendo propiedades por defecto"
+      },
+      {
+        "letra": "C",
+        "texto": "El código no compila, porque el compilador detecta siempre el casting erróneo"
+      },
+      {
+        "letra": "D",
+        "texto": "El casting devuelve null y el programa continúa"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Para evitarlo se puede comprobar el tipo con instanceof."
+  },
+  {
+    "id": 193,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S39",
+    "pregunta": "¿Cómo se denomina una clase abstracta en la que todos sus métodos son abstractos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Clase final, que no admite subclases"
+      },
+      {
+        "letra": "B",
+        "texto": "Clase interna, definida dentro de otra clase"
+      },
+      {
+        "letra": "C",
+        "texto": "Clase abstracta pura"
+      },
+      {
+        "letra": "D",
+        "texto": "Clase concreta, con todos sus métodos implementados"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Si todos los métodos no tienen implementación, es abstracta pura."
+  },
+  {
+    "id": 194,
+    "tema": 3,
+    "tipo": "diseno",
+    "diapositiva": "T3-S43",
+    "pregunta": "En el diagrama del procesador de texto, Drawable pasa a ser una interfaz sin implementación. ¿Quién implementa entonces el comportamiento de draw?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La clase Document, que es la única que conoce cómo dibujar"
+      },
+      {
+        "letra": "B",
+        "texto": "La propia interfaz, mediante un método por defecto que usan todas"
+      },
+      {
+        "letra": "C",
+        "texto": "La clase WordApp, que decide el comportamiento en cada caso"
+      },
+      {
+        "letra": "D",
+        "texto": "Las clases que derivan de ella, cada una con el comportamiento adecuado"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "La interfaz solo declara draw."
+  },
+  {
+    "id": 195,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S45",
+    "pregunta": "La clase Car implementa las interfaces Cloneable y Comparable. ¿Qué indica esto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que Car hereda la implementación de clone y compareTo de las dos interfaces"
+      },
+      {
+        "letra": "B",
+        "texto": "Que Car no puede tener otros métodos distintos de clone y compareTo"
+      },
+      {
+        "letra": "C",
+        "texto": "Que los objetos Car se pueden clonar y se pueden comparar con otros Car"
+      },
+      {
+        "letra": "D",
+        "texto": "Que Car deriva de dos clases, lo que Java permite si son interfaces"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Herencia múltiple de interfaz."
+  },
+  {
+    "id": 196,
+    "tema": 3,
+    "tipo": "diseno",
+    "diapositiva": "T3-S8",
+    "pregunta": "En el diagrama, Car define acelerate y getSpeed; SportsCar añade turbo; Van añade una propiedad load y el método loadr. ¿Qué métodos tiene un objeto Van?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "acelerate, getSpeed y turbo"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo loadr, porque los métodos de Car pertenecen a Car"
+      },
+      {
+        "letra": "C",
+        "texto": "loadr, acelerate, getSpeed y turbo"
+      },
+      {
+        "letra": "D",
+        "texto": "acelerate, getSpeed y loadr"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Se hereda todo lo visible; solo se añade lo propio."
+  },
+  {
+    "id": 197,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S46",
+    "pregunta": "¿Por qué se introdujeron los métodos default en las interfaces a partir de JDK 8?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para que las interfaces puedan heredar de varias clases a la vez sin problemas de ambigüedad"
+      },
+      {
+        "letra": "B",
+        "texto": "Para añadir un método a una interfaz sin modificar las clases que ya la implementan"
+      },
+      {
+        "letra": "C",
+        "texto": "Para impedir que las clases que implementan la interfaz sobrescriban sus métodos"
+      },
+      {
+        "letra": "D",
+        "texto": "Para permitir que las interfaces tengan propiedades de instancia con valor inicial propio"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Se mantiene la compatibilidad hacia atrás."
+  },
+  {
+    "id": 198,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S47",
+    "pregunta": "Una clase implementa dos interfaces con un método default del mismo nombre y no lo resuelve. ¿Qué hace Java?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Elige la implementación de la última interfaz de la lista, que sobrescribe a las anteriores sin avisar"
+      },
+      {
+        "letra": "B",
+        "texto": "Detecta el problema del diamante y obliga a implementar el método conflictivo en la clase derivada"
+      },
+      {
+        "letra": "C",
+        "texto": "Elige la implementación de la primera interfaz de la lista de implements y descarta las demás"
+      },
+      {
+        "letra": "D",
+        "texto": "Ejecuta ambas implementaciones, una detrás de otra, siguiendo el orden alfabético de las interfaces"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Se resuelve escribiendo el método en la clase."
+  },
+  {
+    "id": 199,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S40",
+    "pregunta": "En el ejemplo de Car abstracta con acelerate abstracto, ¿quién implementa el método acelerate y por qué es útil dejarlo abstracto?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El compilador, que genera una implementación vacía por defecto para que el programa pueda compilar sin errores"
+      },
+      {
+        "letra": "B",
+        "texto": "El cliente que crea los objetos, que lo pasa como parámetro al constructor de cada objeto derivado"
+      },
+      {
+        "letra": "C",
+        "texto": "Las clases derivadas; cada una define su comportamiento y se invoca por polimorfismo desde una referencia a Car"
+      },
+      {
+        "letra": "D",
+        "texto": "La propia clase Car, que lo define una sola vez y todas las derivadas lo reutilizan sin cambios"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Car solo fija la operación."
+  },
+  {
+    "id": 200,
+    "tema": 3,
+    "tipo": "test",
+    "diapositiva": "T3-S19",
+    "pregunta": "En el ejemplo de herencia, la clase SportsCar intenta invocar changeTire() de Car, que es private, y usar wheels. ¿Qué ocurre?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compila, porque SportsCar hereda todos los miembros de Car, privados incluidos, aunque no los vea"
+      },
+      {
+        "letra": "B",
+        "texto": "Error de compilación: los miembros privados de la base no son visibles en la derivada"
+      },
+      {
+        "letra": "C",
+        "texto": "Compila, pero lanza una excepción cuando se ejecuta el método turbo por acceso indebido"
+      },
+      {
+        "letra": "D",
+        "texto": "Compila si SportsCar y Car están en el mismo paquete, al ser accesibles los miembros privados"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Un miembro private no se hereda."
+  }
+]
