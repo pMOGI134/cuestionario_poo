@@ -48,7 +48,7 @@ function prepararPregunta(q) {
 }
 
 function mostrar(id) {
-  ["pantalla-inicio", "pantalla-test", "pantalla-resultados"].forEach((p) => {
+  ["pantalla-login", "pantalla-asignaturas", "pantalla-tests", "pantalla-test", "pantalla-resultados"].forEach((p) => {
     $(p).hidden = p !== id;
   });
   window.scrollTo({ top: 0 });
@@ -125,7 +125,7 @@ function pintarHistorial() {
 /* ---------- carga ---------- */
 
 async function cargarBanco() {
-  const btn = $("btn-empezar");
+  const btn = $("btn-test-temas-1-3");
   try {
     const resp = await fetch("preguntas.json", { cache: "no-cache" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
@@ -133,13 +133,14 @@ async function cargarBanco() {
     if (!Array.isArray(datos) || datos.length < TOTAL) throw new Error("El banco de preguntas es inválido o demasiado pequeño");
     banco = datos;
     btn.disabled = false;
-    btn.textContent = `Empezar test (${TOTAL} preguntas)`;
+    btn.querySelector(".tema-estado").textContent = "Disponible";
   } catch (e) {
     const err = $("error-carga");
     err.hidden = false;
     err.textContent =
       "No se pudo cargar preguntas.json (" + e.message + "). Abre la página desde un servidor local, por ejemplo con «python3 -m http.server», y entra en http://localhost:8000.";
-    btn.textContent = "Preguntas no disponibles";
+    btn.disabled = true;
+    btn.querySelector(".tema-estado").textContent = "No disponible";
   }
 }
 
@@ -249,7 +250,7 @@ function siguiente() {
 function abandonar() {
   if (confirm("¿Abandonar el test? No se guardará ninguna nota.")) {
     pintarHistorial();
-    mostrar("pantalla-inicio");
+    mostrar("pantalla-tests");
   }
 }
 
@@ -393,18 +394,33 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-$("btn-empezar").addEventListener("click", empezar);
+$("btn-test-temas-1-3").addEventListener("click", empezar);
 $("btn-siguiente").addEventListener("click", siguiente);
 $("btn-abandonar").addEventListener("click", abandonar);
 $("btn-repetir").addEventListener("click", empezar);
 $("btn-inicio").addEventListener("click", () => {
   pintarHistorial();
-  mostrar("pantalla-inicio");
+  mostrar("pantalla-tests");
 });
+
+$("btn-asignatura-poo").addEventListener("click", () => mostrar("pantalla-tests"));
+$("btn-volver-asignaturas").addEventListener("click", () => mostrar("pantalla-asignaturas"));
+document.querySelectorAll(".btn-cerrar-sesion").forEach((btn) => btn.addEventListener("click", () => {
+  if (typeof cerrarSesion === "function") cerrarSesion();
+}));
 $("btn-borrar-historial").addEventListener("click", () => {
-  if (confirm("¿Borrar todo el historial de notas?")) {
+  if (confirm("¿Borrar todo el historial local de notas?")) {
     borrarHistorial();
     pintarHistorial();
+  }
+});
+document.addEventListener("sesion-actualizada", (e) => {
+  const user = e.detail && e.detail.user;
+  if (user) {
+    mostrar("pantalla-asignaturas");
+    pintarHistorial();
+  } else {
+    mostrar("pantalla-login");
   }
 });
 

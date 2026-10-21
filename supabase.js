@@ -90,10 +90,18 @@ async function pintarSesion() {
   $$("auth-formulario").hidden = !!user || !sb;
   $$("auth-sesion").hidden = !user;
   $$("auth-aviso").hidden = !!sb;
+  if (!sb) $$("auth-aviso").textContent = "El inicio de sesión no está configurado. Configura Supabase para acceder a las asignaturas.";
   if (user) {
     $$("auth-nombre").textContent = (user.user_metadata && user.user_metadata.nombre) || user.email;
   }
+  document.dispatchEvent(new CustomEvent("sesion-actualizada", { detail: { user } }));
   await pintarHistorialCuenta();
+}
+
+async function cerrarSesion() {
+  if (!sb) return;
+  await sb.auth.signOut();
+  await pintarSesion();
 }
 
 function mensajeAuth(texto) {
@@ -139,9 +147,6 @@ async function accionAuth(registrar) {
 if (sb) {
   $$("btn-entrar").addEventListener("click", () => accionAuth(false));
   $$("btn-registrar").addEventListener("click", () => accionAuth(true));
-  $$("btn-salir").addEventListener("click", async () => {
-    await sb.auth.signOut();
-    pintarSesion();
-  });
+  $$("btn-salir").addEventListener("click", cerrarSesion);
 }
 pintarSesion();

@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cuestionario de POO · Temas 1–3</title>
+  <title>Cuestionarios</title>
   <link rel="stylesheet" href="estilos.css">
   <link rel="stylesheet" href="auth.css">
 </head>
 <body>
   <header class="cabecera">
-    <h1>Cuestionario de POO</h1>
-    <p class="subtitulo">Temas 1–3 · POO, Java y herencia y polimorfismo</p>
+    <h1>Cuestionarios</h1>
+    <p class="subtitulo">Accede a tus asignaturas y tests</p>
   </header>
 
   <main>
-    <!-- Pantalla de inicio -->
-    <section id="pantalla-inicio" class="tarjeta">
-      <h2>Test de 30 preguntas</h2>
-      <p>Cada intento elige 30 preguntas al azar de un banco de 200, con las opciones mezcladas. Mezcla conceptos, análisis de código, diseño/UML, estructura de Java y sintaxis.</p>
-      <p class="nota-pequena">La nota es sobre 10 (aciertos ÷ 30 × 10). Las preguntas sin responder cuentan como fallo.</p>
-
-      <!-- Cuenta de usuario (Supabase) -->
+    <!-- Inicio de sesión -->
+    <section id="pantalla-login" class="tarjeta">
+      <h2>Inicia sesión</h2>
+      <p class="nota-pequena">Entra en tu cuenta para ver las asignaturas y guardar tu progreso.</p>
       <div id="auth">
-        <p id="auth-aviso" class="nota-pequena" hidden>Cuentas no configuradas: el historial solo se guarda en este navegador.</p>
+        <p id="auth-aviso" class="nota-pequena" hidden></p>
         <form id="auth-formulario" onsubmit="return false" hidden>
           <label>Usuario (solo al registrarte)
             <input id="auth-usuario" type="text" autocomplete="nickname">
@@ -44,23 +41,42 @@
             <button id="btn-salir" class="btn btn-texto" type="button">Salir</button>
           </p>
         </div>
-        <div id="historial-cuenta" class="nota-pequena" hidden></div>
       </div>
-
-      <div id="resumen-historial" class="historial" hidden></div>
-      <div class="acciones">
-        <button id="btn-empezar" class="btn btn-principal" type="button" disabled>Cargando preguntas…</button>
-        <button id="btn-borrar-historial" class="btn btn-secundario" type="button" hidden>Borrar historial</button>
-      </div>
-      <p id="error-carga" class="error" hidden></p>
+      <p id="login-error" class="error" hidden></p>
     </section>
 
-    <!-- Pantalla de test -->
+    <!-- Selección de asignatura -->
+    <section id="pantalla-asignaturas" class="tarjeta" hidden>
+      <div class="barra-superior"><div><h2>Asignaturas</h2><p class="nota-pequena">Elige una asignatura para ver sus cuestionarios.</p></div><button class="btn btn-texto btn-cerrar-sesion" type="button">Salir</button></div>
+      <div class="seleccion-temas">
+        <button id="btn-asignatura-poo" class="tarjeta-seleccion tema-disponible" type="button">
+          <span class="tema-estado">Disponible</span><strong>POO</strong><span>Programación Orientada a Objetos</span>
+        </button>
+      </div>
+      <div id="resumen-historial" class="historial" hidden></div>
+      <div class="acciones"><button id="btn-borrar-historial" class="btn btn-secundario" type="button" hidden>Borrar historial local</button></div>
+      <div id="historial-cuenta" class="nota-pequena" hidden></div>
+    </section>
+
+    <!-- Tests de la asignatura -->
+    <section id="pantalla-tests" class="tarjeta" hidden>
+      <div class="barra-superior"><div><p class="nota-pequena">Asignatura</p><h2>POO</h2></div><button id="btn-volver-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button><button class="btn btn-texto btn-cerrar-sesion" type="button">Salir</button></div>
+      <h3>Tests disponibles</h3>
+      <div class="seleccion-temas">
+        <button id="btn-test-temas-1-3" class="tarjeta-seleccion tema-disponible" type="button" disabled>
+          <span class="tema-estado">Cargando preguntas…</span><strong>Test Tema 1-3</strong><span>POO, Java, herencia y polimorfismo · 30 preguntas</span>
+        </button>
+      </div>
+      <p id="error-carga" class="error" hidden></p>
+      <div id="resumen-historial-tests" class="historial" hidden></div>
+    </section>
+
+    <!-- Preguntas -->
     <section id="pantalla-test" class="tarjeta" hidden>
       <div class="barra-superior">
         <span id="contador" class="contador">Pregunta 1 de 30</span>
         <span id="marcador" class="marcador">Aciertos: 0</span>
-        <button id="btn-abandonar" class="btn btn-texto" type="button">Abandonar</button>
+        <button id="btn-abandonar" class="btn btn-texto" type="button">Volver a tests</button>
       </div>
       <div class="progreso" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0" id="progreso">
         <div id="progreso-barra" class="progreso-barra"></div>
@@ -83,7 +99,7 @@
       <p class="atajos">Atajos: A–D (o 1–4) para responder · Intro para continuar</p>
     </section>
 
-    <!-- Pantalla de resultados -->
+    <!-- Resultados -->
     <section id="pantalla-resultados" class="tarjeta" hidden>
       <h2>Resultado</h2>
       <div class="nota-grande">
@@ -102,8 +118,8 @@
       <div id="lista-falladas" class="falladas"></div>
 
       <div class="acciones">
-        <button id="btn-repetir" class="btn btn-principal" type="button">Nuevo test de 30</button>
-        <button id="btn-inicio" class="btn btn-secundario" type="button">Volver al inicio</button>
+        <button id="btn-repetir" class="btn btn-principal" type="button">Repetir test</button>
+        <button id="btn-inicio" class="btn btn-secundario" type="button">Volver a tests</button>
       </div>
     </section>
   </main>
