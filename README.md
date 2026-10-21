@@ -118,14 +118,13 @@ Te jodes, las creo yo, no me toquéis la base de datos.
 - [ ] Añadiremos un emulador de consolas de nintendo por que no
 - [ ] Función tinder.
 
-> Esta lista es orientativa: marca lo que ya esté hecho y añade tus propias ideas.
 
----
 
 ## Tecnologías
 
 HTML5 · CSS3 · JavaScript (vanilla) · JSON
 
 ## Licencia
+Me da igual lo que hagáis con esto la verdad solo es un proyecto personal.
 
 Añade aquí la licencia que prefieras (por ejemplo, MIT) o indica que es de uso personal/educativo.
