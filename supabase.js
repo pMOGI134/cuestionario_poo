@@ -14,7 +14,13 @@ const TEST_ID = "temas-1-3";
 
 const sb =
   window.supabase && SUPABASE_URL.startsWith("https://")
-    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true,
+        },
+      })
     : null;
 
 const $$ = (id) => document.getElementById(id);
@@ -148,5 +154,19 @@ if (sb) {
   $$("btn-entrar").addEventListener("click", () => accionAuth(false));
   $$("btn-registrar").addEventListener("click", () => accionAuth(true));
   $$("btn-salir").addEventListener("click", cerrarSesion);
+  sb.auth.onAuthStateChange((evento) => {
+    if (["INITIAL_SESSION", "SIGNED_IN", "SIGNED_OUT", "TOKEN_REFRESHED"].includes(evento)) {
+      window.setTimeout(() => pintarSesion(), 0);
+    }
+  });
 }
-pintarSesion();
+
+function iniciarPintadoSesion() {
+  pintarSesion();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", iniciarPintadoSesion, { once: true });
+} else {
+  iniciarPintadoSesion();
+}
