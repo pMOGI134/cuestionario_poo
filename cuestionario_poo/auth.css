@@ -1,0 +1,29 @@
+/* Estilos del bloque de cuenta de usuario (se carga después de estilos.css) */
+#auth { margin: 16px 0; }
+
+#auth-formulario label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: .9rem;
+  color: var(--texto-suave);
+}
+
+#auth-formulario input {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 4px;
+  padding: 9px 12px;
+  font: inherit;
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+}
+
+#auth-formulario input:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+#historial-cuenta { margin-top: 8px; font-weight: 600; }

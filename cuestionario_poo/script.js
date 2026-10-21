@@ -1,6 +1,6 @@
 "use strict";
 
-const NIVELES = { facil: 10, medio: 20, dificil: 30 };
+const TOTAL = 30;
 const LETRAS = ["A", "B", "C", "D", "E", "F"];
 const LS_KEY = "poo_historial_v1";
 const TIPOS = {
@@ -14,9 +14,6 @@ const TEMAS = { 1: "Tema 1 · POO", 2: "Tema 2 · Java", 3: "Tema 3 · Herencia 
 
 let banco = [];
 let preguntas = [];
-let totalPreguntas = NIVELES.dificil;
-let nivelElegido = "dificil";
-const NOMBRES_NIVEL = { facil: "Aitor mode", medio: "medio", dificil: "difícil" };
 let indice = 0;
 let respuestas = []; // letra elegida (o null) por pregunta
 let respondida = false;
@@ -128,47 +125,30 @@ function pintarHistorial() {
 /* ---------- carga ---------- */
 
 async function cargarBanco() {
-  const botonesNivel = document.querySelectorAll(".btn-nivel");
+  const btn = $("btn-empezar");
   try {
     const resp = await fetch("preguntas.json", { cache: "no-cache" });
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const datos = await resp.json();
-    if (!Array.isArray(datos) || datos.length < NIVELES.dificil) throw new Error("El banco de preguntas es inválido o demasiado pequeño");
+    if (!Array.isArray(datos) || datos.length < TOTAL) throw new Error("El banco de preguntas es inválido o demasiado pequeño");
     banco = datos;
-    botonesNivel.forEach((btn) => { btn.disabled = false; });
+    btn.disabled = false;
+    btn.textContent = `Empezar test (${TOTAL} preguntas)`;
   } catch (e) {
     const err = $("error-carga");
     err.hidden = false;
     err.textContent =
       "No se pudo cargar preguntas.json (" + e.message + "). Abre la página desde un servidor local, por ejemplo con «python3 -m http.server», y entra en http://localhost:8000.";
-    botonesNivel.forEach((btn) => { btn.disabled = true; });
+    btn.textContent = "Preguntas no disponibles";
   }
-}
-
-function mostrarDificultades() {
-  $("seleccion-tests").hidden = true;
-  $("seleccion-dificultad").hidden = false;
-}
-
-function mostrarTests() {
-  $("seleccion-dificultad").hidden = true;
-  $("seleccion-tests").hidden = false;
-}
-
-function mostrarAsignaturas() {
-  $("seleccion-tests").hidden = true;
-  $("seleccion-dificultad").hidden = true;
-  $("seleccion-lecturas").hidden = false;
 }
 
 /* ---------- test ---------- */
 
 function empezar() {
-  totalPreguntas = NIVELES[nivelElegido];
-  preguntas = barajar(banco).slice(0, totalPreguntas).map(prepararPregunta);
-  respuestas = new Array(totalPreguntas).fill(null);
+  preguntas = barajar(banco).slice(0, TOTAL).map(prepararPregunta);
+  respuestas = new Array(TOTAL).fill(null);
   indice = 0;
-  $("progreso").setAttribute("aria-valuemax", String(totalPreguntas));
   mostrar("pantalla-test");
   pintarPregunta();
 }
@@ -181,9 +161,9 @@ function pintarPregunta() {
   const q = preguntas[indice];
   respondida = false;
 
-  $("contador").textContent = `Pregunta ${indice + 1} de ${totalPreguntas}`;
+  $("contador").textContent = `Pregunta ${indice + 1} de ${TOTAL}`;
   $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
-  $("progreso-barra").style.width = `${(indice / totalPreguntas) * 100}%`;
+  $("progreso-barra").style.width = `${(indice / TOTAL) * 100}%`;
   $("progreso").setAttribute("aria-valuenow", String(indice));
 
   const et = $("etiquetas");
@@ -226,33 +206,6 @@ function pintarPregunta() {
 
   $("explicacion").hidden = true;
   $("btn-siguiente").hidden = true;
-  $("btn-anterior").hidden = indice === 0;
-  if (respuestas[indice]) restaurarRespuesta();
-}
-
-function restaurarRespuesta() {
-  const q = preguntas[indice];
-  const letra = respuestas[indice];
-  const acierto = q.respuestas_correctas.includes(letra);
-  respondida = true;
-
-  document.querySelectorAll("#opciones .opcion").forEach((b) => {
-    b.disabled = true;
-    const l = b.dataset.letra;
-    if (q.respuestas_correctas.includes(l)) b.classList.add("correcta");
-    else if (l === letra) b.classList.add("incorrecta");
-    else b.classList.add("apagada");
-  });
-
-  const ex = $("explicacion");
-  ex.className = "explicacion " + (acierto ? "ok" : "ko");
-  $("veredicto").textContent = acierto ? "✔ Correcto" : `✘ Incorrecto · la respuesta correcta era la ${q.respuestas_correctas.join(", ")}`;
-  $("texto-explicacion").textContent = q.explicacion || "";
-  ex.hidden = false;
-
-  const sig = $("btn-siguiente");
-  sig.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
-  sig.hidden = false;
 }
 
 function responder(letra) {
@@ -278,25 +231,19 @@ function responder(letra) {
 
   $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
   const sig = $("btn-siguiente");
-  sig.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
+  sig.textContent = indice === TOTAL - 1 ? "Ver resultado" : "Siguiente";
   sig.hidden = false;
   sig.focus({ preventScroll: true });
 }
 
 function siguiente() {
   if (!respondida) return;
-  if (indice < totalPreguntas - 1) {
+  if (indice < TOTAL - 1) {
     indice++;
     pintarPregunta();
   } else {
     terminar();
   }
-}
-
-function anterior() {
-  if (indice === 0) return;
-  indice--;
-  pintarPregunta();
 }
 
 function abandonar() {
@@ -346,17 +293,17 @@ function textoOpcion(q, letra) {
 
 function terminar() {
   const aciertos = aciertosHastaAhora();
-  const nota = (aciertos / totalPreguntas) * 10;
+  const nota = (aciertos / TOTAL) * 10;
 
   const historial = leerHistorial();
   const previa = media(historial);
   const tenia = historial.length;
-  historial.push({ fecha: new Date().toISOString(), nota: Math.round(nota * 100) / 100, aciertos, total: totalPreguntas, nivel: nivelElegido });
+  historial.push({ fecha: new Date().toISOString(), nota: Math.round(nota * 100) / 100, aciertos, total: TOTAL });
   const guardado = guardarHistorial(historial);
 
   $("progreso-barra").style.width = "100%";
   $("nota-numero").textContent = formatoNota(nota);
-  $("nota-detalle").textContent = `${aciertos} aciertos, ${totalPreguntas - aciertos} fallos de ${totalPreguntas} preguntas (nivel ${NOMBRES_NIVEL[nivelElegido]}).`;
+  $("nota-detalle").textContent = `${aciertos} aciertos, ${TOTAL - aciertos} fallos de ${TOTAL} preguntas.`;
 
   let hist;
   if (!guardado) {
@@ -411,6 +358,21 @@ function terminar() {
     lista.append(d);
   });
 
+  // Guardado en la cuenta (Supabase). Si no hay sesión o falla la red,
+  // la app sigue funcionando igual con el historial local.
+  if (typeof guardarIntentoRemoto === "function") {
+    const idsFalladas = falladas.map(({ q }) => q.id);
+    guardarIntentoRemoto({ aciertos, total: TOTAL, nota, falladas: idsFalladas }).then((r) => {
+      const extra = r.ok
+        ? " Guardado en tu cuenta."
+        : r.motivo === "sin-sesion"
+        ? " Inicia sesión para guardar tus notas en tu cuenta."
+        : " No se pudo guardar en tu cuenta.";
+      $("nota-historica").textContent += extra;
+      if (r.ok && typeof pintarHistorialCuenta === "function") pintarHistorialCuenta();
+    });
+  }
+
   mostrar("pantalla-resultados");
 }
 
@@ -428,25 +390,11 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "Enter" || e.key === "ArrowRight") {
     e.preventDefault();
     siguiente();
-  } else if (e.key === "ArrowLeft") {
-    e.preventDefault();
-    anterior();
   }
 });
 
-document.querySelectorAll(".btn-nivel").forEach((btn) => btn.addEventListener("click", () => {
-  nivelElegido = btn.dataset.nivel;
-  empezar();
-}));
-$("btn-lectura-poo").addEventListener("click", () => {
-  $("seleccion-lecturas").hidden = true;
-  $("seleccion-tests").hidden = false;
-});
-$("btn-test-poo-1-3").addEventListener("click", mostrarDificultades);
-$("btn-volver-asignaturas").addEventListener("click", mostrarAsignaturas);
-$("btn-volver-tests").addEventListener("click", mostrarTests);
+$("btn-empezar").addEventListener("click", empezar);
 $("btn-siguiente").addEventListener("click", siguiente);
-$("btn-anterior").addEventListener("click", anterior);
 $("btn-abandonar").addEventListener("click", abandonar);
 $("btn-repetir").addEventListener("click", empezar);
 $("btn-inicio").addEventListener("click", () => {

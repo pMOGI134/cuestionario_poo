@@ -3,64 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cuestionarios de todo tipo</title>
+  <title>Cuestionario de POO · Temas 1–3</title>
   <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="auth.css">
 </head>
 <body>
   <header class="cabecera">
-    <h1>Cuestionarios de todo tipo</h1>
-    <p class="subtitulo">Tests para estudiar y poner a prueba lo que sabes</p>
+    <h1>Cuestionario de POO</h1>
+    <p class="subtitulo">Temas 1–3 · POO, Java y herencia y polimorfismo</p>
   </header>
 
   <main>
     <!-- Pantalla de inicio -->
     <section id="pantalla-inicio" class="tarjeta">
-      <div id="seleccion-lecturas">
-        <h2>Elige una asignatura</h2>
-        <p>Selecciona una asignatura para ver sus tests.</p>
-        <div class="seleccion-temas" aria-label="Asignaturas">
-          <button id="btn-lectura-poo" class="tarjeta-seleccion tema-disponible" type="button">
-            <span class="tema-estado">Disponible</span>
-            <strong>POO</strong>
-            <span>Programación orientada a objetos</span>
-          </button>
-          <div class="tarjeta-seleccion tema-proximamente" aria-disabled="true">
-            <span class="tema-estado">Próximamente</span>
-            <strong>Más asignaturas</strong>
-            <span>Añade otras asignaturas cuando estén listas.</span>
+      <h2>Test de 30 preguntas</h2>
+      <p>Cada intento elige 30 preguntas al azar de un banco de 200, con las opciones mezcladas. Mezcla conceptos, análisis de código, diseño/UML, estructura de Java y sintaxis.</p>
+      <p class="nota-pequena">La nota es sobre 10 (aciertos ÷ 30 × 10). Las preguntas sin responder cuentan como fallo.</p>
+
+      <!-- Cuenta de usuario (Supabase) -->
+      <div id="auth">
+        <p id="auth-aviso" class="nota-pequena" hidden>Cuentas no configuradas: el historial solo se guarda en este navegador.</p>
+        <form id="auth-formulario" onsubmit="return false" hidden>
+          <label>Usuario (solo al registrarte)
+            <input id="auth-usuario" type="text" autocomplete="nickname">
+          </label>
+          <label>Email
+            <input id="auth-email" type="email" autocomplete="email">
+          </label>
+          <label>Contraseña (mínimo 8 caracteres)
+            <input id="auth-password" type="password" autocomplete="current-password">
+          </label>
+          <div class="acciones">
+            <button id="btn-entrar" class="btn btn-principal" type="button">Entrar</button>
+            <button id="btn-registrar" class="btn btn-secundario" type="button">Crear cuenta</button>
           </div>
+          <p id="auth-mensaje" class="nota-pequena" role="status"></p>
+        </form>
+        <div id="auth-sesion" hidden>
+          <p>Sesión iniciada: <strong id="auth-nombre"></strong>
+            <button id="btn-salir" class="btn btn-texto" type="button">Salir</button>
+          </p>
         </div>
+        <div id="historial-cuenta" class="nota-pequena" hidden></div>
       </div>
-      <div id="seleccion-tests" hidden>
-        <h2>POO</h2>
-        <p>Elige un test de esta asignatura.</p>
-        <div class="seleccion-temas" aria-label="Tests de POO">
-          <button id="btn-test-poo-1-3" class="tarjeta-seleccion tema-disponible" type="button">
-            <span class="tema-estado">Disponible</span>
-            <strong>POO Test · Temas 1–3</strong>
-            <span>Test de ingeniería del software para gente como Aitor Mouzo. POO, Java, herencia y polimorfismo · 200 preguntas.</span>
-          </button>
-          <div class="tarjeta-seleccion tema-proximamente" aria-disabled="true">
-            <span class="tema-estado">Próximamente</span>
-            <strong>Otros tests de POO</strong>
-            <span>Los nuevos tests aparecerán aquí.</span>
-          </div>
-        </div>
-        <button id="btn-volver-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button>
-      </div>
+
       <div id="resumen-historial" class="historial" hidden></div>
-      <div id="seleccion-dificultad" hidden>
-        <h3 class="titulo-dificultad">Elige la dificultad</h3>
-        <p>Las preguntas y sus opciones se mezclan en cada intento.</p>
-        <p class="nota-pequena">La nota es sobre 10. Las preguntas sin responder cuentan como fallo.</p>
-        <div class="acciones">
-          <button class="btn btn-principal btn-nivel" type="button" data-nivel="facil" data-total="10" disabled>Aitor mode · 10 preguntas</button>
-          <button class="btn btn-principal btn-nivel" type="button" data-nivel="medio" data-total="20" disabled>Medio · 20 preguntas</button>
-          <button class="btn btn-principal btn-nivel" type="button" data-nivel="dificil" data-total="30" disabled>Difícil · 30 preguntas</button>
-          <button id="btn-volver-tests" class="btn btn-secundario" type="button">Volver a tests</button>
-        </div>
-      </div>
       <div class="acciones">
+        <button id="btn-empezar" class="btn btn-principal" type="button" disabled>Cargando preguntas…</button>
         <button id="btn-borrar-historial" class="btn btn-secundario" type="button" hidden>Borrar historial</button>
       </div>
       <p id="error-carga" class="error" hidden></p>
@@ -89,7 +78,6 @@
       </div>
 
       <div class="acciones">
-        <button id="btn-anterior" class="btn btn-secundario" type="button" hidden>Anterior</button>
         <button id="btn-siguiente" class="btn btn-principal" type="button" hidden>Siguiente</button>
       </div>
       <p class="atajos">Atajos: A–D (o 1–4) para responder · Intro para continuar</p>
@@ -114,7 +102,7 @@
       <div id="lista-falladas" class="falladas"></div>
 
       <div class="acciones">
-        <button id="btn-repetir" class="btn btn-principal" type="button">Repetir test</button>
+        <button id="btn-repetir" class="btn btn-principal" type="button">Nuevo test de 30</button>
         <button id="btn-inicio" class="btn btn-secundario" type="button">Volver al inicio</button>
       </div>
     </section>
@@ -124,6 +112,9 @@
     <p>Si abres <code>index.html</code> directamente y no cargan las preguntas, sírvelo con un servidor local (por ejemplo <code>python3 -m http.server</code>) y abre <code>http://localhost:8000</code>.</p>
   </footer>
 
+  <!-- Orden importante: librería de Supabase, luego supabase.js, luego script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
