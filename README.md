@@ -1,4 +1,4 @@
-# 📝 Banco de Tests Universitarios
+# Banco de Tests Universitarios
 
 Aplicación web para practicar con **tests tipo examen**, organizada por asignaturas. Eliges una asignatura, accedes a sus tests y la app genera un cuestionario aleatorio, lo corrige al momento y calcula tu nota.
 
@@ -6,7 +6,7 @@ Es una aplicación 100 % estática (HTML, CSS y JavaScript): no necesita backend
 
 ---
 
-## ✨ Funciones
+##  Funciones
 
 ### Selección de asignatura
 - Pantalla inicial con las asignaturas disponibles.
