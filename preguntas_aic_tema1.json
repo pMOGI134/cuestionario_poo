@@ -1,0 +1,1652 @@
+[
+  {
+    "id": 1,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Cómo se define habitualmente la arquitectura de un computador?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Las unidades funcionales del computador y la forma en que se interconectan para cumplir unas especificaciones dadas"
+      },
+      {
+        "letra": "B",
+        "texto": "Los atributos del computador visibles para el programador, que influyen directamente en la ejecución lógica de sus programas"
+      },
+      {
+        "letra": "C",
+        "texto": "La tecnología con la que se fabrican los circuitos integrados y la frecuencia a la que trabajan"
+      },
+      {
+        "letra": "D",
+        "texto": "El conjunto de señales de control que la unidad de control activa en cada ciclo de reloj"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La arquitectura es lo que ve el programador (repertorio de instrucciones, registros, tipos de datos...). Cómo se implementa eso por dentro es la organización."
+  },
+  {
+    "id": 2,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué describe la organización de un computador?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El formato y el significado de cada una de las instrucciones de ensamblador del procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Los tipos de datos y los modos de direccionamiento que el programador puede utilizar en su código"
+      },
+      {
+        "letra": "C",
+        "texto": "Las unidades operativas y sus interconexiones que implementan las especificaciones de la arquitectura"
+      },
+      {
+        "letra": "D",
+        "texto": "El número de registros que el compilador tiene disponible para guardar las variables de los programas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "La organización es la implementación: unidades funcionales, buses, señales de control, tecnología..."
+  },
+  {
+    "id": 3,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "Un fabricante lanza un procesador nuevo que ejecuta sin modificaciones los programas del modelo anterior, pero con circuitos internos distintos. ¿Qué se mantiene y qué cambia?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Se mantiene la arquitectura y cambia la organización"
+      },
+      {
+        "letra": "B",
+        "texto": "Cambia la arquitectura y se mantiene la organización del modelo anterior"
+      },
+      {
+        "letra": "C",
+        "texto": "Cambian las dos, y la compatibilidad la consigue el sistema operativo al traducir el código"
+      },
+      {
+        "letra": "D",
+        "texto": "Se mantiene la organización, porque el código binario depende del cableado interno"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Si el software binario sigue funcionando, el repertorio visible (arquitectura) es el mismo; lo que cambia es cómo se implementa."
+  },
+  {
+    "id": 4,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1a",
+    "pregunta": "El tamaño de los datos que maneja el procesador (por ejemplo, 32 o 64 bits) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque el programador debe conocerlo para elegir las instrucciones y los tipos de datos"
+      },
+      {
+        "letra": "B",
+        "texto": "Organización, porque depende de la anchura física de los circuitos del camino de datos del procesador"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque lo decide el fabricante al diseñar el chip y el programador no interviene en ello"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque es únicamente una característica de la tecnología de fabricación empleada"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El tamaño de palabra define cómo se representan y operan los datos desde el punto de vista del programador."
+  },
+  {
+    "id": 5,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1b",
+    "pregunta": "Que el repertorio incluya una instrucción de ensamblador para sumar números en coma flotante es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque obliga a incorporar una unidad de coma flotante dentro del procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque el repertorio de instrucciones es visible para el programador"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque es un detalle de implementación que el ensamblador oculta al programador"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque la suma en coma flotante la resuelve siempre el compilador"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Qué instrucciones existen es arquitectura. Cómo se calcula internamente su resultado es organización."
+  },
+  {
+    "id": 6,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1c",
+    "pregunta": "Decidir si la suma en coma flotante se calcula con un sumador específico de coma flotante o con algoritmos basados en aritmética entera es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización: el programador ejecuta la misma instrucción y no ve cómo se resuelve internamente"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque cambia el resultado que obtiene el programador al ejecutar la instrucción"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque determina qué instrucciones aparecen en el repertorio del procesador"
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas, porque un circuito distinto obliga a recompilar todos los programas existentes"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La instrucción (arquitectura) es la misma; el mecanismo que la ejecuta (circuito o algoritmo) es organización."
+  },
+  {
+    "id": 7,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1d",
+    "pregunta": "Que los operandos fuente de las instrucciones aritmético-lógicas deban estar necesariamente en registros (y no en memoria) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque depende de cómo estén conectados los registros a la ALU del procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Organización, porque se trata de una decisión sobre el número de puertos de lectura del banco de registros"
+      },
+      {
+        "letra": "C",
+        "texto": "Ninguna de las dos: es una restricción que impone el sistema operativo al cargar el programa"
+      },
+      {
+        "letra": "D",
+        "texto": "Arquitectura: condiciona cómo debe escribirse el código y qué instrucciones existen en el repertorio"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Es una propiedad del repertorio (visible al programador). El número de puertos del banco sí sería organización."
+  },
+  {
+    "id": 8,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1f",
+    "pregunta": "El número de registros del banco de registros de un procesador es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque depende del tamaño del chip y de la tecnología de fabricación disponible"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque el programador y el compilador ven cuántos registros pueden utilizar"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque los registros son circuitos de almacenamiento internos del procesador"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque el sistema operativo decide el número de registros al arrancar"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Los registros nombrados por las instrucciones forman parte de la arquitectura."
+  },
+  {
+    "id": 9,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1g",
+    "pregunta": "El tiempo que tarda cada instrucción en ejecutarse (todas iguales o unas más lentas que otras) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque las instrucciones más complejas forman parte del repertorio visible al programador"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque el programador debe conocer la duración exacta para que el programa sea correcto"
+      },
+      {
+        "letra": "C",
+        "texto": "Ninguna de las dos, porque el tiempo de ejecución lo fija únicamente la frecuencia del reloj"
+      },
+      {
+        "letra": "D",
+        "texto": "Organización: el repertorio no dice cuánto tarda cada instrucción, eso depende de la implementación"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Que exista una instrucción compleja es arquitectura; cuántos ciclos necesita en un procesador concreto es organización."
+  },
+  {
+    "id": 10,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1h",
+    "pregunta": "Que las instrucciones se ejecuten una a una o que se segmenten (solapándose parcialmente en el tiempo) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque el resultado lógico del programa es el mismo y solo cambia la velocidad"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque el programador debe reordenar su código de forma distinta en cada caso"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque la segmentación añade instrucciones nuevas al repertorio del procesador"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque la segmentación la gestiona por completo el sistema operativo"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La segmentación es una técnica de implementación que no cambia lo que el programador ve."
+  },
+  {
+    "id": 11,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1j",
+    "pregunta": "Que el almacenamiento masivo sea un disco duro magnético (HDD) o una unidad de estado sólido (SSD) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque el programador usa instrucciones de ensamblador distintas para cada tipo de disco"
+      },
+      {
+        "letra": "B",
+        "texto": "Organización, porque es una decisión de implementación del hardware del sistema"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque cambia el repertorio de instrucciones del procesador del computador"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque solo depende del precio del dispositivo y no del diseño"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Es un componente del sistema que se puede cambiar sin alterar el repertorio de instrucciones."
+  },
+  {
+    "id": 12,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1k",
+    "pregunta": "La frecuencia del reloj del procesador es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque determina cuántas instrucciones por segundo ve ejecutarse el programador"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque aparece siempre indicada en el manual del repertorio de instrucciones"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque depende de la implementación y de la tecnología, no del repertorio"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque la frecuencia es una magnitud física ajena al diseño del computador"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Dos implementaciones de la misma arquitectura pueden trabajar a frecuencias distintas."
+  },
+  {
+    "id": 13,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1l",
+    "pregunta": "Que el procesador sea superescalar (capaz de emitir varias instrucciones por ciclo) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque mejora el rendimiento sin cambiar el repertorio ni el resultado de los programas"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque el programador debe indicar en el código qué instrucciones se emiten juntas"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque obliga a definir instrucciones nuevas capaces de ejecutarse en paralelo"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque es una característica del compilador y no del procesador"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Un procesador superescalar ejecuta el mismo código máquina que uno escalar; solo cambia cómo lo implementa."
+  },
+  {
+    "id": 14,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1m",
+    "pregunta": "Disponer o no de memoria caché es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización: es transparente para el programador, que accede a memoria con las mismas instrucciones"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque el programador decide en cada instrucción si el dato se guarda en la caché"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque la caché añade un nivel de direcciones propio que el programa debe manejar"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque la caché la gestiona exclusivamente el disco duro del sistema"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La caché se gestiona por hardware sin que el programador la vea; es una cuestión de organización."
+  },
+  {
+    "id": 15,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1o",
+    "pregunta": "El tamaño de las instrucciones (por ejemplo, 32 bits fijos o longitud variable) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque depende del ancho del bus de instrucciones que se instale en el procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Organización, porque solo afecta a la cantidad de memoria que ocupa cada programa"
+      },
+      {
+        "letra": "C",
+        "texto": "Ninguna de las dos, porque lo decide el ensamblador al traducir cada programa"
+      },
+      {
+        "letra": "D",
+        "texto": "Arquitectura, porque define el formato binario del repertorio de instrucciones"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El formato de las instrucciones es parte del repertorio, es decir, de la arquitectura."
+  },
+  {
+    "id": 16,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1p",
+    "pregunta": "Que el procesador tenga una instrucción llamada «Halt and Catch Fire» (hcf) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque se trata de un efecto que ocurre dentro del hardware del procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque añade una instrucción más al repertorio visible al programador"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque solo afecta al consumo y a la temperatura del chip, no a los programas"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque no es una instrucción real sino un error de diseño"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Que la instrucción exista es arquitectura. Cómo se implemente su efecto sería organización."
+  },
+  {
+    "id": 17,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1r",
+    "pregunta": "El número de transistores de un procesador es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque el programador necesita conocerlo para elegir las instrucciones adecuadas"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque aparece en la definición del repertorio de instrucciones del fabricante"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque es consecuencia de cómo se implementa el diseño con una tecnología concreta"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque el número de transistores solo lo determina el precio del chip"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Dos implementaciones de la misma arquitectura pueden tener números de transistores muy distintos."
+  },
+  {
+    "id": 18,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "HP1-1s",
+    "pregunta": "Que la memoria esté basada en biestables (SRAM) o en condensadores (DRAM) es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque el programador usa instrucciones de acceso distintas para cada tecnología"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque cada tecnología define un repertorio de instrucciones diferente"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque es una decisión sobre la tecnología con que se implementa la memoria"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque la tecnología de la memoria no influye en el diseño del computador"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "El programador accede igual a una memoria SRAM que a una DRAM."
+  },
+  {
+    "id": 19,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1t",
+    "pregunta": "Que exista un mecanismo de predicción de instrucciones de salto condicional es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque el programador debe escribir cada salto indicando si se tomará o no"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque la predicción define el comportamiento de las instrucciones de salto del repertorio"
+      },
+      {
+        "letra": "C",
+        "texto": "Ninguna de las dos, porque la predicción de saltos la realiza el compilador antes de ejecutar"
+      },
+      {
+        "letra": "D",
+        "texto": "Organización, porque no altera el resultado lógico del programa, solo el tiempo que tarda"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Un predictor de saltos es una mejora de implementación, transparente para el programador."
+  },
+  {
+    "id": 20,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1w",
+    "pregunta": "Que existan instrucciones específicas para manipular datos representados en complemento a 2 es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque exigen que la ALU incluya circuitos sumadores y restadores especiales"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque forman parte del repertorio y de los tipos de datos que ve el programador"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque el complemento a 2 es una forma interna de almacenar bits en los registros"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque todas las instrucciones trabajan igual con cualquier representación"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Qué instrucciones y qué representaciones soporta el procesador es arquitectura."
+  },
+  {
+    "id": 21,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-1x",
+    "pregunta": "Que la dirección de memoria de un operando se pueda indicar mediante un registro del banco, o que deba incluirse completa en la propia instrucción, es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque depende de cuántos bits se reserven en el bus de direcciones del procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque son modos de direccionamiento, visibles para el programador"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque se refiere a cómo el hardware calcula internamente la dirección efectiva"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque la dirección la elige el sistema operativo al asignar memoria"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Los modos de direccionamiento forman parte del repertorio de instrucciones, es decir, de la arquitectura."
+  },
+  {
+    "id": 22,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-1z",
+    "pregunta": "Que se usen las mismas instrucciones para leer y escribir en la memoria principal y en los periféricos (E/S asignada en memoria), o instrucciones diferentes, es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque depende de cómo se conecten físicamente los periféricos al bus del sistema"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque cambia qué instrucciones existen y cómo accede el programador a los periféricos"
+      },
+      {
+        "letra": "C",
+        "texto": "Organización, porque el programador no puede distinguir si el dato viene de la memoria o de un periférico"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque los periféricos se gestionan siempre mediante el sistema operativo"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Con E/S aislada hay instrucciones específicas de E/S; con E/S en memoria se usan las de memoria. Es un rasgo del repertorio."
+  },
+  {
+    "id": 23,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1aa",
+    "pregunta": "Poder acceder a un registro del banco en tamaño de palabra, de media palabra o de byte es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque depende del número de bits que tengan los circuitos de cada registro"
+      },
+      {
+        "letra": "B",
+        "texto": "Organización, porque los registros siempre se leen completos y el recorte lo hace el hardware"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque el programador elige el tamaño de acceso en las propias instrucciones"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque el tamaño de acceso lo decide el compilador sin intervención del procesador"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Los tamaños de acceso disponibles son parte del repertorio de instrucciones."
+  },
+  {
+    "id": 24,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1bb",
+    "pregunta": "El orden en el que se conectan las entradas de un multiplexor del camino de datos de un procesador es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Arquitectura, porque determina qué operandos puede seleccionar cada instrucción del programa"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque cambia el orden en que se ejecutan las instrucciones del repertorio"
+      },
+      {
+        "letra": "C",
+        "texto": "Ninguna de las dos, porque los multiplexores solo se usan en circuitos de memoria"
+      },
+      {
+        "letra": "D",
+        "texto": "Organización, porque es un detalle interno de implementación que el programador no puede ver"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Sea cual sea el orden de las entradas, la unidad de control lo compensa: el programador no lo percibe."
+  },
+  {
+    "id": 25,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-1cc",
+    "pregunta": "Una implementación concreta de un procesador usa dos registros internos para almacenar temporalmente datos que el programador no puede nombrar en ninguna instrucción. Esto es una cuestión de:",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Organización, porque son registros de implementación que no forman parte del repertorio"
+      },
+      {
+        "letra": "B",
+        "texto": "Arquitectura, porque los registros son siempre visibles para el programador, sean del tipo que sean"
+      },
+      {
+        "letra": "C",
+        "texto": "Arquitectura, porque un procesador con dos registros más que otro tiene necesariamente otro repertorio"
+      },
+      {
+        "letra": "D",
+        "texto": "Ninguna de las dos, porque los registros temporales no son parte del procesador sino de la memoria"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Solo los registros que las instrucciones pueden nombrar son arquitectura; los internos son organización."
+  },
+  {
+    "id": 26,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-2",
+    "pregunta": "¿Cuál de las siguientes parejas de decisiones de diseño pertenece íntegramente a la arquitectura?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Frecuencia del reloj y número de transistores del procesador"
+      },
+      {
+        "letra": "B",
+        "texto": "Tecnología de la memoria (SRAM o DRAM) y existencia de memoria caché"
+      },
+      {
+        "letra": "C",
+        "texto": "Número de registros del banco y modos de direccionamiento admitidos"
+      },
+      {
+        "letra": "D",
+        "texto": "Predicción de saltos y segmentación del procesador"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Registros y modos de direccionamiento los ve el programador. Las demás parejas son detalles de implementación."
+  },
+  {
+    "id": 27,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-2",
+    "pregunta": "¿Cuál de las siguientes parejas de decisiones de diseño pertenece íntegramente a la organización?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Tamaño de las instrucciones y número de registros del banco"
+      },
+      {
+        "letra": "B",
+        "texto": "Instrucciones de complemento a 2 y modos de direccionamiento"
+      },
+      {
+        "letra": "C",
+        "texto": "Tamaño de los datos y repertorio de instrucciones"
+      },
+      {
+        "letra": "D",
+        "texto": "Segmentación del procesador y tecnología de la memoria (SRAM o DRAM)"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Ni la segmentación ni la tecnología de la memoria son visibles en el repertorio; las demás parejas sí."
+  },
+  {
+    "id": 28,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-2",
+    "pregunta": "Dos procesadores A y B ejecutan exactamente el mismo código máquina y producen los mismos resultados, pero A es segmentado y B no. ¿Qué se puede afirmar con seguridad?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Tienen la misma arquitectura y distinta organización"
+      },
+      {
+        "letra": "B",
+        "texto": "Tienen distinta arquitectura, pero la misma organización interna"
+      },
+      {
+        "letra": "C",
+        "texto": "Tienen distinta arquitectura y distinta organización, porque no pueden compartir código"
+      },
+      {
+        "letra": "D",
+        "texto": "Tienen la misma organización, porque ambos ejecutan el mismo repertorio de instrucciones"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Ejecutar el mismo código máquina implica el mismo repertorio (arquitectura); la segmentación es una diferencia de organización."
+  },
+  {
+    "id": 29,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué ventaja principal ofrece distinguir entre arquitectura y organización?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que dos arquitecturas distintas pueden ejecutar el mismo código máquina sin necesidad de modificarlo ni de traducirlo"
+      },
+      {
+        "letra": "B",
+        "texto": "Que una misma arquitectura puede implementarse con organizaciones distintas manteniendo la compatibilidad del software"
+      },
+      {
+        "letra": "C",
+        "texto": "Que cada mejora de la tecnología obliga a rediseñar y recompilar todo el software que ya existe para el procesador"
+      },
+      {
+        "letra": "D",
+        "texto": "Que ningún fabricante puede cambiar la frecuencia del reloj entre modelos de una misma familia de procesadores"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Es la base de las familias de procesadores: el software se conserva aunque la implementación evolucione."
+  },
+  {
+    "id": 30,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "Intel y AMD fabrican procesadores x86 con diseños internos muy distintos. ¿Qué explica que ambos ejecuten el mismo sistema operativo?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Comparten la arquitectura (el repertorio x86) aunque tengan organizaciones diferentes"
+      },
+      {
+        "letra": "B",
+        "texto": "Comparten la organización interna, aunque sus repertorios de instrucciones difieran"
+      },
+      {
+        "letra": "C",
+        "texto": "Comparten la frecuencia de reloj y el número de transistores de sus procesadores"
+      },
+      {
+        "letra": "D",
+        "texto": "El sistema operativo se recompila automáticamente para cada procesador al arrancar"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El código binario depende del repertorio, no de la implementación."
+  },
+  {
+    "id": 31,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué es el repertorio de instrucciones (ISA) de un procesador?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El conjunto de programas que el sistema operativo incluye para gestionar los recursos del hardware"
+      },
+      {
+        "letra": "B",
+        "texto": "La lista de señales de control que la unidad de control activa durante la ejecución de cada instrucción"
+      },
+      {
+        "letra": "C",
+        "texto": "El conjunto de instrucciones máquina que entiende y ejecuta, con su formato y su significado"
+      },
+      {
+        "letra": "D",
+        "texto": "El conjunto de lenguajes de alto nivel que se pueden compilar para ese procesador concreto"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "ISA = Instruction Set Architecture; es la interfaz entre el software y el hardware."
+  },
+  {
+    "id": 32,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "Un mismo programa en código máquina se ejecuta en un procesador segmentado que gestiona sus conflictos internamente y en otro que no lo está. ¿Qué cambiará entre ambos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El resultado, porque la segmentación altera el orden lógico en que se ejecutan las instrucciones"
+      },
+      {
+        "letra": "B",
+        "texto": "El ensamblador necesario para escribir el programa en cada uno de los dos casos"
+      },
+      {
+        "letra": "C",
+        "texto": "El tiempo de ejecución, pero no el resultado del programa"
+      },
+      {
+        "letra": "D",
+        "texto": "El número de registros que el programa puede utilizar en cada uno de los procesadores"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Misma arquitectura, distinta organización: solo varía el rendimiento."
+  },
+  {
+    "id": 33,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "Según el modelo de von Neumann, ¿dónde se almacenan los programas y los datos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los programas en el disco duro y los datos en la memoria principal"
+      },
+      {
+        "letra": "B",
+        "texto": "En una misma memoria principal"
+      },
+      {
+        "letra": "C",
+        "texto": "En memorias separadas, con buses distintos para instrucciones y para datos"
+      },
+      {
+        "letra": "D",
+        "texto": "Los programas en la memoria ROM y los datos en la memoria caché"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Von Neumann: memoria unificada para instrucciones y datos (programa almacenado)."
+  },
+  {
+    "id": 34,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué diferencia a una arquitectura Harvard de una de von Neumann?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La Harvard usa memorias y buses separados para instrucciones y para datos"
+      },
+      {
+        "letra": "B",
+        "texto": "La Harvard solo admite instrucciones de longitud variable, y la von Neumann solo de longitud fija"
+      },
+      {
+        "letra": "C",
+        "texto": "La von Neumann no puede ejecutar programas almacenados en memoria, y la Harvard sí"
+      },
+      {
+        "letra": "D",
+        "texto": "La Harvard carece de unidad de control, que sustituye por un microcódigo almacenado"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Harvard permite acceder a instrucciones y datos a la vez al tener memorias independientes."
+  },
+  {
+    "id": 35,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué bloques básicos componen un computador según el modelo de von Neumann?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Compilador, ensamblador y cargador, conectados mediante el sistema operativo"
+      },
+      {
+        "letra": "B",
+        "texto": "Procesador, memoria y sistema de entrada/salida, conectados mediante buses"
+      },
+      {
+        "letra": "C",
+        "texto": "ALU, memoria caché y disco duro, conectados directamente entre sí"
+      },
+      {
+        "letra": "D",
+        "texto": "Sistema operativo, aplicaciones y controladores de dispositivos de entrada/salida"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "CPU + memoria + E/S, comunicados por buses."
+  },
+  {
+    "id": 36,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "HP1-1e",
+    "pregunta": "En una arquitectura de tipo load/store, ¿qué afirmación es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Las instrucciones aritméticas pueden operar directamente con operandos situados en la memoria principal del sistema"
+      },
+      {
+        "letra": "B",
+        "texto": "Las cargas y los almacenamientos solo funcionan cuando el dato ya se encuentra almacenado en la memoria caché"
+      },
+      {
+        "letra": "C",
+        "texto": "El resultado de una suma se escribe siempre en memoria principal, nunca en un registro del banco"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo las instrucciones de carga y almacenamiento acceden a memoria; las aritmético-lógicas operan con registros"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "En load/store (como MIPS), operandos y resultados de la ALU están en registros."
+  },
+  {
+    "id": 37,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Cuál es una característica típica de una arquitectura RISC?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Una gran variedad de instrucciones complejas de longitud variable que acceden directamente a memoria"
+      },
+      {
+        "letra": "B",
+        "texto": "La ausencia de registros de propósito general, sustituidos por una pila en memoria"
+      },
+      {
+        "letra": "C",
+        "texto": "La imposibilidad de segmentar el procesador por la simplicidad de sus instrucciones"
+      },
+      {
+        "letra": "D",
+        "texto": "Un repertorio reducido de instrucciones sencillas, normalmente de formato fijo"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "RISC: instrucciones simples, formato regular, load/store y muchos registros."
+  },
+  {
+    "id": 38,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Por qué resulta más sencillo segmentar un procesador RISC que uno CISC?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque el repertorio RISC incluye instrucciones específicas para controlar cada etapa de la segmentación"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque sus instrucciones, simples y de formato regular, tardan tiempos parecidos y se decodifican fácilmente"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque un procesador RISC trabaja siempre a una frecuencia de reloj mayor que cualquier procesador CISC"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque un RISC no incluye instrucciones de salto, que son las que más complican la segmentación del procesador"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La regularidad de RISC facilita repartir el trabajo en etapas equilibradas."
+  },
+  {
+    "id": 39,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "calculo",
+    "dificultad": "medio",
+    "diapositiva": "T1-calculo",
+    "pregunta": "Un programa ejecuta 2·10^9 instrucciones con un CPI medio de 1,5 en un procesador a 3 GHz. ¿Cuánto tarda en ejecutarse?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "1 s"
+      },
+      {
+        "letra": "B",
+        "texto": "0,67 s"
+      },
+      {
+        "letra": "C",
+        "texto": "0,44 s"
+      },
+      {
+        "letra": "D",
+        "texto": "4,5 s"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "T = N · CPI / f = 2·10^9 · 1,5 / 3·10^9 = 1 s."
+  },
+  {
+    "id": 40,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "calculo",
+    "dificultad": "medio",
+    "diapositiva": "T1-calculo",
+    "pregunta": "Un procesador a 2 GHz ejecuta un programa en 3 s con un CPI medio de 2. ¿Cuántas instrucciones ejecuta el programa?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "6·10^9"
+      },
+      {
+        "letra": "B",
+        "texto": "1,2·10^10"
+      },
+      {
+        "letra": "C",
+        "texto": "3·10^9"
+      },
+      {
+        "letra": "D",
+        "texto": "1,5·10^9"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "N = T · f / CPI = 3 · 2·10^9 / 2 = 3·10^9."
+  },
+  {
+    "id": 41,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "calculo",
+    "dificultad": "dificil",
+    "diapositiva": "T1-calculo",
+    "pregunta": "Un programa tarda 10 s en un procesador A (2 GHz, CPI = 3). En un procesador B (1,5 GHz, CPI = 1,5) se ejecuta el mismo número de instrucciones. ¿Cuánto tarda en B?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "5 s"
+      },
+      {
+        "letra": "B",
+        "texto": "7,5 s"
+      },
+      {
+        "letra": "C",
+        "texto": "15 s"
+      },
+      {
+        "letra": "D",
+        "texto": "Aproximadamente 6,67 s"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "T_B / T_A = (CPI_B / f_B) / (CPI_A / f_A) = (1,5/1,5) / (3/2) = 1/1,5, así que T_B = 10 / 1,5 ≈ 6,67 s."
+  },
+  {
+    "id": 42,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "calculo",
+    "dificultad": "dificil",
+    "diapositiva": "T1-calculo",
+    "pregunta": "Se mejora un procesador de modo que una fracción 0,6 del tiempo de ejecución de un programa pasa a ejecutarse 3 veces más rápido. Según la ley de Amdahl, ¿cuál es la aceleración global?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "3,00"
+      },
+      {
+        "letra": "B",
+        "texto": "2,20"
+      },
+      {
+        "letra": "C",
+        "texto": "1,36"
+      },
+      {
+        "letra": "D",
+        "texto": "Aproximadamente 1,67"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "S = 1 / ((1 - 0,6) + 0,6/3) = 1 / 0,6 ≈ 1,67. Mejorar solo una parte limita la aceleración total."
+  },
+  {
+    "id": 43,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué significa CPI en el estudio del rendimiento de un procesador?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El número medio de ciclos de reloj que necesita cada instrucción"
+      },
+      {
+        "letra": "B",
+        "texto": "El número de instrucciones que se completan en cada ciclo de memoria"
+      },
+      {
+        "letra": "C",
+        "texto": "La cantidad de instrucciones por segundo que el procesador puede procesar"
+      },
+      {
+        "letra": "D",
+        "texto": "El número de instrucciones de un programa dividido entre los ciclos de compilación"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "CPI = ciclos por instrucción. Es una medida ligada a la organización."
+  },
+  {
+    "id": 44,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Por qué los MIPS (millones de instrucciones por segundo) no sirven para comparar procesadores de arquitecturas distintas?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque solo pueden medirse con programas escritos íntegramente en ensamblador"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque no dependen de la frecuencia del reloj ni del número de ciclos por instrucción"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque una instrucción de una arquitectura puede hacer mucho más trabajo que una de otra"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque cuentan los ciclos de acceso a memoria y no las instrucciones ejecutadas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Contar instrucciones sin considerar su complejidad lleva a conclusiones engañosas entre arquitecturas distintas."
+  },
+  {
+    "id": 45,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "facil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Por qué existe una jerarquía de memoria formada por registros, caché, memoria principal y disco?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque cada instrucción del repertorio exige un tipo de memoria distinto para poder ejecutarse correctamente"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque el sistema operativo no puede gestionar una memoria única y uniforme en toda la máquina"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque las memorias más rápidas son más caras y más pequeñas, y se combinan para lograr buen rendimiento a coste razonable"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque las memorias rápidas son baratas y abundantes, pero menos fiables que las memorias lentas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Compromiso entre velocidad, capacidad y coste."
+  },
+  {
+    "id": 46,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "medio",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué afirma, en esencia, la ley de Moore?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que la frecuencia de reloj de los procesadores se duplica aproximadamente cada dos años"
+      },
+      {
+        "letra": "B",
+        "texto": "Que el número de transistores de un circuito integrado se duplica aproximadamente cada dos años"
+      },
+      {
+        "letra": "C",
+        "texto": "Que el coste de los computadores se reduce a la mitad cada año"
+      },
+      {
+        "letra": "D",
+        "texto": "Que la velocidad de los programas se duplica con cada nueva versión del compilador"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Es una observación empírica sobre la integración de transistores, no una ley física."
+  },
+  {
+    "id": 47,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-1f",
+    "pregunta": "Un fabricante reduce el banco de un procesador de 32 a 16 registros manteniendo todo lo demás. ¿Qué afirmación es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Cambia solo la organización, porque los registros son circuitos de almacenamiento internos"
+      },
+      {
+        "letra": "B",
+        "texto": "No cambia nada visible, porque el compilador reasigna los registros durante la ejecución"
+      },
+      {
+        "letra": "C",
+        "texto": "Cambia la arquitectura, y el software compilado para el modelo anterior puede dejar de funcionar"
+      },
+      {
+        "letra": "D",
+        "texto": "Cambia solo la organización, y el software se ejecuta igual aunque algo más despacio"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Los registros que el programador puede nombrar son arquitectura; reducirlos rompe la compatibilidad binaria."
+  },
+  {
+    "id": 48,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-1m",
+    "pregunta": "A un procesador se le añade una caché de datos mayor y un predictor de saltos mejor, sin tocar el repertorio ni los formatos. ¿Qué ocurre con el software existente?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Debe recompilarse, porque el compilador necesita conocer el tamaño de la caché para que el programa sea correcto"
+      },
+      {
+        "letra": "B",
+        "texto": "Deja de ser compatible, porque la caché cambia las direcciones de memoria que ve el programa"
+      },
+      {
+        "letra": "C",
+        "texto": "Se ejecuta igual de rápido, porque solo la arquitectura influye en el rendimiento"
+      },
+      {
+        "letra": "D",
+        "texto": "Se ejecuta sin cambios, probablemente más rápido, porque solo ha cambiado la organización"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Mejoras de organización mantienen la compatibilidad y pueden aumentar el rendimiento."
+  },
+  {
+    "id": 49,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "T1-teoria",
+    "pregunta": "¿Qué afirmación sobre la relación entre arquitectura y rendimiento es más acertada?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Depende de ambas: el repertorio condiciona el número de instrucciones y la organización los ciclos por instrucción y la frecuencia"
+      },
+      {
+        "letra": "B",
+        "texto": "Depende solo de la organización, porque la arquitectura no afecta en absoluto a la velocidad de ejecución"
+      },
+      {
+        "letra": "C",
+        "texto": "Depende solo de la arquitectura, porque la organización es invisible para el programador y para el compilador"
+      },
+      {
+        "letra": "D",
+        "texto": "Depende únicamente de la frecuencia de reloj del procesador, sea cual sea su diseño interno o su repertorio"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "T = N · CPI / f: N lo influye el repertorio y el compilador; CPI y f dependen de la implementación."
+  },
+  {
+    "id": 50,
+    "asignatura": "AIC",
+    "tema": 1,
+    "tipo": "test",
+    "dificultad": "dificil",
+    "diapositiva": "HP1-1e",
+    "pregunta": "Un procesador exige que todo resultado aritmético se guarde en un registro. Otro permite guardarlo directamente en memoria. ¿Qué diferencia hay entre ambos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Tienen la misma arquitectura y distinta organización, porque ambos calculan la misma operación"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo se diferencian en la frecuencia de reloj, no en el diseño lógico del repertorio"
+      },
+      {
+        "letra": "C",
+        "texto": "Tienen la misma organización, porque ambos disponen de ALU y de memoria principal"
+      },
+      {
+        "letra": "D",
+        "texto": "Son arquitecturas distintas, porque cambia lo que el programador puede expresar con las instrucciones"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Dónde puede dejar el resultado una instrucción es parte de su definición, es decir, del repertorio."
+  }
+]

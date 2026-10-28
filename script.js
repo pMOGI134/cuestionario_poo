@@ -16,6 +16,32 @@ const ASIGNATURAS = [
       },
     ],
   },
+  {
+    id: 'aic',
+    nombre: 'AIC',
+    descripcion: 'Arquitectura e Ingenieria de Computadores',
+    tests: [
+      {
+        id: 'tema-1',
+        nombre: 'Test Tema 1',
+        descripcion: 'Cuestionario de AIC - Tema 1',
+        archivo: 'preguntas_aic_tema1.json',
+      },
+    ],
+  },
+  {
+    id: 'fundamentos-web',
+    nombre: 'Fundamentos web',
+    descripcion: 'Fundamentos web, JavaScript y Node.js',
+    tests: [
+      {
+        id: 'javascript-node',
+        nombre: 'JavaScript y Node.js',
+        descripcion: 'Cuestionario de Fundamentos web',
+        archivo: 'preguntas_fw_js_node.json',
+      },
+    ],
+  },
 ];
 const TIPOS = {
   test: "Concepto",
@@ -26,6 +52,7 @@ const TIPOS = {
 };
 const TEMAS = { 1: "Tema 1 · POO", 2: "Tema 2 · Java", 3: "Tema 3 · Herencia y polimorfismo" };
 
+let modoInvitado = false;
 let banco = [];
 let preguntas = [];
 let asignaturaActual = null;
@@ -520,10 +547,20 @@ $("btn-inicio").addEventListener("click", () => {
   mostrar("pantalla-tests");
 });
 
+$("btn-invitado").addEventListener("click", () => {
+  modoInvitado = true;
+  mostrar("pantalla-asignaturas");
+  pintarHistorial();
+});
 $("btn-volver-asignaturas").addEventListener("click", () => mostrar("pantalla-asignaturas"));
 $("btn-volver-lista-tests").addEventListener("click", () => pintarTests());
 document.querySelectorAll(".btn-cerrar-sesion").forEach((btn) => btn.addEventListener("click", () => {
-  if (typeof cerrarSesion === "function") cerrarSesion();
+  if (modoInvitado) {
+    modoInvitado = false;
+    mostrar("pantalla-login");
+  } else if (typeof cerrarSesion === "function") {
+    cerrarSesion();
+  }
 }));
 $("btn-borrar-historial").addEventListener("click", () => {
   if (confirm("¿Borrar todo el historial local de notas?")) {
@@ -534,9 +571,10 @@ $("btn-borrar-historial").addEventListener("click", () => {
 document.addEventListener("sesion-actualizada", (e) => {
   const user = e.detail && e.detail.user;
   if (user) {
+    modoInvitado = false;
     mostrar("pantalla-asignaturas");
     pintarHistorial();
-  } else {
+  } else if (!modoInvitado) {
     mostrar("pantalla-login");
   }
 });

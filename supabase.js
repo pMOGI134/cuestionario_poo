@@ -86,9 +86,10 @@ async function pintarHistorialCuenta() {
 async function pintarSesion() {
   const user = await usuarioActual();
   $$("auth-formulario").hidden = !!user || !sb;
+  $$("btn-invitado").hidden = !!user;
   $$("auth-sesion").hidden = !user;
   $$("auth-aviso").hidden = !!sb;
-  if (!sb) $$("auth-aviso").textContent = "El inicio de sesión no está configurado. Configura Supabase para acceder a las asignaturas.";
+  if (!sb) $$("auth-aviso").textContent = "El inicio de sesion no esta configurado. Puedes acceder como invitado.";
   if (user) {
     $$("auth-nombre").textContent = (user.user_metadata && user.user_metadata.nombre) || user.email;
   }

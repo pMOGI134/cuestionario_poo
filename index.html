@@ -24,6 +24,7 @@
           <label>Usuario (solo al registrarte)
             <input id="auth-usuario" type="text" autocomplete="nickname">
           </label>
+          <p class="nota-pequena aviso-seguridad">No pongas la contraseña real de tu correo. Inventa una fácil de recordar, como "12345678".</p>
           <label>Email
             <input id="auth-email" type="email" autocomplete="email">
           </label>
@@ -36,6 +37,7 @@
           </div>
           <p id="auth-mensaje" class="nota-pequena" role="status"></p>
         </form>
+        <button id="btn-invitado" class="btn btn-secundario" type="button" hidden>Entrar como invitado</button>
         <div id="auth-sesion" hidden>
           <p>Sesión iniciada: <strong id="auth-nombre"></strong>
             <button id="btn-salir" class="btn btn-texto" type="button">Salir</button>
@@ -137,7 +139,7 @@
   </main>
 
   <footer class="pie">
-    <p>Si abres <code>index.html</code> directamente y no cargan las preguntas, sírvelo con un servidor local (por ejemplo <code>python3 -m http.server</code>) y abre <code>http://localhost:8000</code>.</p>
+    <p>Esta página fue creada por un gay para otros gays. Mi built de Marauder es la puta ostia la verdad. Pokesurvivor es mid. #Odio la pera</p>
   </footer>
 
   <!-- Orden importante: librería de Supabase, luego supabase.js, luego script.js -->
