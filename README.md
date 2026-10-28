@@ -9,7 +9,10 @@ Aplicación web para practicar con **tests tipo examen**, organizada por asignat
 ### Selección de asignatura
 - Pantalla inicial con las asignaturas disponibles.
 - Al elegir una asignatura se accede a la lista de **tests** de esa asignatura.
-- Actualmente disponible: **POO (Programación Orientada a Objetos)**.
+- Actualmente disponible:
+-  **POO (Programación Orientada a Objetos)**.
+-  **AIC (Arquitectura e Ingeniería de Computadores)**
+-  **F.WEB (Fundamentos de la WEB)**
 
 ### Tests
 - Cada test tiene su propio banco de preguntas en un archivo `.json`.
