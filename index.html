@@ -72,13 +72,22 @@
       <div id="lista-tests" class="seleccion-temas"></div>
       <div id="selector-modo" class="selector-modo" hidden>
         <h3 id="nombre-test-modo"></h3>
-        <p class="nota-pequena">Elige la cantidad de preguntas y la dificultad del test.</p>
-        <div class="seleccion-temas modos-dificultad">
+        <p id="texto-modo-ayuda" class="nota-pequena">Elige la cantidad de preguntas y la dificultad del test.</p>
+        <div id="modos-dificultad" class="seleccion-temas modos-dificultad">
           <button class="tarjeta-seleccion tema-disponible modo-cantidad" data-total="10" type="button" disabled><strong>10 preguntas · Modo Aitor</strong><span>Práctica facilita</span></button>
           <button class="tarjeta-seleccion tema-disponible modo-cantidad" data-total="20" type="button" disabled><strong>20 preguntas · Medio</strong><span>Nivel Intermedio</span></button>
           <button class="tarjeta-seleccion tema-disponible modo-cantidad" data-total="30" type="button" disabled><strong>30 preguntas · Pro</strong><span>Nivel Gutu</span></button>
         </div>
         <p id="estado-banco" class="nota-pequena" role="status">Cargando preguntas…</p>
+        <section id="intro-aic" class="tarjeta" hidden>
+          <h3>Antes de empezar: arquitectura y organizaci&oacute;n</h3>
+          <p><strong>Arquitectura</strong> es lo que ve el programador: los atributos del computador que influyen en c&oacute;mo se escriben y se ejecutan sus programas. Incluye el repertorio de instrucciones (ISA) y su formato, los registros, los tipos de datos, los modos de direccionamiento y el tama&ntilde;o de palabra. Si cambia, el software compilado para el modelo anterior puede dejar de funcionar.</p>
+          <p><strong>Organizaci&oacute;n</strong> es c&oacute;mo se implementa esa arquitectura por dentro: las unidades funcionales y sus interconexiones, las se&ntilde;ales de control y la tecnolog&iacute;a. Incluye la segmentaci&oacute;n, la cach&eacute;, el predictor de saltos, la frecuencia de reloj, el n&uacute;mero de transistores y el tipo de memoria (SRAM o DRAM). El programador no la ve, y si cambia, los programas siguen funcionando igual, aunque quiz&aacute; m&aacute;s r&aacute;pido o m&aacute;s lento.</p>
+          <div class="acciones">
+            <button id="btn-comenzar-aic" class="btn btn-principal" type="button">Comenzar</button>
+            <button id="btn-cambiar-cantidad-aic" class="btn btn-secundario" type="button">Elegir otra cantidad</button>
+          </div>
+        </section>
         <button id="btn-volver-lista-tests" class="btn btn-secundario" type="button">Volver a tests</button>
       </div>
       <div id="resumen-historial-tests" class="historial" hidden></div>

@@ -243,13 +243,24 @@ function pintarTests() {
     boton.append(estado, nombre, descripcion);
     boton.addEventListener("click", async () => {
       testActual = test;
+      $("modos-dificultad").hidden = false;
+      $("estado-banco").hidden = false;
+      $("intro-aic").hidden = true;
+      $("texto-modo-ayuda").hidden = false;
       banco = [];
       $("nombre-test-modo").textContent = test.nombre;
       lista.hidden = true;
       $("selector-modo").hidden = false;
       document.querySelectorAll(".modo-cantidad").forEach((opcion) => { opcion.disabled = true; });
       $("estado-banco").textContent = "Cargando preguntas…";
-      await cargarBanco(test);
+      const bancoCargado = await cargarBanco(test);
+      if (bancoCargado && asignaturaActual && asignaturaActual.id === "aic") {
+        totalPreguntas = Math.min(30, banco.length);
+        $("modos-dificultad").hidden = true;
+        $("estado-banco").hidden = true;
+        $("intro-aic").hidden = false;
+        $("texto-modo-ayuda").hidden = true;
+      }
       pintarHistorial();
     });
     lista.append(boton);
@@ -530,8 +541,22 @@ document.addEventListener("keydown", (e) => {
 
 document.querySelectorAll(".modo-cantidad").forEach((btn) => btn.addEventListener("click", () => {
   totalPreguntas = Number(btn.dataset.total);
-  empezar();
+  if (asignaturaActual && asignaturaActual.id === "aic") {
+    $("modos-dificultad").hidden = true;
+    $("estado-banco").hidden = true;
+    $("intro-aic").hidden = false;
+    $("texto-modo-ayuda").hidden = true;
+  } else {
+    empezar();
+  }
 }));
+$("btn-comenzar-aic").addEventListener("click", empezar);
+$("btn-cambiar-cantidad-aic").addEventListener("click", () => {
+  $("intro-aic").hidden = true;
+  $("texto-modo-ayuda").hidden = false;
+  $("modos-dificultad").hidden = false;
+  $("estado-banco").hidden = false;
+});
 $("btn-siguiente").addEventListener("click", siguiente);
 $("btn-anterior").addEventListener("click", () => {
   if (indice > 0) {
