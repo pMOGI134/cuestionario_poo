@@ -103,6 +103,11 @@ function claveHistorial() {
   return `${LS_KEY}_${asignaturaActual.id}_${testActual ? testActual.id : "general"}`;
 }
 
+function nombreTema(tema) {
+  if (asignaturaActual && asignaturaActual.id === "poo") return TEMAS[tema] || `Tema ${tema} · POO`;
+  return `Tema ${tema} · ${asignaturaActual ? asignaturaActual.nombre : ""}`;
+}
+
 function formatoNota(n) {
   return n.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
@@ -297,7 +302,7 @@ function pintarPregunta() {
   et.innerHTML = "";
   const bTema = document.createElement("span");
   bTema.className = "badge badge-tema";
-  bTema.textContent = TEMAS[q.tema] || `Tema ${q.tema}`;
+  bTema.textContent = nombreTema(q.tema);
   const bTipo = document.createElement("span");
   bTipo.className = "badge badge-tipo";
   bTipo.textContent = TIPOS[q.tipo] || q.tipo;
@@ -429,7 +434,10 @@ function desglosar(destino, clave, etiquetas) {
   destino.innerHTML = "";
   Object.keys(acum)
     .sort()
-    .forEach((k) => destino.append(filaDesglose(etiquetas[k] || String(k), acum[k].ok, acum[k].total)));
+    .forEach((k) => {
+      const etiqueta = clave === "tema" ? nombreTema(k) : etiquetas[k] || String(k);
+      destino.append(filaDesglose(etiqueta, acum[k].ok, acum[k].total));
+    });
 }
 
 function textoOpcion(q, letra) {
@@ -447,6 +455,7 @@ function terminar() {
   historial.push({ fecha: new Date().toISOString(), nota: Math.round(nota * 100) / 100, aciertos, total: totalPreguntas });
   const guardado = guardarHistorial(historial);
 
+  $("titulo-resultado").textContent = `${asignaturaActual.nombre} - ${testActual.nombre}`;
   $("progreso-barra").style.width = "100%";
   $("nota-numero").textContent = formatoNota(nota);
   $("nota-detalle").textContent = `${aciertos} aciertos, ${totalPreguntas - aciertos} fallos de ${totalPreguntas} preguntas.`;
