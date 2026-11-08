@@ -40,6 +40,12 @@ const ASIGNATURAS = [
         descripcion: 'Cuestionario de Fundamentos web',
         archivo: 'preguntas_fw_js_node.json',
       },
+      {
+        id: 'bases-datos-mongodb',
+        nombre: 'Bases de datos y MongoDB',
+        descripcion: 'Cuestionario de Fundamentos web - Temas 6 y 7',
+        archivo: 'preguntas_fw_bd_mongodb.json',
+      },
     ],
   },
 ];

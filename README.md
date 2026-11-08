@@ -33,6 +33,7 @@ Cada asignatura tiene su propio archivo JSON, con el mismo formato
 |---|---|---:|
 | POO (Temas 1–3) | `preguntas.json` | 200 |
 | FW · JavaScript y Node (Temas 1–5) | `preguntas_fw_js_node.json` | 261 |
+| FW · Bases de datos y MongoDB (Temas 6–7) | `preguntas_fw_bd_mongodb.json` | 62 |
 | AIC · Arquitectura e Ingeniería de Computadores (Tema 1) | `preguntas_aic_tema1.json` | 50 |
 
 ---
@@ -75,6 +76,17 @@ Banco de 261 preguntas basadas en el Bloque III de la asignatura (tecnologías d
 - **Encontrar el error (52):** qué falla en un fragmento de código y por qué.
 
 Todas las preguntas de análisis de código y de errores se han comprobado ejecutándolas con Node.js 22.
+
+---
+
+## FW · Bases de datos y MongoDB (Temas 6–7)
+
+Banco de 62 preguntas sobre bases de datos en aplicaciones web y MongoDB: 19 fáciles, 29 medias y 14 difíciles.
+
+| Tema | Contenido | Preguntas |
+|---|---|---:|
+| 6 | Bases de datos en aplicaciones web | 23 |
+| 7 | MongoDB | 39 |
 
 ---
 
@@ -184,5 +196,4 @@ HTML5 · CSS3 · JavaScript (vanilla) · JSON
 
 ## Licencia
 Me da igual lo que hagáis con esto la verdad solo es un proyecto personal.
-
 
