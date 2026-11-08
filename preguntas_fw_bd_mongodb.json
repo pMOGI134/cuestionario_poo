@@ -1,0 +1,2048 @@
+[
+  {
+    "id": 262,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Para qué se utiliza una base de datos en una aplicación web?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para almacenar (persistir) información y permitir un acceso posterior a ella"
+      },
+      {
+        "letra": "B",
+        "texto": "Para generar las páginas HTML que se envían al navegador del usuario"
+      },
+      {
+        "letra": "C",
+        "texto": "Para ejecutar el código JavaScript del servidor de forma más rápida"
+      },
+      {
+        "letra": "D",
+        "texto": "Para sustituir al navegador como cliente de la aplicación web"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Una base de datos es un programa que guarda la información de forma persistente y ofrece consultas avanzadas."
+  },
+  {
+    "id": 263,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué ofrecen los sistemas de bases de datos además de guardar la información?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un entorno de ejecución para programas escritos en JavaScript"
+      },
+      {
+        "letra": "B",
+        "texto": "Un sistema de módulos para dividir el código en varios ficheros"
+      },
+      {
+        "letra": "C",
+        "texto": "Mecanismos avanzados de consulta sobre la información almacenada"
+      },
+      {
+        "letra": "D",
+        "texto": "Un servidor web que atiende las peticiones HTTP de los clientes"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Las bases de datos permiten consultar la información con distintos criterios, no solo almacenarla."
+  },
+  {
+    "id": 264,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué ventaja tiene que varios servicios accedan a la misma base de datos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo un servicio puede leer mientras el resto espera su turno siempre"
+      },
+      {
+        "letra": "B",
+        "texto": "Pueden acceder a la vez, sin interferencias entre ellos"
+      },
+      {
+        "letra": "C",
+        "texto": "Los servicios dejan de necesitar un identificador para sus datos"
+      },
+      {
+        "letra": "D",
+        "texto": "Cada servicio recibe una copia independiente que nunca se sincroniza"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Varios servicios (y varias tareas del mismo servicio) pueden acceder a la vez sin interferencias."
+  },
+  {
+    "id": 265,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Cuál de estas ventajas de centralizar la información en una base de datos se menciona en el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La información se guarda siempre en el navegador de cada usuario"
+      },
+      {
+        "letra": "B",
+        "texto": "Se elimina la necesidad de hacer copias de seguridad de los datos"
+      },
+      {
+        "letra": "C",
+        "texto": "Es más sencillo hacer copias de seguridad, auditorías y análisis"
+      },
+      {
+        "letra": "D",
+        "texto": "Los datos solo pueden guardarse como texto plano sin formato"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "La información centralizada y actualizada facilita copias de seguridad, auditorías y análisis."
+  },
+  {
+    "id": 266,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué tipos de información puede almacenar una base de datos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo ficheros HTML y hojas de estilo CSS"
+      },
+      {
+        "letra": "B",
+        "texto": "Texto, números, información binaria, XML, JSON, etc."
+      },
+      {
+        "letra": "C",
+        "texto": "Únicamente cadenas de texto y números enteros"
+      },
+      {
+        "letra": "D",
+        "texto": "Exclusivamente documentos en formato JSON"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La información puede estar en forma de texto, números, datos binarios, XML, JSON, etc."
+  },
+  {
+    "id": 267,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué dos grandes tipos de bases de datos se distinguen en el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Relacionales y NoSQL"
+      },
+      {
+        "letra": "B",
+        "texto": "Estáticas y dinámicas"
+      },
+      {
+        "letra": "C",
+        "texto": "Gratuitas y de pago"
+      },
+      {
+        "letra": "D",
+        "texto": "Locales y remotas"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El tema distingue las bases de datos relacionales de las NoSQL."
+  },
+  {
+    "id": 268,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Cómo estructura la información una base de datos relacional?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "En ficheros binarios con un formato propio de cada aplicación"
+      },
+      {
+        "letra": "B",
+        "texto": "En pares de clave y valor sin ninguna estructura interna"
+      },
+      {
+        "letra": "C",
+        "texto": "En documentos con atributos que cambian en cada inserción"
+      },
+      {
+        "letra": "D",
+        "texto": "En tablas (relaciones) con filas y columnas"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Una base de datos relacional almacena la información en tablas con filas y columnas (campos)."
+  },
+  {
+    "id": 269,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿De dónde viene el nombre «base de datos relacional»?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "De que se creó para relacionar servidores en un clúster"
+      },
+      {
+        "letra": "B",
+        "texto": "De que todas las bases de datos están relacionadas entre sí"
+      },
+      {
+        "letra": "C",
+        "texto": "De que los datos se relacionan con los usuarios de la aplicación"
+      },
+      {
+        "letra": "D",
+        "texto": "De que a las tablas se las denominaba «relaciones»"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "A las tablas se las llamaba «relaciones», de ahí el nombre."
+  },
+  {
+    "id": 270,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué lenguaje de consulta ofrecen las bases de datos relacionales?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "JSON"
+      },
+      {
+        "letra": "B",
+        "texto": "SQL"
+      },
+      {
+        "letra": "C",
+        "texto": "XML"
+      },
+      {
+        "letra": "D",
+        "texto": "CSS"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Las bases de datos relacionales ofrecen el lenguaje de consulta SQL."
+  },
+  {
+    "id": 271,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "En una base de datos relacional con las tablas Libros, Autores y RelacionLibroAutor, ¿cómo se relaciona la información?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Mediante el orden en que aparecen las filas en cada tabla"
+      },
+      {
+        "letra": "B",
+        "texto": "Mediante objetos anidados dentro de cada fila de la tabla"
+      },
+      {
+        "letra": "C",
+        "texto": "Mediante el nombre de la base de datos a la que pertenecen"
+      },
+      {
+        "letra": "D",
+        "texto": "Mediante identificadores (id) que se repiten en las tablas"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "En el ejemplo, RelacionLibroAutor guarda pares idLibro-idAutor para vincular libros y autores."
+  },
+  {
+    "id": 272,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "En el ejemplo de libros y autores, ¿para qué sirve la tabla RelacionLibroAutor?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para guardar el precio de cada libro y la nacionalidad del autor"
+      },
+      {
+        "letra": "B",
+        "texto": "Para definir el esquema que deben seguir las otras dos tablas"
+      },
+      {
+        "letra": "C",
+        "texto": "Para guardar copias de seguridad de las tablas Libros y Autores"
+      },
+      {
+        "letra": "D",
+        "texto": "Para indicar qué autor corresponde a cada libro mediante sus ids"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Cada fila de RelacionLibroAutor une un idLibro con un idAutor."
+  },
+  {
+    "id": 273,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué operaciones permite realizar SQL sobre los datos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Consultar con criterios (con medias o sumas) y modificar datos"
+      },
+      {
+        "letra": "B",
+        "texto": "Únicamente definir la estructura de las tablas del sistema"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo consultar datos, sin poder modificarlos después"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo insertar y borrar, pero nunca actualizar un dato"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "SQL permite consultas con criterios y operaciones, y la inserción, actualización y borrado de información."
+  },
+  {
+    "id": 274,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Cómo se define hoy el término «NoSQL»?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Como «Network SQL», porque solo funcionan a través de la red"
+      },
+      {
+        "letra": "B",
+        "texto": "Como «New SQL», porque son la versión más reciente de SQL"
+      },
+      {
+        "letra": "C",
+        "texto": "Como «No SQL», porque ninguna de ellas admite consultas"
+      },
+      {
+        "letra": "D",
+        "texto": "Como «Not Only SQL», pues algunas admiten SQL"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "No hay una definición formal, pero se entiende como «Not Only SQL»."
+  },
+  {
+    "id": 275,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué se afirma sobre las bases de datos NoSQL en el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Son bases de datos relacionales que no admiten ninguna consulta"
+      },
+      {
+        "letra": "B",
+        "texto": "Existe una definición formal y todas comparten el mismo modelo"
+      },
+      {
+        "letra": "C",
+        "texto": "Modelos de datos distintos del relacional, sin definición formal"
+      },
+      {
+        "letra": "D",
+        "texto": "Todas siguen el modelo relacional con tablas y el lenguaje SQL"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "NoSQL refleja que el modelo de datos es diferente al relacional, pero no hay definición formal."
+  },
+  {
+    "id": 276,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué característica común tienen la mayoría de bases de datos NoSQL respecto a la estructura de los datos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo admiten tablas con un número fijo de columnas numéricas"
+      },
+      {
+        "letra": "B",
+        "texto": "Obligan a que todos los datos tengan exactamente los mismos campos"
+      },
+      {
+        "letra": "C",
+        "texto": "No tienen esquema: la estructura se define al insertar"
+      },
+      {
+        "letra": "D",
+        "texto": "Exigen definir el esquema completo antes de insertar ningún dato"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "La mayoría no tienen esquema de datos; la estructura se define al insertar."
+  },
+  {
+    "id": 277,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué tipo de escalabilidad ofrecen típicamente las bases de datos NoSQL?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ninguna, porque solo pueden ejecutarse en un único servidor"
+      },
+      {
+        "letra": "B",
+        "texto": "Escalabilidad basada en repetir las tablas en cada aplicación"
+      },
+      {
+        "letra": "C",
+        "texto": "Escalabilidad vertical, ampliando solo la memoria de un servidor"
+      },
+      {
+        "letra": "D",
+        "texto": "Escalabilidad horizontal mediante clusterización"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Son escalables horizontalmente (clusterización)."
+  },
+  {
+    "id": 278,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Cuál de estas es una característica común de las bases de datos NoSQL?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La mayoría son de pago y están pensadas solo para aplicaciones de escritorio"
+      },
+      {
+        "letra": "B",
+        "texto": "Todas ofrecen consultas tan potentes como SQL para relacionar datos"
+      },
+      {
+        "letra": "C",
+        "texto": "La mayoría son open-source y están pensadas para las aplicaciones web actuales"
+      },
+      {
+        "letra": "D",
+        "texto": "Todas exigen un esquema fijo igual que las bases de datos relacionales"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "La mayoría ofrecen consultas menos potentes que SQL para relacionar datos, son open-source y pensadas para la web actual."
+  },
+  {
+    "id": 279,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué problema de escalado tienen las bases de datos relacionales según el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo pueden ejecutarse en servidores de un único fabricante"
+      },
+      {
+        "letra": "B",
+        "texto": "No pueden atender a más de un usuario al mismo tiempo"
+      },
+      {
+        "letra": "C",
+        "texto": "Les cuesta atender a muchos usuarios si hay varios servidores"
+      },
+      {
+        "letra": "D",
+        "texto": "Necesitan que cada usuario tenga su propia base de datos"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Si se ejecutan en distintos servidores aparecen muchas limitaciones, lo que dificulta escalar."
+  },
+  {
+    "id": 280,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Qué es el «impedance mismatch» que motiva la aparición de las bases de datos NoSQL?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que algunos lenguajes no encajan bien sus objetos en las tablas"
+      },
+      {
+        "letra": "B",
+        "texto": "La pérdida de datos al copiar una base de datos entre servidores"
+      },
+      {
+        "letra": "C",
+        "texto": "La diferencia de velocidad entre el servidor web y el navegador"
+      },
+      {
+        "letra": "D",
+        "texto": "La incompatibilidad entre dos versiones distintas del lenguaje SQL"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los objetos en memoria de algunos lenguajes no encajan bien en las tablas de una base relacional."
+  },
+  {
+    "id": 281,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Por qué la necesidad de definir el esquema antes de guardar datos dificulta el desarrollo en lenguajes de tipado dinámico?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Porque la estructura de los datos cambia y habría que redefinir el esquema"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque el esquema obliga a declarar los tipos de las variables del programa"
+      },
+      {
+        "letra": "C",
+        "texto": "Porque estos lenguajes no son capaces de conectarse a ninguna base de datos"
+      },
+      {
+        "letra": "D",
+        "texto": "Porque estos lenguajes solo pueden guardar números y no texto en tablas"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "El esquema obligatorio choca con la flexibilidad de los lenguajes de tipado dinámico."
+  },
+  {
+    "id": 282,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "Una aplicación guarda objetos cuya estructura varía mucho y debe atender a muchísimos usuarios con varios servidores. ¿Qué tipo de base de datos encaja mejor según el tema?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Relacional, porque no necesita definir ninguna estructura previa"
+      },
+      {
+        "letra": "B",
+        "texto": "Relacional, porque en varios servidores no tiene ninguna limitación"
+      },
+      {
+        "letra": "C",
+        "texto": "Ninguna, porque las bases de datos no admiten varios servidores"
+      },
+      {
+        "letra": "D",
+        "texto": "NoSQL, por su escalado horizontal y la ausencia de esquema fijo"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los motivos de las NoSQL son el escalado, el impedance mismatch y la falta de esquema."
+  },
+  {
+    "id": 283,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.1",
+    "pregunta": "¿Cuál de estas afirmaciones sobre la relación entre bases de datos relacionales y NoSQL es correcta?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Las relacionales escalan mejor horizontalmente que cualquier base de datos NoSQL"
+      },
+      {
+        "letra": "B",
+        "texto": "Las NoSQL suelen perder potencia de consulta a cambio de escalabilidad"
+      },
+      {
+        "letra": "C",
+        "texto": "Las NoSQL exigen definir el esquema con más rigor que las relacionales"
+      },
+      {
+        "letra": "D",
+        "texto": "Las NoSQL superan siempre a las relacionales en consultas que relacionan tablas"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "La mayoría de NoSQL ofrece consultas, pero sin la potencia de SQL para relacionar datos."
+  },
+  {
+    "id": 284,
+    "asignatura": "FW",
+    "tema": 6,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.1",
+    "pregunta": "En un despliegue web típico con base de datos, ¿quién accede directamente a ella?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El navegador del usuario, enviando consultas SQL directamente"
+      },
+      {
+        "letra": "B",
+        "texto": "El servidor de la aplicación, no el navegador del usuario"
+      },
+      {
+        "letra": "C",
+        "texto": "El servidor de ficheros estáticos que entrega HTML y CSS"
+      },
+      {
+        "letra": "D",
+        "texto": "El sistema operativo del cliente mediante una caché local"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El navegador pide datos al servidor, y es el servidor quien consulta la base de datos."
+  },
+  {
+    "id": 285,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué edición de MongoDB se usa en la asignatura?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Atlas, el servicio de Mongo que se ejecuta en la nube"
+      },
+      {
+        "letra": "B",
+        "texto": "Una versión de pago que se instala solo en servidores remotos"
+      },
+      {
+        "letra": "C",
+        "texto": "Community Edition, la versión gratuita para desarrollo"
+      },
+      {
+        "letra": "D",
+        "texto": "Enterprise Edition, la versión empresarial con funciones avanzadas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "El tema usa la Community Edition. Enterprise es la empresarial y Atlas es el servicio en la nube."
+  },
+  {
+    "id": 286,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué es MongoDB Atlas?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La herramienta gráfica para consultar documentos"
+      },
+      {
+        "letra": "B",
+        "texto": "La versión gratuita para el equipo de desarrollo"
+      },
+      {
+        "letra": "C",
+        "texto": "El servicio de MongoDB en la nube"
+      },
+      {
+        "letra": "D",
+        "texto": "La consola para escribir comandos en el terminal"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Atlas es el servicio de Mongo en la nube."
+  },
+  {
+    "id": 287,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Cómo se puede arrancar MongoDB con Docker, según el tema?",
+    "imagen": "",
+    "codigo": "$ docker run --rm -p 27017:27017 -d mongo:8.2",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con npm install mongo ejecutado dentro de un contenedor"
+      },
+      {
+        "letra": "B",
+        "texto": "Con docker run exponiendo el puerto 27017 de la imagen mongo"
+      },
+      {
+        "letra": "C",
+        "texto": "Con docker pull del fichero package.json del proyecto"
+      },
+      {
+        "letra": "D",
+        "texto": "Con docker build usando el puerto 8080 de la imagen node"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El comando es docker run --rm -p 27017:27017 -d mongo:8.2."
+  },
+  {
+    "id": 288,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué es MongoDB Compass?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un servicio en la nube para desplegar clústeres de MongoDB"
+      },
+      {
+        "letra": "B",
+        "texto": "Una librería de JavaScript para definir esquemas en el servidor"
+      },
+      {
+        "letra": "C",
+        "texto": "Un formato binario de almacenamiento de documentos de Mongo"
+      },
+      {
+        "letra": "D",
+        "texto": "Una herramienta gráfica interactiva para trabajar con MongoDB"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Compass es el cliente gráfico de MongoDB; también hay plugin para VSCode."
+  },
+  {
+    "id": 289,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Cómo se organiza la información en MongoDB?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Una colección tiene bases de datos, y cada una guarda documentos"
+      },
+      {
+        "letra": "B",
+        "texto": "Una base de datos tiene tablas, y cada tabla guarda filas"
+      },
+      {
+        "letra": "C",
+        "texto": "Un documento tiene colecciones, y cada una guarda bases de datos"
+      },
+      {
+        "letra": "D",
+        "texto": "Una base de datos tiene colecciones, y cada colección guarda documentos"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Base de datos → colecciones → documentos."
+  },
+  {
+    "id": 290,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué es un documento en MongoDB?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Una consulta guardada para ejecutarla más tarde"
+      },
+      {
+        "letra": "B",
+        "texto": "Un objeto BSON (Binary JSON)"
+      },
+      {
+        "letra": "C",
+        "texto": "Un fichero HTML guardado en el servidor web"
+      },
+      {
+        "letra": "D",
+        "texto": "Una fila de una tabla con columnas de tipo fijo"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Un documento es un objeto Binario JSON (BSON)."
+  },
+  {
+    "id": 291,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué cliente permite interactuar con Mongo escribiendo comandos, como en un terminal?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La consola (shell), disponible en el terminal, en Compass y en VSCode"
+      },
+      {
+        "letra": "B",
+        "texto": "El gestor de paquetes NPM, con el comando npm run mongo"
+      },
+      {
+        "letra": "C",
+        "texto": "El servidor Express, que traduce las URL a consultas"
+      },
+      {
+        "letra": "D",
+        "texto": "El navegador web, escribiendo la dirección de la base de datos"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "La shell se puede usar desde el terminal del sistema, Compass o VSCode."
+  },
+  {
+    "id": 292,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué hace el comando use test en la shell de Mongo?",
+    "imagen": "",
+    "codigo": "> use test\n> db.users.find();",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Elimina todos los documentos de la colección test"
+      },
+      {
+        "letra": "B",
+        "texto": "Ejecuta las pruebas automáticas de la aplicación"
+      },
+      {
+        "letra": "C",
+        "texto": "Crea una colección llamada test en la base de datos"
+      },
+      {
+        "letra": "D",
+        "texto": "Indica la base de datos que se va a usar"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "use selecciona la base de datos; después se indica la colección y el comando."
+  },
+  {
+    "id": 293,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué devuelve db.users.find() sin ningún argumento?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Todos los documentos de la colección users"
+      },
+      {
+        "letra": "B",
+        "texto": "Los nombres de todas las colecciones de la base"
+      },
+      {
+        "letra": "C",
+        "texto": "El número de documentos de la colección users"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo el primer documento de la colección users"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "find() sin criterio devuelve todos los documentos de la colección."
+  },
+  {
+    "id": 294,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "facil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué hace db.users.insertOne({name:\"Carlos\", dni:\"04897481L\"})?",
+    "imagen": "",
+    "codigo": "> db.users.insertOne({name:\"Carlos\", dni:\"04897481L\"})",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Elimina el documento de Carlos de la colección users"
+      },
+      {
+        "letra": "B",
+        "texto": "Inserta un documento en la colección users"
+      },
+      {
+        "letra": "C",
+        "texto": "Actualiza el dni de todos los usuarios llamados Carlos"
+      },
+      {
+        "letra": "D",
+        "texto": "Busca un documento con ese nombre en la colección users"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "insertOne añade un documento a la colección y devuelve acknowledged e insertedId."
+  },
+  {
+    "id": 295,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "En el resultado de insertOne, ¿qué indican acknowledged e insertedId?",
+    "imagen": "",
+    "codigo": "{\n  acknowledged: true,\n  insertedId: ObjectId('68f94b66677e98cf67fba94f')\n}",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Que la base de datos está llena y el espacio que queda libre"
+      },
+      {
+        "letra": "B",
+        "texto": "Que la colección es nueva y el nombre que se le ha dado"
+      },
+      {
+        "letra": "C",
+        "texto": "Que la inserción se confirmó y el _id que Mongo asignó al documento"
+      },
+      {
+        "letra": "D",
+        "texto": "Que el documento ya existía y el número de copias encontradas"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "acknowledged: true confirma la operación e insertedId es el identificador del documento."
+  },
+  {
+    "id": 296,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Se inserta un documento sin el campo _id. ¿Qué ocurre?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Mongo pide al usuario que elija un _id en la consola"
+      },
+      {
+        "letra": "B",
+        "texto": "Mongo le asigna automáticamente un _id (un ObjectId)"
+      },
+      {
+        "letra": "C",
+        "texto": "El documento se guarda sin identificador y no se puede consultar"
+      },
+      {
+        "letra": "D",
+        "texto": "La inserción falla porque todo documento necesita un _id explícito"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "A cada documento se le asigna un id automáticamente."
+  },
+  {
+    "id": 297,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué se afirma sobre la estructura de los documentos de una misma colección?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Pueden tener estructuras diferentes, aunque suelen ser parecidos"
+      },
+      {
+        "letra": "B",
+        "texto": "Deben tener los mismos atributos, aunque pueden cambiar sus tipos"
+      },
+      {
+        "letra": "C",
+        "texto": "Deben tener exactamente los mismos atributos y los mismos tipos"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo pueden diferir en el valor del _id que Mongo les asigna"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los documentos de una colección pueden tener estructura diferente."
+  },
+  {
+    "id": 298,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Hay que definir el esquema de una colección antes de insertar documentos en MongoDB?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No, y además Mongo no permite validar la estructura nunca"
+      },
+      {
+        "letra": "B",
+        "texto": "No, aunque opcionalmente se puede definir una validación de esquema"
+      },
+      {
+        "letra": "C",
+        "texto": "Sí, siempre, igual que en una base de datos relacional"
+      },
+      {
+        "letra": "D",
+        "texto": "Sí, pero solo si la colección va a tener más de un documento"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "No hay que definir un esquema explícito, aunque se podría hacer opcionalmente (schema validation)."
+  },
+  {
+    "id": 299,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un documento BSON, ¿qué ventaja tiene sobre un objeto JSON respecto a los tipos?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Sus atributos admiten más tipos: binarios, Double, Decimal128, enteros de 64 bits"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo admite los tipos de JSON, pero con claves ordenadas"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo admite cadenas, ya que cada valor se guarda como texto"
+      },
+      {
+        "letra": "D",
+        "texto": "No admite arrays, que se sustituyen por documentos anidados"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "BSON amplía los tipos de JSON."
+  },
+  {
+    "id": 300,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Para qué se usa el método findOne?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Para obtener un único documento que cumpla el criterio indicado"
+      },
+      {
+        "letra": "B",
+        "texto": "Para obtener todos los documentos que cumplan el criterio"
+      },
+      {
+        "letra": "C",
+        "texto": "Para insertar un documento si no existe ya otro igual"
+      },
+      {
+        "letra": "D",
+        "texto": "Para contar los documentos que cumplan el criterio"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "findOne devuelve un documento; find devuelve todos los que cumplan el criterio."
+  },
+  {
+    "id": 301,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Cómo se consulta un documento por su identificador?",
+    "imagen": "",
+    "codigo": "> db.users.findOne({ _id: ObjectId(\"68f94b66677e98cf67fba94f\")})",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Con findById(\"...\"), que es el único método para los ids"
+      },
+      {
+        "letra": "B",
+        "texto": "Con findOne({ id: \"...\" }), escribiendo el id como una cadena"
+      },
+      {
+        "letra": "C",
+        "texto": "Con find(\"...\"), pasando solo el valor del identificador"
+      },
+      {
+        "letra": "D",
+        "texto": "Con findOne({ _id: ObjectId(\"...\") }), usando ObjectId"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El _id es un ObjectId, así que se busca con ObjectId(\"...\")."
+  },
+  {
+    "id": 302,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Cuál es la diferencia entre db.users.find({age:37}) y db.users.findOne({age:37})?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No hay ninguna diferencia, son dos nombres del mismo método"
+      },
+      {
+        "letra": "B",
+        "texto": "find busca por edad y findOne solo puede buscar por el _id"
+      },
+      {
+        "letra": "C",
+        "texto": "find devuelve todos los documentos que cumplan el criterio, y findOne solo uno"
+      },
+      {
+        "letra": "D",
+        "texto": "find devuelve un documento y findOne devuelve todos los que cumplan"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "find consulta varios documentos y findOne obtiene un documento."
+  },
+  {
+    "id": 303,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué hace esta consulta?",
+    "imagen": "",
+    "codigo": "db.users.find({ age: 37, name: 'Pepe' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Devuelve los documentos con age 37 o con name «Pepe» (OR)"
+      },
+      {
+        "letra": "B",
+        "texto": "Devuelve los documentos con age 37 sin mirar el nombre"
+      },
+      {
+        "letra": "C",
+        "texto": "Devuelve los documentos con age 37 y name «Pepe» a la vez (AND)"
+      },
+      {
+        "letra": "D",
+        "texto": "Devuelve el primer documento que tenga el campo name"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Varios atributos separados por comas en el criterio se combinan con AND."
+  },
+  {
+    "id": 304,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué devuelve esta consulta?",
+    "imagen": "",
+    "codigo": "db.users.find({\n  $or: [ {dni: '03487456'}, {name: 'Pepe'} ]\n})",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los documentos que no cumplan ninguno de los dos criterios"
+      },
+      {
+        "letra": "B",
+        "texto": "Únicamente el primer documento que cumpla el primer criterio"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo los documentos que cumplan los dos criterios a la vez"
+      },
+      {
+        "letra": "D",
+        "texto": "Los documentos cuyo dni sea «03487456» o cuyo name sea «Pepe»"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "$or recibe un array de criterios y basta con que se cumpla uno."
+  },
+  {
+    "id": 305,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué operador de consulta equivale a «mayor o igual que»?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$gte"
+      },
+      {
+        "letra": "B",
+        "texto": "$more"
+      },
+      {
+        "letra": "C",
+        "texto": "$ge"
+      },
+      {
+        "letra": "D",
+        "texto": "$gt"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "$gt es mayor, $gte mayor o igual, $lt menor y $lte menor o igual."
+  },
+  {
+    "id": 306,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué documentos devuelve db.users.find({ age: { $lt: 37 } })?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los que tienen un valor de age mayor que 37"
+      },
+      {
+        "letra": "B",
+        "texto": "Los que tienen el campo age con un valor menor o igual que 37"
+      },
+      {
+        "letra": "C",
+        "texto": "Los que tienen el campo age con un valor menor que 37"
+      },
+      {
+        "letra": "D",
+        "texto": "Los que no tienen el campo age o tienen un valor menor"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "$lt es «menor que» (estricto); $lte incluye el 37."
+  },
+  {
+    "id": 307,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Según la sintaxis de la shell, ¿cuál de estas consultas busca los usuarios mayores de 37 años?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "db.users.find({ age: $gt 37 })"
+      },
+      {
+        "letra": "B",
+        "texto": "db.users.find({ age: { $gt: 37 } })"
+      },
+      {
+        "letra": "C",
+        "texto": "db.users.find({ $gt: { age: 37 } })"
+      },
+      {
+        "letra": "D",
+        "texto": "db.users.find({ age > 37 })"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El operador va dentro de un documento asociado al atributo: { age: { $gt: 37 } }."
+  },
+  {
+    "id": 308,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué otras consultas permite MongoDB además de comparar atributos simples?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Solo consultas que relacionan varias colecciones con SQL"
+      },
+      {
+        "letra": "B",
+        "texto": "Por objetos embebidos, por arrays y por atributos ausentes"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo por el _id y por el nombre de la colección"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo por atributos simples, sin objetos ni arrays"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "El tema menciona consultas sobre objetos embebidos, arrays y ausencia de atributos."
+  },
+  {
+    "id": 309,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Cuántos documentos devuelve la consulta sobre estos datos?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.find({ age: 37 })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Uno: solo Luis"
+      },
+      {
+        "letra": "B",
+        "texto": "Dos: Luis y Marta"
+      },
+      {
+        "letra": "C",
+        "texto": "Tres: Luis, Marta y Pepe"
+      },
+      {
+        "letra": "D",
+        "texto": "Cuatro: todos menos Carlos"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Luis y Marta tienen age 37. Ana tiene 25 y Pepe 40, y Carlos no tiene age."
+  },
+  {
+    "id": 310,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Con estos datos, ¿qué nombres devuelve la consulta?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.find({ age: { $lte: 37 } })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ana, Luis y Marta"
+      },
+      {
+        "letra": "B",
+        "texto": "Luis, Marta y Carlos"
+      },
+      {
+        "letra": "C",
+        "texto": "Ana y Carlos"
+      },
+      {
+        "letra": "D",
+        "texto": "Ana y Luis"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "age <= 37 lo cumplen Ana (25), Luis (37) y Marta (37). Pepe tiene 40 y Carlos no tiene age, así que no cumple."
+  },
+  {
+    "id": 311,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Con estos datos, ¿qué nombres devuelve la consulta?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.find({ age: { $gt: 36, $lt: 40 } })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Marta y Pepe"
+      },
+      {
+        "letra": "B",
+        "texto": "Luis y Marta"
+      },
+      {
+        "letra": "C",
+        "texto": "Luis, Marta y Pepe"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo Luis"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "age > 36 y age < 40: la cumplen Luis y Marta (37). Pepe tiene 40, que no es menor que 40."
+  },
+  {
+    "id": 312,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Con estos datos, ¿qué nombres devuelve la consulta?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.find({ $or: [ {dni: '1234'}, {dni: '5678'} ] })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Pepe, Carlos y Ana"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo Pepe"
+      },
+      {
+        "letra": "C",
+        "texto": "Pepe y Carlos"
+      },
+      {
+        "letra": "D",
+        "texto": "Ana, Luis y Marta"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "Se cumple si el documento tiene dni «1234» (Pepe) o dni «5678» (Carlos)."
+  },
+  {
+    "id": 313,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Con estos datos, ¿qué devuelve la consulta?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.find({ age: 37, dni: '1234' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ningún documento"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo Marta"
+      },
+      {
+        "letra": "C",
+        "texto": "Luis y Marta"
+      },
+      {
+        "letra": "D",
+        "texto": "Solo Luis"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los dos criterios se combinan con AND: nadie con age 37 tiene dni «1234» (Pepe tiene age 40)."
+  },
+  {
+    "id": 314,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Con estos datos, ¿qué devuelve la consulta?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.find({ age: '37' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Todos los documentos"
+      },
+      {
+        "letra": "B",
+        "texto": "Ningún documento"
+      },
+      {
+        "letra": "C",
+        "texto": "Solo Luis"
+      },
+      {
+        "letra": "D",
+        "texto": "Luis y Marta"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "Los valores se comparan de forma exacta: «37» (cadena) no es igual al número 37."
+  },
+  {
+    "id": 315,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Con estos datos, ¿qué devuelve findOne({ age: 37 }) aunque haya dos documentos con age 37?",
+    "imagen": "",
+    "codigo": "// colección users\n{ name: 'Ana',   age: 25, preferences: ['java', 'nosql'] }\n{ name: 'Luis',  age: 37, preferences: ['nosql'] }\n{ name: 'Marta', age: 37 }\n{ name: 'Pepe',  age: 40, dni: '1234' }\n{ name: 'Carlos', dni: '5678' }\n\ndb.users.findOne({ age: 37 })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Un único documento, el primero que encuentra (aquí, Luis)"
+      },
+      {
+        "letra": "B",
+        "texto": "Un array con los dos documentos, el de Luis y el de Marta"
+      },
+      {
+        "letra": "C",
+        "texto": "Ningún documento, porque el criterio es ambiguo"
+      },
+      {
+        "letra": "D",
+        "texto": "Un error, porque hay más de un documento con age 37"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "findOne devuelve un solo documento, normalmente el primero que cumple el criterio."
+  },
+  {
+    "id": 316,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué elimina esta operación?",
+    "imagen": "",
+    "codigo": "db.bookings.deleteMany({ type: \"flight\" })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Todos los documentos cuyo atributo type sea «flight»"
+      },
+      {
+        "letra": "B",
+        "texto": "Solo el primer documento cuyo atributo type sea «flight»"
+      },
+      {
+        "letra": "C",
+        "texto": "La base de datos que contiene esos documentos"
+      },
+      {
+        "letra": "D",
+        "texto": "La colección entera y todos sus documentos"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "deleteMany borra todos los documentos que cumplen el criterio."
+  },
+  {
+    "id": 317,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "teoria",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "¿Qué diferencia hay entre deleteOne y deleteMany?",
+    "imagen": "",
+    "codigo": "",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No hay diferencia: ambos eliminan todos los documentos que cumplan"
+      },
+      {
+        "letra": "B",
+        "texto": "deleteOne elimina todos los documentos y deleteMany solo uno"
+      },
+      {
+        "letra": "C",
+        "texto": "deleteOne elimina la colección y deleteMany elimina la base de datos"
+      },
+      {
+        "letra": "D",
+        "texto": "deleteOne elimina un documento, y deleteMany todos los que cumplan"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "El sufijo indica cuántos documentos se eliminan: uno o todos los que cumplan el criterio."
+  },
+  {
+    "id": 318,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "error",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un alumno quiere obtener los usuarios con más de 37 años, pero la consola da un error de sintaxis. ¿Cuál es el problema?",
+    "imagen": "",
+    "codigo": "db.users.find({ age: { $gt: 37 })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "age debe escribirse entre comillas como cadena: \"age\""
+      },
+      {
+        "letra": "B",
+        "texto": "$gt no existe: el operador «mayor que» se llama $more"
+      },
+      {
+        "letra": "C",
+        "texto": "Falta cerrar la llave: { age: { $gt: 37 } }"
+      },
+      {
+        "letra": "D",
+        "texto": "find no admite criterios y solo se puede usar sin argumentos"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "El tema muestra la consulta sin la llave de cierre final (un descuido de la diapositiva): hay que cerrar { $gt: 37 } y el criterio."
+  },
+  {
+    "id": 319,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "error",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un alumno quiere los usuarios llamados «Pepe» o con dni 03487456, pero la consulta devuelve solo los que cumplen ambos. ¿Qué falla?",
+    "imagen": "",
+    "codigo": "db.users.find({ dni: '03487456', name: 'Pepe' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Las comas son un AND: para un OR hay que usar $or con un array"
+      },
+      {
+        "letra": "B",
+        "texto": "Falta usar use test, que activa el modo OR en la shell"
+      },
+      {
+        "letra": "C",
+        "texto": "Los valores deben escribirse sin comillas simples ni dobles"
+      },
+      {
+        "letra": "D",
+        "texto": "Falta usar findOne, que es el único método que admite OR"
+      }
+    ],
+    "respuestas_correctas": [
+      "A"
+    ],
+    "explicacion": "Los criterios separados por comas se combinan con AND. Para OR se usa $or: [ {...}, {...} ]."
+  },
+  {
+    "id": 320,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "error",
+    "dificultad": "medio",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un alumno intenta borrar un único usuario y escribe el siguiente comando, pero la shell responde que db.users.remueveUno no es una función. ¿Qué falla?",
+    "imagen": "",
+    "codigo": "db.users.remueveUno({ name: 'Carlos' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Falta el punto y coma final: sin él la shell no ejecuta nada"
+      },
+      {
+        "letra": "B",
+        "texto": "name debe ir entre corchetes, como en { [name]: 'Carlos' }"
+      },
+      {
+        "letra": "C",
+        "texto": "Falta indicar la base de datos con use dentro de la consulta"
+      },
+      {
+        "letra": "D",
+        "texto": "Ese método no existe: el correcto es deleteOne"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los métodos de la shell tienen nombres fijos: deleteOne y deleteMany."
+  },
+  {
+    "id": 321,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "error",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un alumno busca a un usuario por su id con el siguiente comando y no obtiene ningún resultado, aunque el documento existe. ¿Cuál es la causa?",
+    "imagen": "",
+    "codigo": "db.users.findOne({ _id: '68f94b66677e98cf67fba94f' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Falta la colección: debería ser db.findOne en lugar de db.users"
+      },
+      {
+        "letra": "B",
+        "texto": "findOne no admite el atributo _id en el criterio de búsqueda"
+      },
+      {
+        "letra": "C",
+        "texto": "El _id solo se puede consultar con el método find, no con findOne"
+      },
+      {
+        "letra": "D",
+        "texto": "El _id es un ObjectId y se compara con una cadena"
+      }
+    ],
+    "respuestas_correctas": [
+      "D"
+    ],
+    "explicacion": "Los valores se comparan de forma exacta y por tipo: hay que usar ObjectId('...')."
+  },
+  {
+    "id": 322,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "error",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un alumno quiere los usuarios con edad entre 30 y 40 (inclusive), pero la consulta solo devuelve los de edad mayor o igual que 40. ¿Por qué?",
+    "imagen": "",
+    "codigo": "db.users.find({ age: { $gte: 30 }, age: { $lte: 40 } })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$lte no existe en MongoDB, así que se ignora su condición"
+      },
+      {
+        "letra": "B",
+        "texto": "La clave age está repetida: la segunda sustituye a la primera"
+      },
+      {
+        "letra": "C",
+        "texto": "find solo admite un operador de comparación por cada consulta"
+      },
+      {
+        "letra": "D",
+        "texto": "Se aplican las dos condiciones, pero Mongo ordena de mayor a menor"
+      }
+    ],
+    "respuestas_correctas": [
+      "B"
+    ],
+    "explicacion": "En un documento (como en un objeto de JavaScript) una clave repetida se sobrescribe. Hay que usar { age: { $gte: 30, $lte: 40 } }."
+  },
+  {
+    "id": 323,
+    "asignatura": "FW",
+    "tema": 7,
+    "tipo": "error",
+    "dificultad": "dificil",
+    "diapositiva": "T3.2.2",
+    "pregunta": "Un alumno quiere insertar dos documentos a la vez con el comando siguiente. ¿Qué problema tiene?",
+    "imagen": "",
+    "codigo": "db.users.insertOne({ name: 'Ana' }, { name: 'Luis' })",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Los nombres deben ir sin comillas, porque son atributos del documento"
+      },
+      {
+        "letra": "B",
+        "texto": "Mongo solo permite un documento por colección en toda la base"
+      },
+      {
+        "letra": "C",
+        "texto": "insertOne inserta un documento: para varios hay que usar insertMany"
+      },
+      {
+        "letra": "D",
+        "texto": "Falta el campo _id en ambos, y es obligatorio escribirlo siempre"
+      }
+    ],
+    "respuestas_correctas": [
+      "C"
+    ],
+    "explicacion": "insertOne recibe un documento, e insertMany un array de documentos."
+  }
+]
