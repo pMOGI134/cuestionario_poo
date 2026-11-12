@@ -275,6 +275,7 @@ function leerTodosLosIntentos() {
 }
 
 function pintarPerfil() {
+  pintarNombrePerfil();
   const resultado = leerTodosLosIntentos();
   const resumen = $("resumen-perfil");
   const recientes = $("tests-recientes");
@@ -337,6 +338,11 @@ function pintarPerfil() {
     fila.append(descripcion, nota);
     recientes.append(fila);
   });
+}
+
+function pintarNombrePerfil(user) {
+  const nombre = user && ((user.user_metadata && user.user_metadata.nombre) || user.email);
+  $("nombre-perfil").textContent = nombre || "Invitado";
 }
 
 /* ---------- carga ---------- */
@@ -858,6 +864,7 @@ $("btn-inicio").addEventListener("click", () => {
 
 $("btn-invitado").addEventListener("click", () => {
   modoInvitado = true;
+  pintarNombrePerfil();
   mostrar("pantalla-asignaturas");
   pintarHistorial();
 });
@@ -880,6 +887,7 @@ $("btn-borrar-historial").addEventListener("click", () => {
 });
 document.addEventListener("sesion-actualizada", (e) => {
   const user = e.detail && e.detail.user;
+  pintarNombrePerfil(user);
   if (user) {
     modoInvitado = false;
     mostrar("pantalla-asignaturas");
