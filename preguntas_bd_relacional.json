@@ -1611,34 +1611,16 @@
     "id": 388,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "facil",
     "diapositiva": "Tema 6b",
-    "pregunta": "Obtén el nombre de los fabricantes que tienen algún modelo registrado. Elige la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
+    "pregunta": "Obtén el nombre de los fabricantes que tienen algún modelo registrado. Escribe la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nFABRICANTE\nnom_fab | pais\n--------+-------\nToyota  | Japón\nSeat    | España\nFord    | EEUU\nTesla   | EEUU\n\nMODELO\nid_modelo | nom_modelo | anio | nom_fab\n----------+------------+------+--------\n1         | Corolla    | 2019 | Toyota\n2         | Ibiza      | 2017 | Seat\n3         | Focus      | 2020 | Ford\n4         | Leon       | 2021 | Seat",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π nom_fab (MODELO)"
-      },
-      {
-        "letra": "B",
-        "texto": "π nom_fab (FABRICANTE ⋈ MODELO)"
-      },
-      {
-        "letra": "C",
-        "texto": "(π nom_fab (FABRICANTE)) − (π nom_fab (MODELO))"
-      },
-      {
-        "letra": "D",
-        "texto": "π nom_fab (FABRICANTE)"
-      }
-    ],
-    "respuestas_correctas": [
-      "A"
-    ],
-    "explicacion": "Basta con proyectar nom_fab de MODELO; unir con FABRICANTE no aporta nada y genera tuplas intermedias de más. Resultado: {Ford, Seat, Toyota}."
+    "opciones": [],
+    "explicacion": "Basta con proyectar nom_fab de MODELO; unir con FABRICANTE no aporta nada y genera tuplas intermedias de más. Resultado: {Ford, Seat, Toyota}.",
+    "formato": "abierta",
+    "respuesta_modelo": "π nom_fab (MODELO)"
   },
   {
     "id": 389,
@@ -1677,133 +1659,61 @@
     "id": 390,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "facil",
     "diapositiva": "Tema 6b",
-    "pregunta": "Obtén los DNI de los propietarios que tienen algún vehículo de color 'negro'. Elige la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
+    "pregunta": "Obtén los DNI de los propietarios que tienen algún vehículo de color 'negro'. Escribe la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nVEHICULO\nmatricula | color  | id_modelo | DNI\n----------+--------+-----------+------\n1000AAA   | negro  | 1         | 1111A\n2000BBB   | rojo   | 2         | 2222B\n3000CCC   | negro  | 3         | 3333C\n4000DDD   | blanco | 4         | 3333C\n5000EEE   | negro  | 2         | 4444D",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π DNI (σ color = 'negro' (PROPIETARIO ⋈ VEHICULO))"
-      },
-      {
-        "letra": "B",
-        "texto": "(π DNI (PROPIETARIO)) − (π DNI (σ color = 'negro' (VEHICULO)))"
-      },
-      {
-        "letra": "C",
-        "texto": "π DNI (σ color = 'negro' (VEHICULO))"
-      },
-      {
-        "letra": "D",
-        "texto": "π DNI (σ color ≠ 'negro' (VEHICULO))"
-      }
-    ],
-    "respuestas_correctas": [
-      "C"
-    ],
-    "explicacion": "VEHICULO ya contiene el DNI del propietario: se selecciona el color y se proyecta DNI, sin necesidad de unir con PROPIETARIO. Resultado: {1111A, 3333C, 4444D}."
+    "opciones": [],
+    "explicacion": "VEHICULO ya contiene el DNI del propietario: se selecciona el color y se proyecta DNI, sin necesidad de unir con PROPIETARIO. Resultado: {1111A, 3333C, 4444D}.",
+    "formato": "abierta",
+    "respuesta_modelo": "π DNI (σ color = 'negro' (VEHICULO))"
   },
   {
     "id": 391,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "medio",
     "diapositiva": "Tema 6b",
-    "pregunta": "Obtén las matrículas de los vehículos cuyo modelo se lanzó después de 2018. Elige la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
+    "pregunta": "Obtén las matrículas de los vehículos cuyo modelo se lanzó después de 2018. Escribe la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nVEHICULO\nmatricula | color  | id_modelo | DNI\n----------+--------+-----------+------\n1000AAA   | negro  | 1         | 1111A\n2000BBB   | rojo   | 2         | 2222B\n3000CCC   | negro  | 3         | 3333C\n4000DDD   | blanco | 4         | 3333C\n5000EEE   | negro  | 2         | 4444D\n\nMODELO\nid_modelo | nom_modelo | anio | nom_fab\n----------+------------+------+--------\n1         | Corolla    | 2019 | Toyota\n2         | Ibiza      | 2017 | Seat\n3         | Focus      | 2020 | Ford\n4         | Leon       | 2021 | Seat",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π matricula (VEHICULO ⋈ (σ anio ≥ 2020 (MODELO)))"
-      },
-      {
-        "letra": "B",
-        "texto": "π matricula (σ anio > 2018 (VEHICULO ⋈ MODELO))"
-      },
-      {
-        "letra": "C",
-        "texto": "π matricula (VEHICULO ⋈ (σ anio < 2018 (MODELO)))"
-      },
-      {
-        "letra": "D",
-        "texto": "π matricula (VEHICULO ⋈ (σ anio > 2018 (MODELO)))"
-      }
-    ],
-    "respuestas_correctas": [
-      "D"
-    ],
-    "explicacion": "Se filtra MODELO por año y después se une con VEHICULO por id_modelo. Resultado: {1000AAA, 3000CCC, 4000DDD}."
+    "opciones": [],
+    "explicacion": "Se filtra MODELO por año y después se une con VEHICULO por id_modelo. Resultado: {1000AAA, 3000CCC, 4000DDD}.",
+    "formato": "abierta",
+    "respuesta_modelo": "π matricula (VEHICULO ⋈ (σ anio > 2018 (MODELO)))"
   },
   {
     "id": 392,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "dificil",
     "diapositiva": "Tema 6b",
     "pregunta": "Obtén las matrículas de los vehículos que han pasado todas las revisiones listadas en REVISION.",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nPASA_REVISION\nmatricula | id_revision | fecha      | coste\n----------+-------------+------------+------\n1000AAA   | 1           | 2025-01-10 | 50\n1000AAA   | 2           | 2025-02-11 | 80\n1000AAA   | 3           | 2025-03-12 | 40\n2000BBB   | 1           | 2025-01-15 | 50\n2000BBB   | 2           | 2025-04-20 | 90\n3000CCC   | 1           | 2025-02-01 | 50\n3000CCC   | 2           | 2025-02-02 | 70\n3000CCC   | 3           | 2025-02-03 | 45\n4000DDD   | 1           | 2025-05-05 | 55\n5000EEE   | 3           | 2025-06-06 | 35\n\nREVISION\nid_revision | descripcion\n------------+------------\n1           | ITV\n2           | Frenos\n3           | Aceite",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π matricula (σ id_revision = 3 (PASA_REVISION))"
-      },
-      {
-        "letra": "B",
-        "texto": "π matricula (PASA_REVISION)"
-      },
-      {
-        "letra": "C",
-        "texto": "(π matricula, id_revision (PASA_REVISION)) ÷ (π id_revision (REVISION))"
-      },
-      {
-        "letra": "D",
-        "texto": "π matricula (PASA_REVISION ⋈ REVISION)"
-      }
-    ],
-    "respuestas_correctas": [
-      "C"
-    ],
-    "explicacion": "«Para todo» se resuelve con la división: pares (matricula, id_revision) ÷ conjunto de revisiones. Resultado: {1000AAA, 3000CCC}."
+    "opciones": [],
+    "explicacion": "«Para todo» se resuelve con la división: pares (matricula, id_revision) ÷ conjunto de revisiones. Resultado: {1000AAA, 3000CCC}.",
+    "formato": "abierta",
+    "respuesta_modelo": "(π matricula, id_revision (PASA_REVISION)) ÷ (π id_revision (REVISION))"
   },
   {
     "id": 393,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "medio",
     "diapositiva": "Tema 6b",
     "pregunta": "Obtén el nombre de los fabricantes que no tienen ningún modelo registrado.",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nFABRICANTE\nnom_fab | pais\n--------+-------\nToyota  | Japón\nSeat    | España\nFord    | EEUU\nTesla   | EEUU\n\nMODELO\nid_modelo | nom_modelo | anio | nom_fab\n----------+------------+------+--------\n1         | Corolla    | 2019 | Toyota\n2         | Ibiza      | 2017 | Seat\n3         | Focus      | 2020 | Ford\n4         | Leon       | 2021 | Seat",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π nom_fab (σ pais = 'EEUU' (FABRICANTE))"
-      },
-      {
-        "letra": "B",
-        "texto": "(π nom_fab (FABRICANTE)) ∩ (π nom_fab (MODELO))"
-      },
-      {
-        "letra": "C",
-        "texto": "(π nom_fab (FABRICANTE)) − (π nom_fab (MODELO))"
-      },
-      {
-        "letra": "D",
-        "texto": "(π nom_fab (MODELO)) − (π nom_fab (FABRICANTE))"
-      }
-    ],
-    "respuestas_correctas": [
-      "C"
-    ],
-    "explicacion": "«Que no tienen» se expresa con la diferencia: todos los fabricantes − los que aparecen en MODELO. Resultado: {Tesla}."
+    "opciones": [],
+    "explicacion": "«Que no tienen» se expresa con la diferencia: todos los fabricantes − los que aparecen en MODELO. Resultado: {Tesla}.",
+    "formato": "abierta",
+    "respuesta_modelo": "(π nom_fab (FABRICANTE)) − (π nom_fab (MODELO))"
   },
   {
     "id": 394,
@@ -1842,34 +1752,16 @@
     "id": 395,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "medio",
     "diapositiva": "Tema 6b",
     "pregunta": "Obtén el DNI de los propietarios que tienen al menos un vehículo negro y al menos un vehículo blanco.",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nVEHICULO\nmatricula | color  | id_modelo | DNI\n----------+--------+-----------+------\n1000AAA   | negro  | 1         | 1111A\n2000BBB   | rojo   | 2         | 2222B\n3000CCC   | negro  | 3         | 3333C\n4000DDD   | blanco | 4         | 3333C\n5000EEE   | negro  | 2         | 4444D",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π DNI (σ color = 'negro' ∧ color = 'blanco' (VEHICULO))"
-      },
-      {
-        "letra": "B",
-        "texto": "(π DNI (σ color = 'negro' (VEHICULO))) ∩ (π DNI (σ color = 'blanco' (VEHICULO)))"
-      },
-      {
-        "letra": "C",
-        "texto": "π DNI (σ (color = 'negro' ∨ color = 'blanco') (VEHICULO))"
-      },
-      {
-        "letra": "D",
-        "texto": "(π DNI (σ color = 'negro' (VEHICULO))) − (π DNI (σ color = 'blanco' (VEHICULO)))"
-      }
-    ],
-    "respuestas_correctas": [
-      "B"
-    ],
-    "explicacion": "Una sola selección con color='negro' ∧ color='blanco' no devuelve nada (un vehículo no tiene dos colores). Hay que intersectar dos conjuntos de DNI. Resultado: {3333C}."
+    "opciones": [],
+    "explicacion": "Una sola selección con color='negro' ∧ color='blanco' no devuelve nada (un vehículo no tiene dos colores). Hay que intersectar dos conjuntos de DNI. Resultado: {3333C}.",
+    "formato": "abierta",
+    "respuesta_modelo": "(π DNI (σ color = 'negro' (VEHICULO))) ∩ (π DNI (σ color = 'blanco' (VEHICULO)))"
   },
   {
     "id": 396,
@@ -1908,67 +1800,31 @@
     "id": 397,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "facil",
     "diapositiva": "Tema 6b",
-    "pregunta": "Obtén las matrículas de los vehículos que han pagado alguna revisión con coste superior a 60. Elige la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
+    "pregunta": "Obtén las matrículas de los vehículos que han pagado alguna revisión con coste superior a 60. Escribe la expresión que, además de correcta, sea la más eficiente (la que maneja menos tuplas intermedias).",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nPASA_REVISION\nmatricula | id_revision | fecha      | coste\n----------+-------------+------------+------\n1000AAA   | 1           | 2025-01-10 | 50\n1000AAA   | 2           | 2025-02-11 | 80\n1000AAA   | 3           | 2025-03-12 | 40\n2000BBB   | 1           | 2025-01-15 | 50\n2000BBB   | 2           | 2025-04-20 | 90\n3000CCC   | 1           | 2025-02-01 | 50\n3000CCC   | 2           | 2025-02-02 | 70\n3000CCC   | 3           | 2025-02-03 | 45\n4000DDD   | 1           | 2025-05-05 | 55\n5000EEE   | 3           | 2025-06-06 | 35",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π matricula (σ coste > 60 (PASA_REVISION ⋈ VEHICULO))"
-      },
-      {
-        "letra": "B",
-        "texto": "π matricula (σ coste > 60 (PASA_REVISION))"
-      },
-      {
-        "letra": "C",
-        "texto": "π matricula (σ coste < 60 (PASA_REVISION))"
-      },
-      {
-        "letra": "D",
-        "texto": "π id_revision (σ coste > 60 (PASA_REVISION))"
-      }
-    ],
-    "respuestas_correctas": [
-      "B"
-    ],
-    "explicacion": "Es una selección sobre PASA_REVISION seguida de una proyección; no hace falta ningún join. Resultado: {1000AAA, 2000BBB, 3000CCC}."
+    "opciones": [],
+    "explicacion": "Es una selección sobre PASA_REVISION seguida de una proyección; no hace falta ningún join. Resultado: {1000AAA, 2000BBB, 3000CCC}.",
+    "formato": "abierta",
+    "respuesta_modelo": "π matricula (σ coste > 60 (PASA_REVISION))"
   },
   {
     "id": 398,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "dificil",
     "diapositiva": "Tema 6b",
     "pregunta": "Obtén las revisiones (id_revision) que han pasado todos los vehículos de color negro.",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria; * = admite nulos; el atributo que se repite en dos tablas es la clave ajena)\nFABRICANTE(PK nom_fab; pais)\nMODELO(PK id_modelo; nom_modelo; anio; nom_fab → FABRICANTE)\nPROPIETARIO(PK DNI; nom_prop; DNI_conyuge* → PROPIETARIO)\nVEHICULO(PK matricula; color; id_modelo → MODELO; DNI → PROPIETARIO)\nREVISION(PK id_revision; descripcion)\nPASA_REVISION(PK matricula, id_revision, fecha; coste; matricula → VEHICULO; id_revision → REVISION)\n\nPASA_REVISION\nmatricula | id_revision | fecha      | coste\n----------+-------------+------------+------\n1000AAA   | 1           | 2025-01-10 | 50\n1000AAA   | 2           | 2025-02-11 | 80\n1000AAA   | 3           | 2025-03-12 | 40\n2000BBB   | 1           | 2025-01-15 | 50\n2000BBB   | 2           | 2025-04-20 | 90\n3000CCC   | 1           | 2025-02-01 | 50\n3000CCC   | 2           | 2025-02-02 | 70\n3000CCC   | 3           | 2025-02-03 | 45\n4000DDD   | 1           | 2025-05-05 | 55\n5000EEE   | 3           | 2025-06-06 | 35\n\nVEHICULO\nmatricula | color  | id_modelo | DNI\n----------+--------+-----------+------\n1000AAA   | negro  | 1         | 1111A\n2000BBB   | rojo   | 2         | 2222B\n3000CCC   | negro  | 3         | 3333C\n4000DDD   | blanco | 4         | 3333C\n5000EEE   | negro  | 2         | 4444D",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "(π id_revision (REVISION)) − (π id_revision (PASA_REVISION ⋈ (σ color = 'negro' (VEHICULO))))"
-      },
-      {
-        "letra": "B",
-        "texto": "π id_revision (PASA_REVISION)"
-      },
-      {
-        "letra": "C",
-        "texto": "(π id_revision, matricula (PASA_REVISION)) ÷ (π matricula (σ color = 'negro' (VEHICULO)))"
-      },
-      {
-        "letra": "D",
-        "texto": "π id_revision (PASA_REVISION ⋈ (σ color = 'negro' (VEHICULO)))"
-      }
-    ],
-    "respuestas_correctas": [
-      "C"
-    ],
-    "explicacion": "Se divide el conjunto de pares (id_revision, matricula) entre las matrículas de vehículos negros. Resultado: {3}."
+    "opciones": [],
+    "explicacion": "Se divide el conjunto de pares (id_revision, matricula) entre las matrículas de vehículos negros. Resultado: {3}.",
+    "formato": "abierta",
+    "respuesta_modelo": "(π id_revision, matricula (PASA_REVISION)) ÷ (π matricula (σ color = 'negro' (VEHICULO)))"
   },
   {
     "id": 399,
@@ -2073,67 +1929,31 @@
     "id": 402,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "facil",
     "diapositiva": "Tema 6b",
     "pregunta": "Obtén el título de los libros publicados por la editorial 'Addison-Wesley'.",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria)\nAUTOR(PK nombre; nacionalidad; institucion)\nEDITOR(PK nombre; nacionalidad; institucion)\nLIBRO(PK titulo; autor → AUTOR; editorial; editor → EDITOR)\n\nLIBRO\ntitulo         | autor   | editorial      | editor\n---------------+---------+----------------+-------\nBases de datos | Gil     | RA-MA          | Lara\nAlgoritmos     | Rossi   | Addison-Wesley | Rossi\nRedes          | Bianchi | RA-MA          | Lara\nJava           | Smith   | Addison-Wesley | Moreno\nWeb            | Pérez   | RA-MA          | Gil\nSQL            | Gil     | Addison-Wesley | Lara\nPython         | Gil     | Anaya          | Moreno\nÁlgebra        | Pérez   | Anaya          | Gil",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "π titulo (σ editorial = 'Addison-Wesley' (LIBRO))"
-      },
-      {
-        "letra": "B",
-        "texto": "π titulo (σ editorial ≠ 'Addison-Wesley' (LIBRO))"
-      },
-      {
-        "letra": "C",
-        "texto": "π editorial (σ editorial = 'Addison-Wesley' (LIBRO))"
-      },
-      {
-        "letra": "D",
-        "texto": "π titulo (LIBRO)"
-      }
-    ],
-    "respuestas_correctas": [
-      "A"
-    ],
-    "explicacion": "Selección sobre LIBRO por la editorial y proyección del título. Resultado: {Algoritmos, Java, SQL}."
+    "opciones": [],
+    "explicacion": "Selección sobre LIBRO por la editorial y proyección del título. Resultado: {Algoritmos, Java, SQL}.",
+    "formato": "abierta",
+    "respuesta_modelo": "π titulo (σ editorial = 'Addison-Wesley' (LIBRO))"
   },
   {
     "id": 403,
     "asignatura": "BD",
     "tema": 6,
-    "tipo": "algebra",
+    "tipo": "algebra_abierta",
     "dificultad": "facil",
     "diapositiva": "Tema 6b",
     "pregunta": "Obtén el nombre de los editores que no son autores.",
     "imagen": "",
     "codigo": "Esquema relacional (PK = clave primaria)\nAUTOR(PK nombre; nacionalidad; institucion)\nEDITOR(PK nombre; nacionalidad; institucion)\nLIBRO(PK titulo; autor → AUTOR; editorial; editor → EDITOR)\n\nAUTOR\nnombre  | nacionalidad | institucion\n--------+--------------+------------\nGil     | española     | URJC\nRossi   | italiana     | UPM\nBianchi | italiana     | URJC\nSmith   | inglesa      | UPM\nPérez   | española     | UPM\n\nEDITOR\nnombre | nacionalidad | institucion\n-------+--------------+------------\nGil    | española     | URJC\nLara   | española     | URJC\nMoreno | española     | UPM\nRossi  | italiana     | UPM",
-    "opciones": [
-      {
-        "letra": "A",
-        "texto": "(π nombre (EDITOR)) − (π nombre (AUTOR))"
-      },
-      {
-        "letra": "B",
-        "texto": "(π nombre (AUTOR)) − (π nombre (EDITOR))"
-      },
-      {
-        "letra": "C",
-        "texto": "(π nombre (EDITOR)) ∩ (π nombre (AUTOR))"
-      },
-      {
-        "letra": "D",
-        "texto": "(π nombre (EDITOR)) ∪ (π nombre (AUTOR))"
-      }
-    ],
-    "respuestas_correctas": [
-      "A"
-    ],
-    "explicacion": "Diferencia de los nombres de EDITOR menos los nombres de AUTOR. Es posible porque ambos proyectos tienen el mismo esquema (nombre). Resultado: {Lara, Moreno}."
+    "opciones": [],
+    "explicacion": "Diferencia de los nombres de EDITOR menos los nombres de AUTOR. Es posible porque ambos proyectos tienen el mismo esquema (nombre). Resultado: {Lara, Moreno}.",
+    "formato": "abierta",
+    "respuesta_modelo": "(π nombre (EDITOR)) − (π nombre (AUTOR))"
   },
   {
     "id": 404,

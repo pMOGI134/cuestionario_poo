@@ -1,6 +1,7 @@
 "use strict";
 
 const LETRAS = ["A", "B", "C", "D", "E", "F"];
+const SIMBOLOS_ALGEBRA = ["π", "σ", "ρ", "⋈", "∪", "∩", "−", "÷", "∧", "→", "(", ")", "=", "∈"];
 const LS_KEY = "poo_historial_v1";
 const ASIGNATURAS = [
   {
@@ -68,6 +69,8 @@ const TIPOS = {
   diseno: "Diseño / UML",
   estructura: "Estructura de Java",
   sintaxis: "Sintaxis y operadores",
+  algebra: "Álgebra relacional",
+  algebra_abierta: "Álgebra relacional · respuesta abierta",
 };
 const TEMAS = { 1: "Tema 1 · POO", 2: "Tema 2 · Java", 3: "Tema 3 · Herencia y polimorfismo" };
 
@@ -79,7 +82,8 @@ let testActual = null;
 let modoTest = "estudio";
 let totalPreguntas = 30;
 let indice = 0;
-let respuestas = []; // letra elegida (o null) por pregunta
+let respuestas = []; // Letra elegida o texto escrito, o null si está sin responder.
+let evaluacionesManuales = [];
 let respondida = false;
 
 const $ = (id) => document.getElementById(id);
@@ -97,8 +101,8 @@ function barajar(lista) {
 
 // Mezcla las opciones, las reetiqueta A–D y recalcula cuál es la correcta.
 function prepararPregunta(q) {
-  const correctas = new Set(q.respuestas_correctas);
-  const mezcladas = barajar(q.opciones);
+  const correctas = new Set(q.respuestas_correctas || []);
+  const mezcladas = barajar(q.opciones || []);
   const opciones = mezcladas.map((o, i) => ({
     letra: LETRAS[i],
     texto: o.texto,
@@ -112,7 +116,7 @@ function prepararPregunta(q) {
 }
 
 function mostrar(id) {
-  ["pantalla-login", "pantalla-asignaturas", "pantalla-tests", "pantalla-perfil", "pantalla-test", "pantalla-resultados"].forEach((p) => {
+  ["pantalla-login", "pantalla-asignaturas", "pantalla-tests", "pantalla-perfil", "pantalla-test", "pantalla-revision-examen", "pantalla-autoevaluacion-examen", "pantalla-resultados"].forEach((p) => {
     $(p).hidden = p !== id;
   });
   $("btn-menu").hidden = id === "pantalla-login";
@@ -148,8 +152,9 @@ function actualizarBotonModo() {
   $("descripcion-modo-test").textContent = descripcion;
   boton.setAttribute("aria-label", `Modo actual: ${nombre}. ${descripcion}. Cambiar a modo ${examen ? "estudio" : "examen"}.`);
   boton.title = `Modo ${nombre}: ${descripcion}. Pulsa para cambiar.`;
-  boton.disabled = !$("pantalla-test").hidden;
-  $("btn-menu").disabled = !$("pantalla-test").hidden;
+  const duranteTest = !$("pantalla-test").hidden || !$("pantalla-revision-examen").hidden || !$("pantalla-autoevaluacion-examen").hidden;
+  boton.disabled = duranteTest;
+  $("btn-menu").disabled = duranteTest;
 }
 
 function nombreTema(tema) {
@@ -486,8 +491,16 @@ function abrirMenu() {
 /* ---------- test ---------- */
 
 function empezar() {
-  preguntas = barajar(banco).slice(0, totalPreguntas).map(prepararPregunta);
+  const abiertas = banco.filter((q) => q.formato === "abierta");
+  const cerradas = banco.filter((q) => q.formato !== "abierta");
+  const totalAbiertas = Math.min(abiertas.length, Math.ceil(totalPreguntas * 0.2));
+  preguntas = [
+    ...barajar(abiertas).slice(0, totalAbiertas),
+    ...barajar(cerradas).slice(0, totalPreguntas - totalAbiertas),
+  ].map(prepararPregunta);
+  preguntas = barajar(preguntas);
   respuestas = new Array(totalPreguntas).fill(null);
+  evaluacionesManuales = new Array(totalPreguntas).fill(null);
   indice = 0;
   actualizarBotonModo();
   mostrar("pantalla-test");
@@ -495,7 +508,25 @@ function empezar() {
 }
 
 function aciertosHastaAhora() {
-  return preguntas.reduce((n, q, i) => n + (respuestas[i] && q.respuestas_correctas.includes(respuestas[i]) ? 1 : 0), 0);
+  return preguntas.reduce((n, q, i) => n + (esAbierta(q)
+    ? evaluacionesManuales[i] === true ? 1 : 0
+    : respuestas[i] && q.respuestas_correctas.includes(respuestas[i]) ? 1 : 0), 0);
+}
+
+function fallosHastaAhora() {
+  return preguntas.reduce((n, q, i) => n + (esAbierta(q)
+    ? evaluacionesManuales[i] === false ? 1 : 0
+    : respuestas[i] && !q.respuestas_correctas.includes(respuestas[i]) ? 1 : 0), 0);
+}
+
+function esAbierta(q) {
+  return q.formato === "abierta";
+}
+
+function esCorrecta(i, q) {
+  return esAbierta(q)
+    ? evaluacionesManuales[i] === true
+    : respuestas[i] !== null && q.respuestas_correctas.includes(respuestas[i]);
 }
 
 function respondidasHastaAhora() {
@@ -506,6 +537,7 @@ function pintarPregunta() {
   const q = preguntas[indice];
   const seleccionGuardada = respuestas[indice];
   respondida = seleccionGuardada !== null;
+  const abierta = esAbierta(q);
 
   $("contador").textContent = `Pregunta ${indice + 1} de ${totalPreguntas}`;
   $("marcador").textContent = modoTest === "examen"
@@ -538,34 +570,61 @@ function pintarPregunta() {
 
   const caja = $("opciones");
   caja.innerHTML = "";
-  q.opciones.forEach((o) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "opcion";
-    b.dataset.letra = o.letra;
-    const l = document.createElement("span");
-    l.className = "letra";
-    l.textContent = o.letra;
-    const t = document.createElement("span");
-    t.className = "texto";
-    t.textContent = o.texto;
-    b.append(l, t);
-    if (respondida) {
-      b.disabled = true;
-      if (modoTest === "examen") {
-        if (o.letra === seleccionGuardada) b.classList.add("seleccionada");
-      } else if (q.respuestas_correctas.includes(o.letra)) b.classList.add("correcta");
-      else if (o.letra === seleccionGuardada) b.classList.add("incorrecta");
-      else b.classList.add("apagada");
-    }
-    b.addEventListener("click", () => responder(o.letra));
-    caja.append(b);
-  });
+  caja.hidden = abierta;
+  $("respuesta-abierta").hidden = !abierta;
+  if (abierta) {
+    $("texto-respuesta-abierta").value = seleccionGuardada || "";
+    $("texto-respuesta-abierta").disabled = respondida && modoTest === "estudio";
+    $("btn-enviar-abierta").hidden = respondida && modoTest === "estudio";
+    $("btn-enviar-abierta").textContent = respondida ? "Actualizar respuesta" : "Guardar respuesta";
+    $("btn-enviar-abierta").disabled = false;
+  } else {
+    q.opciones.forEach((o) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "opcion";
+      b.dataset.letra = o.letra;
+      const l = document.createElement("span");
+      l.className = "letra";
+      l.textContent = o.letra;
+      const t = document.createElement("span");
+      t.className = "texto";
+      t.textContent = o.texto;
+      b.append(l, t);
+      if (respondida) {
+        b.disabled = modoTest === "estudio";
+        if (modoTest === "examen") {
+          if (o.letra === seleccionGuardada) b.classList.add("seleccionada");
+        } else if (q.respuestas_correctas.includes(o.letra)) b.classList.add("correcta");
+        else if (o.letra === seleccionGuardada) b.classList.add("incorrecta");
+        else b.classList.add("apagada");
+      }
+      b.addEventListener("click", () => responder(o.letra));
+      caja.append(b);
+    });
+  }
 
   const explicacion = $("explicacion");
+  const revisionAbierta = $("revision-abierta");
   const siguiente = $("btn-siguiente");
+  const saltar = $("btn-saltar");
+  revisionAbierta.hidden = true;
   if (respondida) {
-    if (modoTest === "examen") {
+    saltar.hidden = true;
+    if (abierta && modoTest === "estudio") {
+      $("veredicto").textContent = evaluacionesManuales[indice] === null
+        ? "Compara tu respuesta con la solución modelo"
+        : evaluacionesManuales[indice] ? "✔ Marcada como correcta" : "✘ Marcada para repasar";
+      $("texto-explicacion").textContent = q.explicacion || "";
+      $("respuesta-modelo").textContent = q.respuesta_modelo;
+      revisionAbierta.hidden = false;
+      $("btn-autoevaluar-ok").hidden = evaluacionesManuales[indice] !== null;
+      $("btn-autoevaluar-ko").hidden = evaluacionesManuales[indice] !== null;
+      $("btn-autoevaluar-ok").onclick = () => autoevaluarRespuesta(true);
+      $("btn-autoevaluar-ko").onclick = () => autoevaluarRespuesta(false);
+      explicacion.className = "explicacion " + (evaluacionesManuales[indice] === false ? "ko" : evaluacionesManuales[indice] === true ? "ok" : "");
+      explicacion.hidden = false;
+    } else if (modoTest === "examen") {
       $("veredicto").textContent = "Respuesta guardada";
       $("texto-explicacion").textContent = "La corrección se mostrará al terminar el examen.";
       explicacion.className = "explicacion";
@@ -577,23 +636,30 @@ function pintarPregunta() {
       $("texto-explicacion").textContent = q.explicacion || "";
       explicacion.hidden = false;
     }
-    siguiente.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
-    siguiente.hidden = false;
+    siguiente.textContent = indice === totalPreguntas - 1
+      ? modoTest === "examen" ? "Terminar y revisar" : "Ver resultado"
+      : "Siguiente";
+    siguiente.hidden = abierta && modoTest === "estudio" && evaluacionesManuales[indice] === null;
   } else {
     explicacion.hidden = true;
     siguiente.hidden = true;
+    saltar.hidden = false;
+    saltar.textContent = indice === totalPreguntas - 1
+      ? modoTest === "examen" ? "Saltar y revisar examen" : "Saltar y ver resultado"
+      : "Saltar pregunta";
   }
 }
 
 function responder(letra) {
-  if (respondida) return;
+  if (respondida && modoTest === "estudio") return;
   respondida = true;
   const q = preguntas[indice];
   respuestas[indice] = letra;
   const acierto = q.respuestas_correctas.includes(letra);
 
   document.querySelectorAll("#opciones .opcion").forEach((b) => {
-    b.disabled = true;
+    b.classList.remove("correcta", "incorrecta", "apagada", "seleccionada");
+    b.disabled = modoTest === "estudio";
     const l = b.dataset.letra;
     if (modoTest === "examen") {
       if (l === letra) b.classList.add("seleccionada");
@@ -618,19 +684,180 @@ function responder(letra) {
     ? `Respondidas: ${respondidasHastaAhora()} de ${totalPreguntas}`
     : `Aciertos: ${aciertosHastaAhora()}`;
   const sig = $("btn-siguiente");
-  sig.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
+  sig.textContent = indice === totalPreguntas - 1
+    ? modoTest === "examen" ? "Terminar y revisar" : "Ver resultado"
+    : "Siguiente";
   sig.hidden = false;
   sig.focus({ preventScroll: true });
 }
 
+function guardarRespuestaAbierta() {
+  if (respondida && modoTest === "estudio") return;
+  const respuesta = $("texto-respuesta-abierta").value.trim();
+  if (!respuesta) {
+    $("texto-respuesta-abierta").setCustomValidity("Escribe una respuesta antes de continuar.");
+    $("texto-respuesta-abierta").reportValidity();
+    return;
+  }
+  $("texto-respuesta-abierta").setCustomValidity("");
+  if (respuesta === respuestas[indice]) return;
+  respuestas[indice] = respuesta;
+  evaluacionesManuales[indice] = null;
+  respondida = true;
+  pintarPregunta();
+  if (modoTest === "estudio") $("revision-abierta").scrollIntoView({ block: "nearest" });
+}
+
+function autoevaluarRespuesta(correcta) {
+  if (!esAbierta(preguntas[indice]) || respuestas[indice] === null) return;
+  evaluacionesManuales[indice] = correcta;
+  pintarPregunta();
+  $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
+}
+
+function iniciarRevisionExamen() {
+  const lista = $("lista-preguntas-examen");
+  lista.innerHTML = "";
+  preguntas.forEach((q, i) => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "tarjeta-revision-abierta";
+    const enunciado = document.createElement("h3");
+    enunciado.textContent = `Pregunta ${i + 1}: ${q.pregunta}`;
+    const respuesta = document.createElement("p");
+    respuesta.textContent = respuestas[i] === null
+      ? "Estado: sin responder (no suma ni resta)."
+      : `Tu respuesta: ${textoRespuesta(q, respuestas[i])}`;
+    const editar = document.createElement("button");
+    editar.type = "button";
+    editar.className = "btn btn-secundario";
+    editar.textContent = respuestas[i] === null ? "Responder ahora" : "Cambiar respuesta";
+    editar.addEventListener("click", () => {
+      indice = i;
+      mostrar("pantalla-test");
+      pintarPregunta();
+    });
+    tarjeta.append(enunciado, respuesta, editar);
+    lista.append(tarjeta);
+  });
+  const sinResponder = respuestas.filter((respuesta) => respuesta === null).length;
+  $("estado-revision-examen").textContent = sinResponder
+    ? `${sinResponder} pregunta${sinResponder === 1 ? "" : "s"} sin responder; no suman ni restan.`
+    : "Todas las preguntas tienen respuesta.";
+  mostrar("pantalla-revision-examen");
+}
+
+function iniciarAutoevaluacionExamen() {
+  const abiertasRespondidas = preguntas
+    .map((q, i) => ({ q, i }))
+    .filter(({ q, i }) => esAbierta(q) && respuestas[i] !== null);
+  if (!abiertasRespondidas.length) {
+    terminar();
+    return;
+  }
+  const lista = $("lista-revision-abierta");
+  lista.innerHTML = "";
+  abiertasRespondidas.forEach(({ q, i }) => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "tarjeta-revision-abierta";
+    const enunciado = document.createElement("h3");
+    enunciado.textContent = `Pregunta ${i + 1}: ${q.pregunta}`;
+    const tuRespuesta = document.createElement("p");
+    tuRespuesta.textContent = `Tu respuesta: ${respuestas[i]}`;
+    const modeloTitulo = document.createElement("strong");
+    modeloTitulo.textContent = "Una posible solución";
+    const modelo = document.createElement("pre");
+    modelo.textContent = q.respuesta_modelo;
+    const explicacion = document.createElement("p");
+    explicacion.textContent = q.explicacion || "";
+    const acciones = document.createElement("div");
+    acciones.className = "acciones";
+    [true, false].forEach((correcta) => {
+      const boton = document.createElement("button");
+      boton.type = "button";
+      boton.className = "btn btn-secundario";
+      boton.textContent = correcta ? "La considero correcta" : "Necesito repasarla";
+      boton.disabled = evaluacionesManuales[i] !== null;
+      if (evaluacionesManuales[i] === correcta) boton.classList.add("autoevaluacion-seleccionada");
+      boton.addEventListener("click", () => {
+        evaluacionesManuales[i] = correcta;
+        pintarEstadoRevisionExamen();
+        boton.parentElement.querySelectorAll("button").forEach((opcion) => {
+          opcion.disabled = true;
+          if (opcion === boton) opcion.classList.add("autoevaluacion-seleccionada");
+        });
+      });
+      acciones.append(boton);
+    });
+    tarjeta.append(enunciado, tuRespuesta, modeloTitulo, modelo, explicacion, acciones);
+    lista.append(tarjeta);
+  });
+  pintarEstadoRevisionExamen();
+  mostrar("pantalla-autoevaluacion-examen");
+}
+
+function pintarEstadoRevisionExamen() {
+  const indicesAbiertos = preguntas
+    .map((q, i) => esAbierta(q) && respuestas[i] !== null ? i : -1)
+    .filter((i) => i >= 0);
+  const evaluadas = indicesAbiertos.filter((i) => evaluacionesManuales[i] !== null).length;
+  const completas = evaluadas === indicesAbiertos.length;
+  $("estado-revision-abierta").textContent = completas
+    ? "Has evaluado todas las respuestas abiertas contestadas."
+    : `Evalúa las respuestas abiertas contestadas para continuar (${evaluadas}/${indicesAbiertos.length}).`;
+  $("btn-finalizar-revision").disabled = !completas;
+  $("btn-finalizar-revision").textContent = completas ? "Finalizar y ver nota" : "Evalúa las respuestas abiertas";
+}
+
 function siguiente() {
   if (!respondida) return;
+  if (esAbierta(preguntas[indice]) && modoTest === "estudio" && evaluacionesManuales[indice] === null) return;
   if (indice < totalPreguntas - 1) {
     indice++;
     pintarPregunta();
   } else {
+    if (modoTest === "examen") iniciarRevisionExamen();
+    else terminar();
+  }
+}
+
+function saltarPregunta() {
+  if (respondida) return;
+  if (indice < totalPreguntas - 1) {
+    indice++;
+    pintarPregunta();
+  } else if (modoTest === "examen") {
+    iniciarRevisionExamen();
+  } else {
     terminar();
   }
+}
+
+function insertarSimbolo(simbolo) {
+  const campo = $("texto-respuesta-abierta");
+  if (campo.disabled) return;
+  const inicio = campo.selectionStart;
+  const fin = campo.selectionEnd;
+  campo.setRangeText(simbolo, inicio, fin, "end");
+  campo.focus();
+}
+
+function renderizarPaletaAlgebra() {
+  const paleta = $("paleta-algebra");
+  paleta.innerHTML = "";
+  SIMBOLOS_ALGEBRA.forEach((simbolo) => {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "simbolo-algebra";
+    boton.textContent = simbolo;
+    boton.setAttribute("aria-label", `Insertar ${simbolo}`);
+    boton.addEventListener("mousedown", (e) => e.preventDefault());
+    boton.addEventListener("click", () => insertarSimbolo(simbolo));
+    paleta.append(boton);
+  });
+}
+
+function enviarRespuestaAbierta() {
+  guardarRespuestaAbierta();
 }
 
 function abandonar() {
@@ -666,7 +893,7 @@ function desglosar(destino, clave, etiquetas) {
     const k = q[clave];
     acum[k] = acum[k] || { ok: 0, total: 0 };
     acum[k].total++;
-    if (respuestas[i] && q.respuestas_correctas.includes(respuestas[i])) acum[k].ok++;
+    if (esCorrecta(i, q)) acum[k].ok++;
   });
   destino.innerHTML = "";
   Object.keys(acum)
@@ -682,9 +909,15 @@ function textoOpcion(q, letra) {
   return o ? `${o.letra}) ${o.texto}` : "(sin responder)";
 }
 
+function textoRespuesta(q, respuesta) {
+  if (esAbierta(q)) return respuesta || "(sin respuesta)";
+  return textoOpcion(q, respuesta);
+}
+
 function terminar() {
   const aciertos = aciertosHastaAhora();
-  const fallos = preguntas.reduce((n, q, i) => n + (respuestas[i] && !q.respuestas_correctas.includes(respuestas[i]) ? 1 : 0), 0);
+  const fallos = fallosHastaAhora();
+  const sinResponder = respuestas.filter((respuesta) => respuesta === null).length;
   const penalizacion = modoTest === "examen" ? (fallos / 3) : 0;
   const nota = Math.max(0, ((aciertos - penalizacion) / totalPreguntas) * 10);
 
@@ -706,8 +939,8 @@ function terminar() {
   $("progreso-barra").style.width = "100%";
   $("nota-numero").textContent = formatoNota(nota);
   $("nota-detalle").textContent = modoTest === "examen"
-    ? `Modo examen: ${aciertos} aciertos y ${fallos} fallos de ${totalPreguntas} preguntas. Penalización: ${formatoNota((penalizacion / totalPreguntas) * 10)} puntos.`
-    : `${aciertos} aciertos, ${totalPreguntas - aciertos} fallos de ${totalPreguntas} preguntas.`;
+    ? `Modo examen: ${aciertos} aciertos, ${fallos} fallos y ${sinResponder} sin responder. Penalización: ${formatoNota((penalizacion / totalPreguntas) * 10)} puntos.`
+    : `${aciertos} aciertos, ${fallos} fallos y ${sinResponder} sin responder de ${totalPreguntas} preguntas.`;
 
   let hist;
   if (!guardado) {
@@ -727,14 +960,15 @@ function terminar() {
 
   const lista = $("lista-falladas");
   lista.innerHTML = "";
-  const falladas = preguntas.map((q, i) => ({ q, i })).filter(({ q, i }) => !(respuestas[i] && q.respuestas_correctas.includes(respuestas[i])));
-  const revision = modoTest === "examen" ? preguntas.map((q, i) => ({ q, i })) : falladas;
+  const falladas = preguntas.map((q, i) => ({ q, i })).filter(({ q, i }) => respuestas[i] !== null && !esCorrecta(i, q));
+  const pendientes = preguntas.map((q, i) => ({ q, i })).filter(({ i }) => respuestas[i] === null);
+  const revision = modoTest === "examen" ? preguntas.map((q, i) => ({ q, i })) : [...falladas, ...pendientes];
   $("titulo-falladas").textContent = modoTest === "examen"
     ? `Revisión del examen (${revision.length} preguntas)`
-    : falladas.length ? `Preguntas falladas (${falladas.length})` : "Preguntas falladas";
+    : revision.length ? `Falladas o sin responder (${revision.length})` : "Preguntas falladas";
   if (!revision.length) {
     const p = document.createElement("p");
-    p.textContent = "¡Ninguna! Has acertado todas.";
+    p.textContent = "¡Has acertado todas las preguntas contestadas!";
     lista.append(p);
   }
   revision.forEach(({ q, i }) => {
@@ -754,10 +988,12 @@ function terminar() {
     }
     const tu = document.createElement("p");
     tu.className = "tu";
-    tu.textContent = "Tu respuesta: " + textoOpcion(q, respuestas[i]);
+    tu.textContent = "Tu respuesta: " + textoRespuesta(q, respuestas[i]);
     const ok = document.createElement("p");
     ok.className = "ok";
-    ok.textContent = "Correcta: " + q.respuestas_correctas.map((l) => textoOpcion(q, l)).join(" · ");
+    ok.textContent = esAbierta(q)
+      ? "Una posible solución: " + q.respuesta_modelo
+      : "Correcta: " + q.respuestas_correctas.map((l) => textoOpcion(q, l)).join(" · ");
     const ex = document.createElement("p");
     ex.textContent = q.explicacion || "";
     cont.append(tu, ok, ex);
@@ -788,8 +1024,9 @@ function terminar() {
 document.addEventListener("keydown", (e) => {
   if ($("pantalla-test").hidden) return;
   if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return;
   const k = e.key.toUpperCase();
-  if (!respondida) {
+  if (!respondida || modoTest === "examen") {
     let letra = null;
     if (/^[A-D]$/.test(k)) letra = k;
     else if (/^[1-4]$/.test(k)) letra = LETRAS[Number(k) - 1];
@@ -819,6 +1056,15 @@ $("btn-cambiar-cantidad-aic").addEventListener("click", () => {
   $("estado-banco").hidden = false;
 });
 $("btn-siguiente").addEventListener("click", siguiente);
+$("btn-saltar").addEventListener("click", saltarPregunta);
+$("btn-enviar-abierta").addEventListener("click", enviarRespuestaAbierta);
+$("btn-volver-examen").addEventListener("click", () => {
+  indice = 0;
+  mostrar("pantalla-test");
+  pintarPregunta();
+});
+$("btn-entregar-examen").addEventListener("click", iniciarAutoevaluacionExamen);
+$("btn-finalizar-revision").addEventListener("click", terminar);
 $("btn-menu").addEventListener("click", abrirMenu);
 $("btn-cerrar-menu").addEventListener("click", cerrarMenu);
 $("cerrar-menu-fondo").addEventListener("click", cerrarMenu);
@@ -899,4 +1145,5 @@ document.addEventListener("sesion-actualizada", (e) => {
 
 renderizarAsignaturas();
 renderizarMenu();
+renderizarPaletaAlgebra();
 pintarHistorial();

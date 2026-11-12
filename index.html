@@ -145,17 +145,56 @@
       <pre id="bloque-codigo" class="codigo" hidden><code id="codigo"></code></pre>
 
       <div id="opciones" class="opciones" role="group" aria-label="Opciones de respuesta"></div>
+      <div id="respuesta-abierta" class="respuesta-abierta" hidden>
+        <label for="texto-respuesta-abierta">Escribe tu expresión de álgebra relacional</label>
+        <textarea id="texto-respuesta-abierta" rows="4" placeholder="Puedes usar π, σ, ρ, ⋈, ∪, ∩, − y ÷."></textarea>
+        <div id="paleta-algebra" class="paleta-algebra" aria-label="Símbolos de álgebra relacional"></div>
+        <button id="btn-enviar-abierta" class="btn btn-principal" type="button">Guardar respuesta</button>
+      </div>
 
       <div id="explicacion" class="explicacion" hidden aria-live="polite">
         <strong id="veredicto"></strong>
         <p id="texto-explicacion"></p>
+        <div id="revision-abierta" class="revision-abierta" hidden>
+          <strong>Una posible solución</strong>
+          <pre id="respuesta-modelo"></pre>
+          <p>Las expresiones pueden ser equivalentes aunque estén escritas de otra forma. Compárala con la tuya y evalúate:</p>
+          <div class="acciones">
+            <button id="btn-autoevaluar-ok" class="btn btn-secundario" type="button">La considero correcta</button>
+            <button id="btn-autoevaluar-ko" class="btn btn-secundario" type="button">Necesito repasarla</button>
+          </div>
+        </div>
       </div>
 
       <div class="acciones acciones-navegacion">
         <button id="btn-anterior" class="btn btn-secundario" type="button" disabled>Pregunta anterior</button>
+        <button id="btn-saltar" class="btn btn-secundario" type="button" hidden>Saltar pregunta</button>
         <button id="btn-siguiente" class="btn btn-principal" type="button" hidden>Siguiente</button>
       </div>
       <p class="atajos">Atajos: A–D (o 1–4) para responder · Intro para continuar</p>
+    </section>
+
+    <!-- Revisión de respuestas antes de entregar el examen -->
+    <section id="pantalla-revision-examen" class="tarjeta" hidden>
+      <h2>Revisa el examen</h2>
+      <p class="nota-pequena">Comprueba tus respuestas antes de entregar. Las preguntas en blanco no suman ni restan. Las soluciones correctas no se mostrarán hasta entregar el examen.</p>
+      <div id="lista-preguntas-examen" class="lista-revision-abierta"></div>
+      <p id="estado-revision-examen" class="nota-pequena" role="status"></p>
+      <div class="acciones">
+        <button id="btn-volver-examen" class="btn btn-secundario" type="button">Volver a las preguntas</button>
+        <button id="btn-entregar-examen" class="btn btn-principal" type="button">Entregar examen</button>
+      </div>
+    </section>
+
+    <!-- Autoevaluación de respuestas abiertas tras entregar -->
+    <section id="pantalla-autoevaluacion-examen" class="tarjeta" hidden>
+      <h2>Revisa las respuestas abiertas</h2>
+      <p class="nota-pequena">El examen ya está entregado. Compara tus respuestas con las soluciones modelo y autoevalúalas para calcular la nota.</p>
+      <div id="lista-revision-abierta" class="lista-revision-abierta"></div>
+      <p id="estado-revision-abierta" class="nota-pequena" role="status"></p>
+      <div class="acciones">
+        <button id="btn-finalizar-revision" class="btn btn-principal" type="button" disabled>Finalizar y ver nota</button>
+      </div>
     </section>
 
     <!-- Resultados -->
