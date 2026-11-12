@@ -112,16 +112,23 @@ function prepararPregunta(q) {
 }
 
 function mostrar(id) {
-  ["pantalla-login", "pantalla-asignaturas", "pantalla-tests", "pantalla-test", "pantalla-resultados"].forEach((p) => {
+  ["pantalla-login", "pantalla-asignaturas", "pantalla-tests", "pantalla-perfil", "pantalla-test", "pantalla-resultados"].forEach((p) => {
     $(p).hidden = p !== id;
   });
+  $("btn-menu").hidden = id === "pantalla-login";
   actualizarBotonModo();
   window.scrollTo({ top: 0 });
 }
 
+function claveHistorialPara(asignatura, test) {
+  if (asignatura.id === "poo" && test.id === "temas-1-3") return LS_KEY;
+  return `${LS_KEY}_${asignatura.id}_${test.id}`;
+}
+
 function claveHistorialBase() {
-  if (!asignaturaActual || (asignaturaActual.id === "poo" && (!testActual || testActual.id === "temas-1-3"))) return LS_KEY;
-  return `${LS_KEY}_${asignaturaActual.id}_${testActual ? testActual.id : "general"}`;
+  if (!asignaturaActual) return LS_KEY;
+  if (!testActual) return `${LS_KEY}_${asignaturaActual.id}_general`;
+  return claveHistorialPara(asignaturaActual, testActual);
 }
 
 function claveHistorial() {
@@ -142,6 +149,7 @@ function actualizarBotonModo() {
   boton.setAttribute("aria-label", `Modo actual: ${nombre}. ${descripcion}. Cambiar a modo ${examen ? "estudio" : "examen"}.`);
   boton.title = `Modo ${nombre}: ${descripcion}. Pulsa para cambiar.`;
   boton.disabled = !$("pantalla-test").hidden;
+  $("btn-menu").disabled = !$("pantalla-test").hidden;
 }
 
 function nombreTema(tema) {
@@ -176,9 +184,15 @@ function guardarHistorial(h) {
 
 function borrarHistorial() {
   try {
-    const clave = claveHistorialBase();
-    localStorage.removeItem(clave);
-    localStorage.removeItem(`${clave}_examen`);
+    const asignaturas = asignaturaActual ? [asignaturaActual] : ASIGNATURAS;
+    asignaturas.forEach((asignatura) => {
+      const tests = testActual ? [testActual] : asignatura.tests;
+      tests.forEach((test) => {
+        const clave = claveHistorialPara(asignatura, test);
+        localStorage.removeItem(clave);
+        localStorage.removeItem(`${clave}_examen`);
+      });
+    });
   } catch (e) {
     /* sin almacenamiento disponible */
   }
@@ -217,6 +231,112 @@ function pintarHistorial() {
     caja.append(d);
   });
   caja.hidden = false;
+}
+
+function leerTodosLosIntentos() {
+  const intentos = [];
+  let historialInvalido = false;
+  try {
+    ASIGNATURAS.forEach((asignatura) => {
+      asignatura.tests.forEach((test) => {
+        const base = claveHistorialPara(asignatura, test);
+        ["estudio", "examen"].forEach((modo) => {
+          const clave = modo === "examen" ? `${base}_examen` : base;
+          const crudo = localStorage.getItem(clave);
+          if (!crudo) return;
+          let historial;
+          try {
+            historial = JSON.parse(crudo);
+          } catch (e) {
+            historialInvalido = true;
+            return;
+          }
+          if (!Array.isArray(historial)) {
+            historialInvalido = true;
+            return;
+          }
+          historial.forEach((intento) => {
+            if (!intento || typeof intento.nota !== "number") return;
+            intentos.push({
+              ...intento,
+              modo: intento.modo === "examen" || intento.modo === "estudio" ? intento.modo : modo,
+              asignatura: intento.asignatura || asignatura.nombre,
+              test: intento.test || test.nombre,
+            });
+          });
+        });
+      });
+    });
+  } catch (e) {
+    return null;
+  }
+  intentos.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+  return { intentos, historialInvalido };
+}
+
+function pintarPerfil() {
+  const resultado = leerTodosLosIntentos();
+  const resumen = $("resumen-perfil");
+  const recientes = $("tests-recientes");
+  resumen.innerHTML = "";
+  recientes.innerHTML = "";
+  if (!resultado) {
+    const aviso = document.createElement("p");
+    aviso.className = "nota-pequena";
+    aviso.textContent = "No se pudo leer el historial guardado en este navegador.";
+    recientes.append(aviso);
+    return;
+  }
+  const { intentos, historialInvalido } = resultado;
+  if (historialInvalido) {
+    const aviso = document.createElement("p");
+    aviso.className = "nota-pequena";
+    aviso.textContent = "Algunos registros del historial no se pudieron leer; se muestran los demás.";
+    recientes.append(aviso);
+  }
+  const mejor = intentos.length ? Math.max(...intentos.map((x) => x.nota)) : 0;
+  [
+    [String(intentos.length), "tests realizados"],
+    [intentos.length ? formatoNota(media(intentos)) : "—", "nota media"],
+    [intentos.length ? formatoNota(mejor) : "—", "mejor nota"],
+  ].forEach(([valor, etiqueta]) => {
+    const dato = document.createElement("div");
+    dato.className = "dato";
+    const numero = document.createElement("span");
+    numero.className = "valor";
+    numero.textContent = valor;
+    const nombre = document.createElement("span");
+    nombre.className = "etiqueta";
+    nombre.textContent = etiqueta;
+    dato.append(numero, nombre);
+    resumen.append(dato);
+  });
+  if (!intentos.length) {
+    const aviso = document.createElement("p");
+    aviso.className = "nota-pequena";
+    aviso.textContent = "Todavía no hay tests guardados. Tu actividad aparecerá aquí.";
+    recientes.append(aviso);
+    return;
+  }
+  intentos.slice(0, 20).forEach((intento) => {
+    const fila = document.createElement("article");
+    fila.className = "intento-reciente";
+    const descripcion = document.createElement("div");
+    const nombre = document.createElement("strong");
+    nombre.textContent = `${intento.asignatura} · ${intento.test}`;
+    const detalle = document.createElement("span");
+    const fecha = intento.fecha && !Number.isNaN(new Date(intento.fecha).getTime())
+      ? new Date(intento.fecha).toLocaleString("es-ES")
+      : "Fecha no disponible";
+    detalle.className = "etiquetas-intento";
+    detalle.textContent = `${intento.modo === "examen" ? "Modo examen" : "Modo práctica"} · ${intento.aciertos}/${intento.total} aciertos · ${fecha}`;
+    descripcion.append(nombre, detalle);
+    const nota = document.createElement("span");
+    nota.className = "nota-intento";
+    nota.textContent = `${formatoNota(intento.nota)}/10`;
+    fila.append(descripcion, nota);
+    recientes.append(fila);
+  });
 }
 
 /* ---------- carga ---------- */
@@ -260,16 +380,18 @@ function renderizarAsignaturas() {
     const descripcion = document.createElement("span");
     descripcion.textContent = asignatura.descripcion;
     boton.append(estado, nombre, descripcion);
-    boton.addEventListener("click", () => {
-      asignaturaActual = asignatura;
-      testActual = null;
-      $("nombre-asignatura-tests").textContent = asignatura.nombre;
-      pintarTests();
-      pintarHistorial();
-      mostrar("pantalla-tests");
-    });
+    boton.addEventListener("click", () => abrirAsignatura(asignatura));
     lista.append(boton);
   });
+}
+
+function abrirAsignatura(asignatura) {
+  asignaturaActual = asignatura;
+  testActual = null;
+  $("nombre-asignatura-tests").textContent = asignatura.nombre;
+  pintarTests();
+  pintarHistorial();
+  mostrar("pantalla-tests");
 }
 
 function pintarTests() {
@@ -289,30 +411,70 @@ function pintarTests() {
     const descripcion = document.createElement("span");
     descripcion.textContent = test.descripcion;
     boton.append(estado, nombre, descripcion);
-    boton.addEventListener("click", async () => {
-      testActual = test;
-      $("modos-dificultad").hidden = false;
-      $("estado-banco").hidden = false;
-      $("intro-aic").hidden = true;
-      $("texto-modo-ayuda").hidden = false;
-      banco = [];
-      $("nombre-test-modo").textContent = test.nombre;
-      lista.hidden = true;
-      $("selector-modo").hidden = false;
-      document.querySelectorAll(".modo-cantidad").forEach((opcion) => { opcion.disabled = true; });
-      $("estado-banco").textContent = "Cargando preguntas…";
-      const bancoCargado = await cargarBanco(test);
-      if (bancoCargado && asignaturaActual && asignaturaActual.id === "aic") {
-        totalPreguntas = Math.min(30, banco.length);
-        $("modos-dificultad").hidden = true;
-        $("estado-banco").hidden = true;
-        $("intro-aic").hidden = false;
-        $("texto-modo-ayuda").hidden = true;
-      }
-      pintarHistorial();
-    });
+    boton.addEventListener("click", () => abrirTest(test));
     lista.append(boton);
   });
+}
+
+async function abrirTest(test) {
+  testActual = test;
+  $("modos-dificultad").hidden = false;
+  $("estado-banco").hidden = false;
+  $("intro-aic").hidden = true;
+  $("texto-modo-ayuda").hidden = false;
+  banco = [];
+  $("nombre-test-modo").textContent = test.nombre;
+  $("lista-tests").hidden = true;
+  $("selector-modo").hidden = false;
+  document.querySelectorAll(".modo-cantidad").forEach((opcion) => { opcion.disabled = true; });
+  $("estado-banco").textContent = "Cargando preguntas…";
+  const bancoCargado = await cargarBanco(test);
+  if (bancoCargado && asignaturaActual && asignaturaActual.id === "aic") {
+    totalPreguntas = Math.min(30, banco.length);
+    $("modos-dificultad").hidden = true;
+    $("estado-banco").hidden = true;
+    $("intro-aic").hidden = false;
+    $("texto-modo-ayuda").hidden = true;
+  }
+  pintarHistorial();
+}
+
+function renderizarMenu() {
+  const lista = $("menu-asignaturas");
+  lista.innerHTML = "";
+  ASIGNATURAS.forEach((asignatura) => {
+    const grupo = document.createElement("details");
+    grupo.className = "menu-asignatura";
+    const titulo = document.createElement("summary");
+    titulo.textContent = asignatura.nombre;
+    grupo.append(titulo);
+    asignatura.tests.forEach((test) => {
+      const boton = document.createElement("button");
+      boton.type = "button";
+      boton.className = "enlace-menu-test";
+      boton.textContent = test.nombre;
+      boton.addEventListener("click", async () => {
+        cerrarMenu();
+        abrirAsignatura(asignatura);
+        await abrirTest(test);
+      });
+      grupo.append(boton);
+    });
+    lista.append(grupo);
+  });
+}
+
+function cerrarMenu() {
+  $("fondo-menu").hidden = true;
+  $("menu-navegacion").setAttribute("aria-hidden", "true");
+  $("btn-menu").setAttribute("aria-expanded", "false");
+}
+
+function abrirMenu() {
+  $("fondo-menu").hidden = false;
+  $("menu-navegacion").setAttribute("aria-hidden", "false");
+  $("btn-menu").setAttribute("aria-expanded", "true");
+  $("btn-cerrar-menu").focus();
 }
 
 /* ---------- test ---------- */
@@ -523,7 +685,15 @@ function terminar() {
   const historial = leerHistorial();
   const previa = media(historial);
   const tenia = historial.length;
-  historial.push({ fecha: new Date().toISOString(), nota: Math.round(nota * 100) / 100, aciertos, total: totalPreguntas });
+  historial.push({
+    fecha: new Date().toISOString(),
+    nota: Math.round(nota * 100) / 100,
+    aciertos,
+    total: totalPreguntas,
+    modo: modoTest,
+    asignatura: asignaturaActual.nombre,
+    test: testActual.nombre,
+  });
   const guardado = guardarHistorial(historial);
 
   $("titulo-resultado").textContent = `${asignaturaActual.nombre} - ${testActual.nombre}`;
@@ -643,6 +813,29 @@ $("btn-cambiar-cantidad-aic").addEventListener("click", () => {
   $("estado-banco").hidden = false;
 });
 $("btn-siguiente").addEventListener("click", siguiente);
+$("btn-menu").addEventListener("click", abrirMenu);
+$("btn-cerrar-menu").addEventListener("click", cerrarMenu);
+$("cerrar-menu-fondo").addEventListener("click", cerrarMenu);
+$("btn-menu-perfil").addEventListener("click", () => {
+  cerrarMenu();
+  pintarPerfil();
+  mostrar("pantalla-perfil");
+});
+$("btn-menu-asignaturas").addEventListener("click", () => {
+  cerrarMenu();
+  mostrar("pantalla-asignaturas");
+  pintarHistorial();
+});
+$("btn-perfil-asignaturas").addEventListener("click", () => {
+  mostrar("pantalla-asignaturas");
+  pintarHistorial();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("fondo-menu").hidden) {
+    cerrarMenu();
+    $("btn-menu").focus();
+  }
+});
 $("btn-modo-test").addEventListener("click", () => {
   if (!$("pantalla-test").hidden) return;
   modoTest = modoTest === "estudio" ? "examen" : "estudio";
@@ -682,6 +875,7 @@ $("btn-borrar-historial").addEventListener("click", () => {
   if (confirm("¿Borrar todo el historial local de notas?")) {
     borrarHistorial();
     pintarHistorial();
+    pintarPerfil();
   }
 });
 document.addEventListener("sesion-actualizada", (e) => {
@@ -696,4 +890,5 @@ document.addEventListener("sesion-actualizada", (e) => {
 });
 
 renderizarAsignaturas();
+renderizarMenu();
 pintarHistorial();

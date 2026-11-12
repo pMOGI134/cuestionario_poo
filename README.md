@@ -19,6 +19,7 @@ Aplicación web para practicar con **tests tipo examen**, organizada por asignat
 - Cada test tiene su propio banco de preguntas en un archivo `.json`.
 - En cada intento puedes elegir **10 preguntas (fácil), 20 (medio) o 30 (completo)**; las preguntas se seleccionan al azar del banco.
 - Selector de modo disponible para todos los tests: **Estudio**, con corrección inmediata y sin penalización, o **Examen**, con un tercio del valor de cada respuesta incorrecta descontado y las soluciones ocultas hasta el final. Las preguntas en blanco no penalizan y la nota mínima es 0.
+- Menú lateral con acceso al perfil, notas y tests recientes identificados por modo, además de navegación directa a cada test. El perfil reúne el historial guardado en el navegador actual.
 - Las **opciones se mezclan** en cada pregunta.
 - Barra de progreso y contador ajustados al modo elegido (`Pregunta X de N`).
 - **Corrección inmediata**: la respuesta correcta se marca en verde y la incorrecta en rojo.

@@ -8,6 +8,23 @@
   <link rel="stylesheet" href="auth.css">
 </head>
 <body>
+  <button id="btn-menu" class="btn btn-secundario boton-menu" type="button" aria-controls="menu-navegacion" aria-expanded="false" aria-label="Abrir menú de navegación">
+    <span aria-hidden="true">☰</span>
+    <span>Menú</span>
+  </button>
+  <div id="fondo-menu" class="fondo-menu" hidden>
+    <button id="cerrar-menu-fondo" class="fondo-menu-clic" type="button" aria-label="Cerrar menú"></button>
+    <nav id="menu-navegacion" class="menu-navegacion" aria-label="Navegación principal" aria-hidden="true">
+      <div class="cabecera-menu">
+        <h2>Navegación</h2>
+        <button id="btn-cerrar-menu" class="btn btn-texto" type="button" aria-label="Cerrar menú">✕</button>
+      </div>
+      <button id="btn-menu-perfil" class="enlace-menu" type="button">Mi perfil · notas y tests recientes</button>
+      <h3>Asignaturas</h3>
+      <button id="btn-menu-asignaturas" class="enlace-menu" type="button">Ver todas las asignaturas</button>
+      <div id="menu-asignaturas" class="menu-asignaturas"></div>
+    </nav>
+  </div>
   <button id="btn-modo-test" class="btn btn-secundario boton-modo-test" type="button">
     <span id="nombre-modo-test">Modo: Estudio</span>
     <span id="descripcion-modo-test">Sin penalización · corrección inmediata</span>
@@ -95,6 +112,17 @@
         <button id="btn-volver-lista-tests" class="btn btn-secundario" type="button">Volver a tests</button>
       </div>
       <div id="resumen-historial-tests" class="historial" hidden></div>
+    </section>
+
+    <!-- Perfil -->
+    <section id="pantalla-perfil" class="tarjeta" hidden>
+      <div class="barra-superior barra-seccion">
+        <div><h2>Mi perfil</h2><p class="nota-pequena">Notas y tests recientes de este navegador.</p></div>
+        <button id="btn-perfil-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button>
+      </div>
+      <div id="resumen-perfil" class="historial"></div>
+      <h3>Tests recientes</h3>
+      <div id="tests-recientes" class="tests-recientes"></div>
     </section>
 
     <!-- Preguntas -->
