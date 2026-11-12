@@ -13,10 +13,12 @@ Aplicación web para practicar con **tests tipo examen**, organizada por asignat
 -  **POO (Programación Orientada a Objetos)**.
 -  **AIC (Arquitectura e Ingeniería de Computadores)**
 -  **F.WEB (Fundamentos de la WEB)**
+-  **Bases de datos**
 
 ### Tests
 - Cada test tiene su propio banco de preguntas en un archivo `.json`.
 - En cada intento puedes elegir **10 preguntas (fácil), 20 (medio) o 30 (completo)**; las preguntas se seleccionan al azar del banco.
+- Selector de modo disponible para todos los tests: **Estudio**, con corrección inmediata y sin penalización, o **Examen**, con un tercio del valor de cada respuesta incorrecta descontado y las soluciones ocultas hasta el final. Las preguntas en blanco no penalizan y la nota mínima es 0.
 - Las **opciones se mezclan** en cada pregunta.
 - Barra de progreso y contador ajustados al modo elegido (`Pregunta X de N`).
 - **Corrección inmediata**: la respuesta correcta se marca en verde y la incorrecta en rojo.
@@ -34,6 +36,7 @@ Cada asignatura tiene su propio archivo JSON, con el mismo formato
 | POO (Temas 1–3) | `preguntas.json` | 200 |
 | FW · JavaScript y Node (Temas 1–5) | `preguntas_fw_js_node.json` | 261 |
 | FW · Bases de datos y MongoDB (Temas 6–7) | `preguntas_fw_bd_mongodb.json` | 62 |
+| Bases de datos relacionales (Temas 6–7) | `preguntas_bd_relacional.json` | 325 |
 | AIC · Arquitectura e Ingeniería de Computadores (Tema 1) | `preguntas_aic_tema1.json` | 50 |
 
 ---
@@ -196,4 +199,3 @@ HTML5 · CSS3 · JavaScript (vanilla) · JSON
 
 ## Licencia
 Me da igual lo que hagáis con esto la verdad solo es un proyecto personal.
-

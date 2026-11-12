@@ -30,6 +30,19 @@ const ASIGNATURAS = [
     ],
   },
   {
+    id: 'bases-datos',
+    nombre: 'Bases de datos',
+    descripcion: 'Bases de datos relacionales',
+    tests: [
+      {
+        id: 'relacional',
+        nombre: 'Bases de datos relacionales',
+        descripcion: 'Cuestionario de bases de datos relacionales',
+        archivo: 'preguntas_bd_relacional.json',
+      },
+    ],
+  },
+  {
     id: 'fundamentos-web',
     nombre: 'Fundamentos web',
     descripcion: 'Fundamentos web, JavaScript y Node.js',
@@ -63,6 +76,7 @@ let banco = [];
 let preguntas = [];
 let asignaturaActual = null;
 let testActual = null;
+let modoTest = "estudio";
 let totalPreguntas = 30;
 let indice = 0;
 let respuestas = []; // letra elegida (o null) por pregunta
@@ -101,12 +115,33 @@ function mostrar(id) {
   ["pantalla-login", "pantalla-asignaturas", "pantalla-tests", "pantalla-test", "pantalla-resultados"].forEach((p) => {
     $(p).hidden = p !== id;
   });
+  actualizarBotonModo();
   window.scrollTo({ top: 0 });
 }
 
-function claveHistorial() {
+function claveHistorialBase() {
   if (!asignaturaActual || (asignaturaActual.id === "poo" && (!testActual || testActual.id === "temas-1-3"))) return LS_KEY;
   return `${LS_KEY}_${asignaturaActual.id}_${testActual ? testActual.id : "general"}`;
+}
+
+function claveHistorial() {
+  const clave = claveHistorialBase();
+  return modoTest === "examen" ? `${clave}_examen` : clave;
+}
+
+function actualizarBotonModo() {
+  const boton = $("btn-modo-test");
+  if (!boton) return;
+  const examen = modoTest === "examen";
+  const nombre = examen ? "Examen" : "Estudio";
+  const descripcion = examen
+    ? "−⅓ por fallo · respuestas al final"
+    : "Sin penalización · corrección inmediata";
+  $("nombre-modo-test").textContent = `Modo: ${nombre}`;
+  $("descripcion-modo-test").textContent = descripcion;
+  boton.setAttribute("aria-label", `Modo actual: ${nombre}. ${descripcion}. Cambiar a modo ${examen ? "estudio" : "examen"}.`);
+  boton.title = `Modo ${nombre}: ${descripcion}. Pulsa para cambiar.`;
+  boton.disabled = !$("pantalla-test").hidden;
 }
 
 function nombreTema(tema) {
@@ -141,7 +176,9 @@ function guardarHistorial(h) {
 
 function borrarHistorial() {
   try {
-    localStorage.removeItem(claveHistorial());
+    const clave = claveHistorialBase();
+    localStorage.removeItem(clave);
+    localStorage.removeItem(`${clave}_examen`);
   } catch (e) {
     /* sin almacenamiento disponible */
   }
@@ -284,6 +321,7 @@ function empezar() {
   preguntas = barajar(banco).slice(0, totalPreguntas).map(prepararPregunta);
   respuestas = new Array(totalPreguntas).fill(null);
   indice = 0;
+  actualizarBotonModo();
   mostrar("pantalla-test");
   pintarPregunta();
 }
@@ -292,13 +330,19 @@ function aciertosHastaAhora() {
   return preguntas.reduce((n, q, i) => n + (respuestas[i] && q.respuestas_correctas.includes(respuestas[i]) ? 1 : 0), 0);
 }
 
+function respondidasHastaAhora() {
+  return respuestas.filter((respuesta) => respuesta !== null).length;
+}
+
 function pintarPregunta() {
   const q = preguntas[indice];
   const seleccionGuardada = respuestas[indice];
   respondida = seleccionGuardada !== null;
 
   $("contador").textContent = `Pregunta ${indice + 1} de ${totalPreguntas}`;
-  $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
+  $("marcador").textContent = modoTest === "examen"
+    ? `Respondidas: ${respondidasHastaAhora()} de ${totalPreguntas}`
+    : `Aciertos: ${aciertosHastaAhora()}`;
   $("progreso-barra").style.width = `${(indice / totalPreguntas) * 100}%`;
   $("progreso").setAttribute("aria-valuemax", String(totalPreguntas));
   $("progreso").setAttribute("aria-valuenow", String(indice));
@@ -340,7 +384,9 @@ function pintarPregunta() {
     b.append(l, t);
     if (respondida) {
       b.disabled = true;
-      if (q.respuestas_correctas.includes(o.letra)) b.classList.add("correcta");
+      if (modoTest === "examen") {
+        if (o.letra === seleccionGuardada) b.classList.add("seleccionada");
+      } else if (q.respuestas_correctas.includes(o.letra)) b.classList.add("correcta");
       else if (o.letra === seleccionGuardada) b.classList.add("incorrecta");
       else b.classList.add("apagada");
     }
@@ -351,11 +397,18 @@ function pintarPregunta() {
   const explicacion = $("explicacion");
   const siguiente = $("btn-siguiente");
   if (respondida) {
-    const acierto = q.respuestas_correctas.includes(seleccionGuardada);
-    explicacion.className = "explicacion " + (acierto ? "ok" : "ko");
-    $("veredicto").textContent = acierto ? "✔ Correcto" : `✘ Incorrecto · la respuesta correcta era la ${q.respuestas_correctas.join(", ")}`;
-    $("texto-explicacion").textContent = q.explicacion || "";
-    explicacion.hidden = false;
+    if (modoTest === "examen") {
+      $("veredicto").textContent = "Respuesta guardada";
+      $("texto-explicacion").textContent = "La corrección se mostrará al terminar el examen.";
+      explicacion.className = "explicacion";
+      explicacion.hidden = false;
+    } else {
+      const acierto = q.respuestas_correctas.includes(seleccionGuardada);
+      explicacion.className = "explicacion " + (acierto ? "ok" : "ko");
+      $("veredicto").textContent = acierto ? "✔ Correcto" : `✘ Incorrecto · la respuesta correcta era la ${q.respuestas_correctas.join(", ")}`;
+      $("texto-explicacion").textContent = q.explicacion || "";
+      explicacion.hidden = false;
+    }
     siguiente.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
     siguiente.hidden = false;
   } else {
@@ -374,18 +427,28 @@ function responder(letra) {
   document.querySelectorAll("#opciones .opcion").forEach((b) => {
     b.disabled = true;
     const l = b.dataset.letra;
-    if (q.respuestas_correctas.includes(l)) b.classList.add("correcta");
+    if (modoTest === "examen") {
+      if (l === letra) b.classList.add("seleccionada");
+    } else if (q.respuestas_correctas.includes(l)) b.classList.add("correcta");
     else if (l === letra) b.classList.add("incorrecta");
     else b.classList.add("apagada");
   });
 
   const ex = $("explicacion");
-  ex.className = "explicacion " + (acierto ? "ok" : "ko");
-  $("veredicto").textContent = acierto ? "✔ Correcto" : `✘ Incorrecto · la respuesta correcta era la ${q.respuestas_correctas.join(", ")}`;
-  $("texto-explicacion").textContent = q.explicacion || "";
+  if (modoTest === "examen") {
+    ex.className = "explicacion";
+    $("veredicto").textContent = "Respuesta guardada";
+    $("texto-explicacion").textContent = "La corrección se mostrará al terminar el examen.";
+  } else {
+    ex.className = "explicacion " + (acierto ? "ok" : "ko");
+    $("veredicto").textContent = acierto ? "✔ Correcto" : `✘ Incorrecto · la respuesta correcta era la ${q.respuestas_correctas.join(", ")}`;
+    $("texto-explicacion").textContent = q.explicacion || "";
+  }
   ex.hidden = false;
 
-  $("marcador").textContent = `Aciertos: ${aciertosHastaAhora()}`;
+  $("marcador").textContent = modoTest === "examen"
+    ? `Respondidas: ${respondidasHastaAhora()} de ${totalPreguntas}`
+    : `Aciertos: ${aciertosHastaAhora()}`;
   const sig = $("btn-siguiente");
   sig.textContent = indice === totalPreguntas - 1 ? "Ver resultado" : "Siguiente";
   sig.hidden = false;
@@ -453,7 +516,9 @@ function textoOpcion(q, letra) {
 
 function terminar() {
   const aciertos = aciertosHastaAhora();
-  const nota = (aciertos / totalPreguntas) * 10;
+  const fallos = preguntas.reduce((n, q, i) => n + (respuestas[i] && !q.respuestas_correctas.includes(respuestas[i]) ? 1 : 0), 0);
+  const penalizacion = modoTest === "examen" ? (fallos / 3) : 0;
+  const nota = Math.max(0, ((aciertos - penalizacion) / totalPreguntas) * 10);
 
   const historial = leerHistorial();
   const previa = media(historial);
@@ -464,7 +529,9 @@ function terminar() {
   $("titulo-resultado").textContent = `${asignaturaActual.nombre} - ${testActual.nombre}`;
   $("progreso-barra").style.width = "100%";
   $("nota-numero").textContent = formatoNota(nota);
-  $("nota-detalle").textContent = `${aciertos} aciertos, ${totalPreguntas - aciertos} fallos de ${totalPreguntas} preguntas.`;
+  $("nota-detalle").textContent = modoTest === "examen"
+    ? `Modo examen: ${aciertos} aciertos y ${fallos} fallos de ${totalPreguntas} preguntas. Penalización: ${formatoNota((penalizacion / totalPreguntas) * 10)} puntos.`
+    : `${aciertos} aciertos, ${totalPreguntas - aciertos} fallos de ${totalPreguntas} preguntas.`;
 
   let hist;
   if (!guardado) {
@@ -485,13 +552,16 @@ function terminar() {
   const lista = $("lista-falladas");
   lista.innerHTML = "";
   const falladas = preguntas.map((q, i) => ({ q, i })).filter(({ q, i }) => !(respuestas[i] && q.respuestas_correctas.includes(respuestas[i])));
-  $("titulo-falladas").textContent = falladas.length ? `Preguntas falladas (${falladas.length})` : "Preguntas falladas";
-  if (!falladas.length) {
+  const revision = modoTest === "examen" ? preguntas.map((q, i) => ({ q, i })) : falladas;
+  $("titulo-falladas").textContent = modoTest === "examen"
+    ? `Revisión del examen (${revision.length} preguntas)`
+    : falladas.length ? `Preguntas falladas (${falladas.length})` : "Preguntas falladas";
+  if (!revision.length) {
     const p = document.createElement("p");
     p.textContent = "¡Ninguna! Has acertado todas.";
     lista.append(p);
   }
-  falladas.forEach(({ q, i }) => {
+  revision.forEach(({ q, i }) => {
     const d = document.createElement("details");
     const s = document.createElement("summary");
     s.textContent = `${i + 1}. ${q.pregunta}`;
@@ -573,6 +643,12 @@ $("btn-cambiar-cantidad-aic").addEventListener("click", () => {
   $("estado-banco").hidden = false;
 });
 $("btn-siguiente").addEventListener("click", siguiente);
+$("btn-modo-test").addEventListener("click", () => {
+  if (!$("pantalla-test").hidden) return;
+  modoTest = modoTest === "estudio" ? "examen" : "estudio";
+  actualizarBotonModo();
+  pintarHistorial();
+});
 $("btn-anterior").addEventListener("click", () => {
   if (indice > 0) {
     indice--;
