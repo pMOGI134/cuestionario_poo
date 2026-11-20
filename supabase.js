@@ -120,7 +120,7 @@ async function pintarDatosPerfilCuenta(user) {
       "bases-datos-mongodb": "Bases de datos y MongoDB",
     };
     recientes.innerHTML = "";
-    intentos.slice(0, 20).forEach((intento) => {
+    intentos.forEach((intento) => {
       const fila = document.createElement("article");
       fila.className = "intento-reciente";
       const descripcion = document.createElement("div");
