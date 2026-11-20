@@ -182,18 +182,12 @@ Te jodes, las creo yo, no me toquéis la base de datos.
 ## Próximas actualizaciones
 
 - [ ] Nuevos tests de **POO** (por temas o por bloques).
-- [ ] Más **asignaturas** en la pantalla de selección.
-- [ ] Mostrar la **explicación** de cada respuesta tras contestar.
-- [ ] **Resumen final** con desglose por tema y tipo de pregunta.
-- [ ] Lista de **preguntas falladas** para repasarlas.
-- [ ] **Media histórica** de tus notas guardada en el navegador.
-- [ ] Elegir el **número de preguntas** y filtrar por tema o tipo.
-- [ ] Modo **examen** con temporizador.
-- [ ] Modo **repaso** sin nota.
 - [ ] Modo Aitor donde todas las preguntas vienen ya con la respuesta
 - [ ] Modo Nuzlocke: Pues eliges a tu inicial (Preferiblemente mudkid) y te aventuras a la 3 gen. Los primeros gym caen fácil pero un puto Azumarill mata a la mitad de tu equipo antes del 3 gym.
 - [ ] Añadiremos un emulador de consolas de nintendo por que no
 - [ ] Función tinder.
+- [ ] Gooner mode requested by Aitork
+- [ ] Emulador de GTA VI (Work in progress)
 
 
 
