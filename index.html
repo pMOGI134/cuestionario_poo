@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cuestionarios</title>
-  <link rel="stylesheet" href="estilos.css?v=20261120-perfil-db">
+  <link rel="stylesheet" href="estilos.css?v=20261120-logout-confirm">
   <link rel="stylesheet" href="auth.css">
 </head>
 <body>
@@ -23,6 +23,10 @@
       <h3>Asignaturas</h3>
       <button id="btn-menu-asignaturas" class="enlace-menu" type="button">Ver todas las asignaturas</button>
       <div id="menu-asignaturas" class="menu-asignaturas"></div>
+      <div class="menu-cuenta">
+        <h3>Cuenta</h3>
+        <button id="btn-cerrar-sesion-menu" class="enlace-menu enlace-cerrar-sesion" type="button">Cerrar sesión</button>
+      </div>
     </nav>
   </div>
   <button id="btn-modo-test" class="btn btn-secundario boton-modo-test" type="button">
@@ -61,7 +65,6 @@
         <button id="btn-invitado" class="btn btn-secundario" type="button" hidden>Entrar como invitado</button>
         <div id="auth-sesion" hidden>
           <p>Sesión iniciada: <strong id="auth-nombre"></strong>
-            <button id="btn-salir" class="btn btn-texto" type="button">Salir</button>
           </p>
         </div>
       </div>
@@ -72,7 +75,6 @@
     <section id="pantalla-asignaturas" class="tarjeta" hidden>
       <div class="barra-superior barra-seccion">
         <div><h2>Asignaturas</h2><p class="nota-pequena">Elige una asignatura para ver sus cuestionarios.</p></div>
-        <div class="acciones-cabecera"><button class="btn btn-secundario btn-cerrar-sesion" type="button">Salir</button></div>
       </div>
       <div id="lista-asignaturas" class="seleccion-temas"></div>
     </section>
@@ -83,7 +85,6 @@
         <div><p class="nota-pequena">Asignatura</p><h2 id="nombre-asignatura-tests">POO</h2></div>
         <div class="acciones-cabecera">
           <button id="btn-volver-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button>
-          <button class="btn btn-secundario btn-cerrar-sesion" type="button">Salir</button>
         </div>
       </div>
       <h3>Tests disponibles</h3>
@@ -225,7 +226,7 @@
 
   <!-- Orden importante: librería de Supabase, luego supabase.js, luego script.js -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase.js?v=20261120-perfil-db"></script>
-  <script src="script.js?v=20261120-perfil-db"></script>
+  <script src="supabase.js?v=20261120-logout-confirm"></script>
+  <script src="script.js?v=20261120-logout-confirm"></script>
 </body>
 </html>

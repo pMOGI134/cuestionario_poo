@@ -209,7 +209,6 @@ async function accionAuth(registrar) {
 if (sb) {
   $$("btn-entrar").addEventListener("click", () => accionAuth(false));
   $$("btn-registrar").addEventListener("click", () => accionAuth(true));
-  $$("btn-salir").addEventListener("click", cerrarSesion);
   sb.auth.onAuthStateChange((evento) => {
     if (["INITIAL_SESSION", "SIGNED_IN", "SIGNED_OUT", "TOKEN_REFRESHED"].includes(evento)) {
       window.setTimeout(() => pintarSesion(), 0);

@@ -888,6 +888,16 @@ $("btn-finalizar-revision").addEventListener("click", terminar);
 $("btn-menu").addEventListener("click", abrirMenu);
 $("btn-cerrar-menu").addEventListener("click", cerrarMenu);
 $("cerrar-menu-fondo").addEventListener("click", cerrarMenu);
+$("btn-cerrar-sesion-menu").addEventListener("click", async () => {
+  if (!confirm("¿Seguro que quieres cerrar sesión?")) return;
+  cerrarMenu();
+  if (modoInvitado) {
+    modoInvitado = false;
+    mostrar("pantalla-login");
+  } else if (typeof cerrarSesion === "function") {
+    await cerrarSesion();
+  }
+});
 $("btn-menu-perfil").addEventListener("click", () => {
   cerrarMenu();
   mostrar("pantalla-perfil");
@@ -931,14 +941,6 @@ $("btn-invitado").addEventListener("click", () => {
 });
 $("btn-volver-asignaturas").addEventListener("click", () => mostrar("pantalla-asignaturas"));
 $("btn-volver-lista-tests").addEventListener("click", () => pintarTests());
-document.querySelectorAll(".btn-cerrar-sesion").forEach((btn) => btn.addEventListener("click", () => {
-  if (modoInvitado) {
-    modoInvitado = false;
-    mostrar("pantalla-login");
-  } else if (typeof cerrarSesion === "function") {
-    cerrarSesion();
-  }
-}));
 document.addEventListener("sesion-actualizada", (e) => {
   const user = e.detail && e.detail.user;
   pintarNombrePerfil(user);
