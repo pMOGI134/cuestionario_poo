@@ -2,7 +2,6 @@
 
 const LETRAS = ["A", "B", "C", "D", "E", "F"];
 const SIMBOLOS_ALGEBRA = ["π", "σ", "ρ", "⋈", "∪", "∩", "−", "÷", "∧", "→", "(", ")", "=", "∈"];
-const LS_KEY = "poo_historial_v1";
 const ASIGNATURAS = [
   {
     id: "poo",
@@ -140,22 +139,6 @@ function mostrar(id) {
   window.scrollTo({ top: 0 });
 }
 
-function claveHistorialPara(asignatura, test) {
-  if (asignatura.id === "poo" && test.id === "temas-1-3") return LS_KEY;
-  return `${LS_KEY}_${asignatura.id}_${test.id}`;
-}
-
-function claveHistorialBase() {
-  if (!asignaturaActual) return LS_KEY;
-  if (!testActual) return `${LS_KEY}_${asignaturaActual.id}_general`;
-  return claveHistorialPara(asignaturaActual, testActual);
-}
-
-function claveHistorial() {
-  const clave = claveHistorialBase();
-  return modoTest === "examen" ? `${clave}_examen` : clave;
-}
-
 function actualizarBotonModo() {
   const boton = $("btn-modo-test");
   if (!boton) return;
@@ -182,188 +165,27 @@ function formatoNota(n) {
   return n.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-/* ---------- historial (localStorage, con try/catch) ---------- */
+/* ---------- perfil ---------- */
 
-function leerHistorial() {
-  try {
-    const crudo = localStorage.getItem(claveHistorial());
-    const h = crudo ? JSON.parse(crudo) : [];
-    return Array.isArray(h) ? h.filter((x) => x && typeof x.nota === "number") : [];
-  } catch (e) {
-    return [];
-  }
-}
-
-function guardarHistorial(h) {
-  try {
-    localStorage.setItem(claveHistorial(), JSON.stringify(h.slice(-200)));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function borrarHistorial() {
-  try {
-    const asignaturas = asignaturaActual ? [asignaturaActual] : ASIGNATURAS;
-    asignaturas.forEach((asignatura) => {
-      const tests = testActual ? [testActual] : asignatura.tests;
-      tests.forEach((test) => {
-        const clave = claveHistorialPara(asignatura, test);
-        localStorage.removeItem(clave);
-        localStorage.removeItem(`${clave}_examen`);
-      });
-    });
-  } catch (e) {
-    /* sin almacenamiento disponible */
-  }
-}
-
-function media(lista) {
-  return lista.length ? lista.reduce((a, x) => a + x.nota, 0) / lista.length : 0;
-}
-
-function pintarHistorial() {
-  const h = leerHistorial();
-  const caja = $("resumen-historial");
-  $("btn-borrar-historial").hidden = h.length === 0;
-  if (!h.length) {
-    caja.hidden = true;
-    return;
-  }
-  const mejor = Math.max(...h.map((x) => x.nota));
-  const ultimas = h.slice(-5);
-  caja.innerHTML = "";
-  [
-    [String(h.length), "tests realizados"],
-    [formatoNota(media(h)), "nota media"],
-    [formatoNota(mejor), "mejor nota"],
-    [formatoNota(media(ultimas)), `media de los últimos ${ultimas.length}`],
-  ].forEach(([valor, etiqueta]) => {
-    const d = document.createElement("div");
-    d.className = "dato";
-    const v = document.createElement("span");
-    v.className = "valor";
-    v.textContent = valor;
-    const e = document.createElement("span");
-    e.className = "etiqueta";
-    e.textContent = etiqueta;
-    d.append(v, e);
-    caja.append(d);
-  });
-  caja.hidden = false;
-}
-
-function leerTodosLosIntentos() {
-  const intentos = [];
-  let historialInvalido = false;
-  try {
-    ASIGNATURAS.forEach((asignatura) => {
-      asignatura.tests.forEach((test) => {
-        const base = claveHistorialPara(asignatura, test);
-        ["estudio", "examen"].forEach((modo) => {
-          const clave = modo === "examen" ? `${base}_examen` : base;
-          const crudo = localStorage.getItem(clave);
-          if (!crudo) return;
-          let historial;
-          try {
-            historial = JSON.parse(crudo);
-          } catch (e) {
-            historialInvalido = true;
-            return;
-          }
-          if (!Array.isArray(historial)) {
-            historialInvalido = true;
-            return;
-          }
-          historial.forEach((intento) => {
-            if (!intento || typeof intento.nota !== "number") return;
-            intentos.push({
-              ...intento,
-              modo: intento.modo === "examen" || intento.modo === "estudio" ? intento.modo : modo,
-              asignatura: intento.asignatura || asignatura.nombre,
-              test: intento.test || test.nombre,
-            });
-          });
-        });
-      });
-    });
-  } catch (e) {
-    return null;
-  }
-  intentos.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
-  return { intentos, historialInvalido };
-}
-
-function pintarPerfil() {
-  pintarNombrePerfil();
-  const resultado = leerTodosLosIntentos();
-  const resumen = $("resumen-perfil");
-  const recientes = $("tests-recientes");
-  resumen.innerHTML = "";
-  recientes.innerHTML = "";
-  if (!resultado) {
-    const aviso = document.createElement("p");
-    aviso.className = "nota-pequena";
-    aviso.textContent = "No se pudo leer el historial guardado en este navegador.";
-    recientes.append(aviso);
-    return;
-  }
-  const { intentos, historialInvalido } = resultado;
-  if (historialInvalido) {
-    const aviso = document.createElement("p");
-    aviso.className = "nota-pequena";
-    aviso.textContent = "Algunos registros del historial no se pudieron leer; se muestran los demás.";
-    recientes.append(aviso);
-  }
-  const mejor = intentos.length ? Math.max(...intentos.map((x) => x.nota)) : 0;
-  [
-    [String(intentos.length), "tests realizados"],
-    [intentos.length ? formatoNota(media(intentos)) : "—", "nota media"],
-    [intentos.length ? formatoNota(mejor) : "—", "mejor nota"],
-  ].forEach(([valor, etiqueta]) => {
-    const dato = document.createElement("div");
-    dato.className = "dato";
-    const numero = document.createElement("span");
-    numero.className = "valor";
-    numero.textContent = valor;
-    const nombre = document.createElement("span");
-    nombre.className = "etiqueta";
-    nombre.textContent = etiqueta;
-    dato.append(numero, nombre);
-    resumen.append(dato);
-  });
-  if (!intentos.length) {
-    const aviso = document.createElement("p");
-    aviso.className = "nota-pequena";
-    aviso.textContent = "Todavía no hay tests guardados. Tu actividad aparecerá aquí.";
-    recientes.append(aviso);
-    return;
-  }
-  intentos.slice(0, 20).forEach((intento) => {
-    const fila = document.createElement("article");
-    fila.className = "intento-reciente";
-    const descripcion = document.createElement("div");
-    const nombre = document.createElement("strong");
-    nombre.textContent = `${intento.asignatura} · ${intento.test}`;
-    const detalle = document.createElement("span");
-    const fecha = intento.fecha && !Number.isNaN(new Date(intento.fecha).getTime())
-      ? new Date(intento.fecha).toLocaleString("es-ES")
-      : "Fecha no disponible";
-    detalle.className = "etiquetas-intento";
-    detalle.textContent = `${intento.modo === "examen" ? "Modo examen" : "Modo práctica"} · ${intento.aciertos}/${intento.total} aciertos · ${fecha}`;
-    descripcion.append(nombre, detalle);
-    const nota = document.createElement("span");
-    nota.className = "nota-intento";
-    nota.textContent = `${formatoNota(intento.nota)}/10`;
-    fila.append(descripcion, nota);
-    recientes.append(fila);
-  });
+async function pintarPerfil() {
+  const user = typeof usuarioActual === "function" ? await usuarioActual() : null;
+  pintarNombrePerfil(user);
 }
 
 function pintarNombrePerfil(user) {
   const nombre = user && ((user.user_metadata && user.user_metadata.nombre) || user.email);
   $("nombre-perfil").textContent = nombre || "Invitado";
+}
+
+function borrarHistorialLocalAnterior() {
+  const prefijo = "poo_historial_v1";
+  try {
+    Object.keys(localStorage)
+      .filter((clave) => clave === prefijo || clave.startsWith(`${prefijo}_`))
+      .forEach((clave) => localStorage.removeItem(clave));
+  } catch (error) {
+    console.error("No se pudo borrar el historial local antiguo.", error);
+  }
 }
 
 /* ---------- carga ---------- */
@@ -417,7 +239,6 @@ function abrirAsignatura(asignatura) {
   testActual = null;
   $("nombre-asignatura-tests").textContent = asignatura.nombre;
   pintarTests();
-  pintarHistorial();
   mostrar("pantalla-tests");
 }
 
@@ -463,7 +284,6 @@ async function abrirTest(test) {
     $("intro-aic").hidden = false;
     $("texto-modo-ayuda").hidden = true;
   }
-  pintarHistorial();
 }
 
 function renderizarMenu() {
@@ -878,7 +698,6 @@ function enviarRespuestaAbierta() {
 
 function abandonar() {
   if (confirm("¿Abandonar el test? No se guardará ninguna nota.")) {
-    pintarHistorial();
     pintarTests();
     mostrar("pantalla-tests");
   }
@@ -937,20 +756,6 @@ function terminar() {
   const penalizacion = modoTest === "examen" ? (fallos / 3) : 0;
   const nota = Math.max(0, ((aciertos - penalizacion) / totalPreguntas) * 10);
 
-  const historial = leerHistorial();
-  const previa = media(historial);
-  const tenia = historial.length;
-  historial.push({
-    fecha: new Date().toISOString(),
-    nota: Math.round(nota * 100) / 100,
-    aciertos,
-    total: totalPreguntas,
-    modo: modoTest,
-    asignatura: asignaturaActual.nombre,
-    test: testActual.nombre,
-  });
-  const guardado = guardarHistorial(historial);
-
   $("titulo-resultado").textContent = `${asignaturaActual.nombre} - ${testActual.nombre}`;
   $("progreso-barra").style.width = "100%";
   $("nota-numero").textContent = formatoNota(nota);
@@ -958,18 +763,7 @@ function terminar() {
     ? `Modo examen: ${aciertos} aciertos, ${fallos} fallos y ${sinResponder} sin responder. Penalización: ${formatoNota((penalizacion / totalPreguntas) * 10)} puntos.`
     : `${aciertos} aciertos, ${fallos} fallos y ${sinResponder} sin responder de ${totalPreguntas} preguntas.`;
 
-  let hist;
-  if (!guardado) {
-    hist = "No se ha podido guardar el historial en este navegador.";
-  } else if (tenia === 0) {
-    hist = "Es tu primer test registrado: a partir de ahora se calculará tu media histórica.";
-  } else {
-    const nueva = media(historial);
-    const dif = nueva - previa;
-    const signo = dif > 0 ? "+" : dif < 0 ? "−" : "±";
-    hist = `Media histórica: ${formatoNota(nueva)} sobre ${historial.length} tests (${signo}${formatoNota(Math.abs(dif))} respecto a la anterior).`;
-  }
-  $("nota-historica").textContent = hist;
+  $("nota-historica").textContent = "Guardando resultado en tu cuenta…";
 
   desglosar($("desglose-tipo"), "tipo", TIPOS);
   desglosar($("desglose-tema"), "tema", TEMAS);
@@ -1017,19 +811,19 @@ function terminar() {
     lista.append(d);
   });
 
-  // Guardado en la cuenta (Supabase). Si no hay sesión o falla la red,
-  // la app sigue funcionando igual con el historial local.
   if (typeof guardarIntentoRemoto === "function") {
     const idsFalladas = falladas.map(({ q }) => q.id);
     guardarIntentoRemoto({ asignatura: asignaturaActual.id, testId: testActual.id, aciertos, total: totalPreguntas, nota, falladas: idsFalladas }).then((r) => {
       const extra = r.ok
-        ? " Guardado en tu cuenta."
+        ? "Resultado guardado en tu cuenta."
         : r.motivo === "sin-sesion"
-        ? " Inicia sesión para guardar tus notas en tu cuenta."
-        : " No se pudo guardar en tu cuenta.";
-      $("nota-historica").textContent += extra;
+        ? "Inicia sesión para guardar el resultado en tu cuenta."
+        : "No se pudo guardar el resultado en tu cuenta.";
+      $("nota-historica").textContent = extra;
       if (r.ok && typeof pintarHistorialCuenta === "function") pintarHistorialCuenta();
     });
+  } else {
+    $("nota-historica").textContent = "No se pudo guardar el resultado en tu cuenta.";
   }
 
   mostrar("pantalla-resultados");
@@ -1086,17 +880,14 @@ $("btn-cerrar-menu").addEventListener("click", cerrarMenu);
 $("cerrar-menu-fondo").addEventListener("click", cerrarMenu);
 $("btn-menu-perfil").addEventListener("click", () => {
   cerrarMenu();
-  pintarPerfil();
-  mostrar("pantalla-perfil");
+  pintarPerfil().then(() => mostrar("pantalla-perfil"));
 });
 $("btn-menu-asignaturas").addEventListener("click", () => {
   cerrarMenu();
   mostrar("pantalla-asignaturas");
-  pintarHistorial();
 });
 $("btn-perfil-asignaturas").addEventListener("click", () => {
   mostrar("pantalla-asignaturas");
-  pintarHistorial();
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !$("fondo-menu").hidden) {
@@ -1108,7 +899,6 @@ $("btn-modo-test").addEventListener("click", () => {
   if (!$("pantalla-test").hidden) return;
   modoTest = modoTest === "estudio" ? "examen" : "estudio";
   actualizarBotonModo();
-  pintarHistorial();
 });
 $("btn-anterior").addEventListener("click", () => {
   if (indice > 0) {
@@ -1119,7 +909,6 @@ $("btn-anterior").addEventListener("click", () => {
 $("btn-abandonar").addEventListener("click", abandonar);
 $("btn-repetir").addEventListener("click", empezar);
 $("btn-inicio").addEventListener("click", () => {
-  pintarHistorial();
   pintarTests();
   mostrar("pantalla-tests");
 });
@@ -1128,7 +917,6 @@ $("btn-invitado").addEventListener("click", () => {
   modoInvitado = true;
   pintarNombrePerfil();
   mostrar("pantalla-asignaturas");
-  pintarHistorial();
 });
 $("btn-volver-asignaturas").addEventListener("click", () => mostrar("pantalla-asignaturas"));
 $("btn-volver-lista-tests").addEventListener("click", () => pintarTests());
@@ -1140,20 +928,12 @@ document.querySelectorAll(".btn-cerrar-sesion").forEach((btn) => btn.addEventLis
     cerrarSesion();
   }
 }));
-$("btn-borrar-historial").addEventListener("click", () => {
-  if (confirm("¿Borrar todo el historial local de notas?")) {
-    borrarHistorial();
-    pintarHistorial();
-    pintarPerfil();
-  }
-});
 document.addEventListener("sesion-actualizada", (e) => {
   const user = e.detail && e.detail.user;
   pintarNombrePerfil(user);
   if (user) {
     modoInvitado = false;
     mostrar("pantalla-asignaturas");
-    pintarHistorial();
   } else if (!modoInvitado) {
     mostrar("pantalla-login");
   }
@@ -1162,4 +942,4 @@ document.addEventListener("sesion-actualizada", (e) => {
 renderizarAsignaturas();
 renderizarMenu();
 renderizarPaletaAlgebra();
-pintarHistorial();
+borrarHistorialLocalAnterior();

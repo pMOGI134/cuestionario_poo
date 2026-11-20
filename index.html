@@ -19,7 +19,7 @@
         <h2>Navegación</h2>
         <button id="btn-cerrar-menu" class="btn btn-texto" type="button" aria-label="Cerrar menú">✕</button>
       </div>
-      <button id="btn-menu-perfil" class="enlace-menu" type="button">Mi perfil · notas y tests recientes</button>
+      <button id="btn-menu-perfil" class="enlace-menu" type="button">Mi perfil · nombre de usuario</button>
       <h3>Asignaturas</h3>
       <button id="btn-menu-asignaturas" class="enlace-menu" type="button">Ver todas las asignaturas</button>
       <div id="menu-asignaturas" class="menu-asignaturas"></div>
@@ -75,8 +75,6 @@
         <div class="acciones-cabecera"><button class="btn btn-secundario btn-cerrar-sesion" type="button">Salir</button></div>
       </div>
       <div id="lista-asignaturas" class="seleccion-temas"></div>
-      <div id="resumen-historial" class="historial" hidden></div>
-      <div class="acciones"><button id="btn-borrar-historial" class="btn btn-secundario" type="button" hidden>Borrar historial local</button></div>
       <div id="historial-cuenta" class="nota-pequena" hidden></div>
     </section>
 
@@ -111,7 +109,6 @@
         </section>
         <button id="btn-volver-lista-tests" class="btn btn-secundario" type="button">Volver a tests</button>
       </div>
-      <div id="resumen-historial-tests" class="historial" hidden></div>
     </section>
 
     <!-- Perfil -->
@@ -119,14 +116,10 @@
       <div class="barra-superior barra-seccion">
         <div>
           <h2>Mi perfil</h2>
-          <p class="nota-pequena">Nombre: <strong id="nombre-perfil">Invitado</strong></p>
-          <p class="nota-pequena">Notas y tests recientes guardados en este navegador.</p>
+          <p class="nota-pequena">Nombre de usuario: <strong id="nombre-perfil">Invitado</strong></p>
         </div>
         <button id="btn-perfil-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button>
       </div>
-      <div id="resumen-perfil" class="historial"></div>
-      <h3>Tests recientes</h3>
-      <div id="tests-recientes" class="tests-recientes"></div>
     </section>
 
     <!-- Preguntas -->
@@ -229,6 +222,6 @@
   <!-- Orden importante: librería de Supabase, luego supabase.js, luego script.js -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase.js"></script>
-  <script src="script.js?v=20261120"></script>
+  <script src="script.js?v=20261120-perfil"></script>
 </body>
 </html>
