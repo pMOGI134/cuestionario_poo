@@ -37,6 +37,7 @@ Cada asignatura tiene su propio archivo JSON, con el mismo formato
 | Asignatura | Archivo | Preguntas |
 |---|---|---:|
 | POO (Temas 1–3) | `preguntas.json` | 200 |
+| POO (Temas 4–6) | `preguntas_poo_temas4_6.json` | 271 |
 | FW · JavaScript y Node (Temas 1–5) | `preguntas_fw_js_node.json` | 261 |
 | FW · Bases de datos y MongoDB (Temas 6–7) | `preguntas_fw_bd_mongodb.json` | 62 |
 | Bases de datos relacionales (Temas 6–7) | `preguntas_bd_relacional.json` | 325 |

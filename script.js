@@ -15,6 +15,12 @@ const ASIGNATURAS = [
         descripcion: "POO, Java, herencia y polimorfismo",
         archivo: "preguntas.json",
       },
+      {
+        id: "temas-4-6",
+        nombre: "TEMAS 4,5,6",
+        descripcion: "Excepciones, archivos, JavaFX, colecciones y genéricos",
+        archivo: "preguntas_poo_temas4_6.json",
+      },
     ],
   },
   {
@@ -66,13 +72,23 @@ const ASIGNATURAS = [
 const TIPOS = {
   test: "Concepto",
   codigo: "Código",
+  analisis: "Análisis",
+  analisis_codigo: "Análisis de código",
+  razonamiento: "Razonamiento",
   diseno: "Diseño / UML",
   estructura: "Estructura de Java",
   sintaxis: "Sintaxis y operadores",
   algebra: "Álgebra relacional",
   algebra_abierta: "Álgebra relacional · respuesta abierta",
 };
-const TEMAS = { 1: "Tema 1 · POO", 2: "Tema 2 · Java", 3: "Tema 3 · Herencia y polimorfismo" };
+const TEMAS = {
+  1: "Tema 1 · POO",
+  2: "Tema 2 · Java",
+  3: "Tema 3 · Herencia y polimorfismo",
+  4: "Tema 4 · Excepciones",
+  5: "Tema 5 · Archivos",
+  6: "Tema 6 · Colecciones y genéricos",
+};
 
 let modoInvitado = false;
 let banco = [];
