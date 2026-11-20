@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cuestionarios</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="estilos.css?v=20261120-perfil-db">
   <link rel="stylesheet" href="auth.css">
 </head>
 <body>
@@ -75,7 +75,6 @@
         <div class="acciones-cabecera"><button class="btn btn-secundario btn-cerrar-sesion" type="button">Salir</button></div>
       </div>
       <div id="lista-asignaturas" class="seleccion-temas"></div>
-      <div id="historial-cuenta" class="nota-pequena" hidden></div>
     </section>
 
     <!-- Tests de la asignatura -->
@@ -120,6 +119,11 @@
         </div>
         <button id="btn-perfil-asignaturas" class="btn btn-secundario" type="button">Volver a asignaturas</button>
       </div>
+      <p id="email-perfil" class="nota-pequena" hidden></p>
+      <p id="estado-perfil-cuenta" class="nota-pequena" role="status">Inicia sesión para consultar tus datos guardados.</p>
+      <div id="resumen-perfil" class="historial" hidden></div>
+      <h3 id="titulo-tests-recientes" hidden>Tests recientes</h3>
+      <div id="tests-recientes" class="tests-recientes"></div>
     </section>
 
     <!-- Preguntas -->
@@ -221,7 +225,7 @@
 
   <!-- Orden importante: librería de Supabase, luego supabase.js, luego script.js -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase.js"></script>
-  <script src="script.js?v=20261120-perfil"></script>
+  <script src="supabase.js?v=20261120-perfil-db"></script>
+  <script src="script.js?v=20261120-perfil-db"></script>
 </body>
 </html>

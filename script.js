@@ -170,6 +170,17 @@ function formatoNota(n) {
 async function pintarPerfil() {
   const user = typeof usuarioActual === "function" ? await usuarioActual() : null;
   pintarNombrePerfil(user);
+  $("email-perfil").textContent = user && user.email ? `Email: ${user.email}` : "";
+  $("email-perfil").hidden = !user || !user.email;
+  $("estado-perfil-cuenta").textContent = "Cargando tus datos…";
+  $("resumen-perfil").hidden = true;
+  $("tests-recientes").innerHTML = "";
+  $("titulo-tests-recientes").hidden = true;
+  if (typeof pintarDatosPerfilCuenta === "function") {
+    await pintarDatosPerfilCuenta(user);
+  } else {
+    $("estado-perfil-cuenta").textContent = "No se pudo conectar con la base de datos.";
+  }
 }
 
 function pintarNombrePerfil(user) {
@@ -820,7 +831,6 @@ function terminar() {
         ? "Inicia sesión para guardar el resultado en tu cuenta."
         : "No se pudo guardar el resultado en tu cuenta.";
       $("nota-historica").textContent = extra;
-      if (r.ok && typeof pintarHistorialCuenta === "function") pintarHistorialCuenta();
     });
   } else {
     $("nota-historica").textContent = "No se pudo guardar el resultado en tu cuenta.";
@@ -880,7 +890,8 @@ $("btn-cerrar-menu").addEventListener("click", cerrarMenu);
 $("cerrar-menu-fondo").addEventListener("click", cerrarMenu);
 $("btn-menu-perfil").addEventListener("click", () => {
   cerrarMenu();
-  pintarPerfil().then(() => mostrar("pantalla-perfil"));
+  mostrar("pantalla-perfil");
+  pintarPerfil();
 });
 $("btn-menu-asignaturas").addEventListener("click", () => {
   cerrarMenu();

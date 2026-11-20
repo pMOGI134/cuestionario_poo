@@ -19,7 +19,7 @@ Aplicación web para practicar con **tests tipo examen**, organizada por asignat
 - Cada test tiene su propio banco de preguntas en un archivo `.json`.
 - En cada intento puedes elegir **10 preguntas (fácil), 20 (medio) o 30 (completo)**; las preguntas se seleccionan al azar del banco.
 - Selector de modo disponible para todos los tests: **Estudio**, con corrección inmediata y sin penalización, o **Examen**, con un tercio del valor de cada respuesta incorrecta descontado y las soluciones ocultas hasta el final. Las preguntas en blanco no penalizan y la nota mínima es 0.
-- Menú lateral con acceso al perfil, que muestra el nombre de usuario, además de navegación directa a cada test. Los resultados se guardan en la cuenta mediante la base de datos.
+- Menú lateral con acceso al perfil, que muestra el nombre, el email, la nota media, la mejor nota y los intentos recientes de la cuenta. Estos datos se consultan desde la base de datos.
 - El test de Bases de datos incluye ejercicios abiertos de álgebra relacional: escribe tu expresión y compárala con una solución modelo. En modo Estudio te autoevalúas al responder; en modo Examen, al terminar y antes de calcular la nota.
 - Puedes saltar preguntas y volver a ellas antes de terminar. En modo Examen hay una revisión previa a la entrega; las preguntas en blanco no suman ni restan. Los ejercicios abiertos incluyen botones para insertar símbolos de álgebra relacional en el cursor.
 - Las **opciones se mezclan** en cada pregunta.

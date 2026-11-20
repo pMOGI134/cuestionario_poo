@@ -48,38 +48,102 @@ async function guardarIntentoRemoto({ asignatura, testId, aciertos, total, nota,
   }
 }
 
-/* Resumen del historial de la cuenta en la pantalla de inicio */
-async function pintarHistorialCuenta() {
-  const caja = $$("historial-cuenta");
-  const user = await usuarioActual();
+/* Datos y resultados del usuario en su perfil */
+async function pintarDatosPerfilCuenta(user) {
+  const estado = $$("estado-perfil-cuenta");
+  const resumen = $$("resumen-perfil");
+  const recientes = $$("tests-recientes");
+  const tituloRecientes = $$("titulo-tests-recientes");
   if (!user) {
-    caja.hidden = true;
+    estado.textContent = "Inicia sesión para consultar tus datos guardados.";
     return;
   }
-  caja.hidden = false;
-  caja.textContent = "";
-  const p = document.createElement("p");
+  const intentos = [];
+  const tamanoPagina = 1000;
   try {
-    const { data, error } = await sb
-      .from("intentos")
-      .select("nota, aciertos, total, creado_en")
-      .eq("asignatura", typeof asignaturaActual !== "undefined" && asignaturaActual ? asignaturaActual.id : "poo")
-      .order("creado_en", { ascending: false })
-      .limit(200);
-    if (error) {
-      p.textContent = "No se pudo cargar tu historial.";
-    } else if (!data.length) {
-      p.textContent = "Aún no tienes tests guardados en tu cuenta.";
-    } else {
-      const notas = data.map((x) => Number(x.nota));
-      const media = notas.reduce((a, n) => a + n, 0) / notas.length;
-      const mejor = Math.max(...notas);
-      p.textContent = `Tu cuenta: ${data.length} tests · media ${media.toFixed(2)} · mejor ${mejor.toFixed(2)}`;
+    for (let desde = 0; ; desde += tamanoPagina) {
+      const { data, error } = await sb
+        .from("intentos")
+        .select("asignatura, test_id, nota, aciertos, total, creado_en")
+        .eq("usuario_id", user.id)
+        .order("creado_en", { ascending: false })
+        .range(desde, desde + tamanoPagina - 1);
+      if (error) throw error;
+      if (!Array.isArray(data)) throw new Error("La respuesta de intentos no es válida.");
+      intentos.push(...data);
+      if (data.length < tamanoPagina) break;
     }
-  } catch (e) {
-    p.textContent = "No se pudo cargar tu historial.";
+
+    estado.textContent = "";
+    if (!intentos.length) {
+      estado.textContent = "Todavía no tienes tests guardados en tu cuenta.";
+      return;
+    }
+
+    const notas = intentos.map((intento) => Number(intento.nota));
+    if (notas.some((nota) => !Number.isFinite(nota))) {
+      throw new Error("Hay notas guardadas con un formato no válido.");
+    }
+    const media = notas.reduce((suma, nota) => suma + nota, 0) / notas.length;
+    const mejor = Math.max(...notas);
+    resumen.innerHTML = "";
+    [
+      [String(intentos.length), "tests realizados"],
+      [media.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }), "nota media"],
+      [mejor.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }), "mejor nota"],
+    ].forEach(([valor, etiqueta]) => {
+      const dato = document.createElement("div");
+      dato.className = "dato";
+      const numero = document.createElement("span");
+      numero.className = "valor";
+      numero.textContent = valor;
+      const nombre = document.createElement("span");
+      nombre.className = "etiqueta";
+      nombre.textContent = etiqueta;
+      dato.append(numero, nombre);
+      resumen.append(dato);
+    });
+    resumen.hidden = false;
+
+    const nombresAsignatura = {
+      poo: "POO",
+      aic: "AIC",
+      "bases-datos": "Bases de datos",
+      "fundamentos-web": "Fundamentos web",
+    };
+    const nombresTest = {
+      "temas-1-3": "Test Tema 1-3",
+      "temas-4-6": "TEMAS 4,5,6",
+      "tema-1": "Test Tema 1",
+      relacional: "Bases de datos relacionales",
+      "javascript-node": "JavaScript y Node.js",
+      "bases-datos-mongodb": "Bases de datos y MongoDB",
+    };
+    recientes.innerHTML = "";
+    intentos.slice(0, 20).forEach((intento) => {
+      const fila = document.createElement("article");
+      fila.className = "intento-reciente";
+      const descripcion = document.createElement("div");
+      const nombre = document.createElement("strong");
+      nombre.textContent = `${nombresAsignatura[intento.asignatura] || intento.asignatura} · ${nombresTest[intento.test_id] || intento.test_id}`;
+      const detalle = document.createElement("span");
+      detalle.className = "etiquetas-intento";
+      const fecha = intento.creado_en && !Number.isNaN(new Date(intento.creado_en).getTime())
+        ? new Date(intento.creado_en).toLocaleString("es-ES")
+        : "Fecha no disponible";
+      detalle.textContent = `${intento.aciertos}/${intento.total} aciertos · ${fecha}`;
+      descripcion.append(nombre, detalle);
+      const nota = document.createElement("span");
+      nota.className = "nota-intento";
+      nota.textContent = `${Number(intento.nota).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/10`;
+      fila.append(descripcion, nota);
+      recientes.append(fila);
+    });
+    tituloRecientes.hidden = false;
+  } catch (error) {
+    console.error("No se pudieron cargar los datos del perfil.", error);
+    estado.textContent = "No se pudieron cargar tus datos. Inténtalo de nuevo más tarde.";
   }
-  caja.append(p);
 }
 
 /* Estado de sesión y formulario */
@@ -94,7 +158,6 @@ async function pintarSesion() {
     $$("auth-nombre").textContent = (user.user_metadata && user.user_metadata.nombre) || user.email;
   }
   document.dispatchEvent(new CustomEvent("sesion-actualizada", { detail: { user } }));
-  await pintarHistorialCuenta();
 }
 
 async function cerrarSesion() {
